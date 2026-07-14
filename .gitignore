@@ -1,0 +1,28 @@
+# Secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+
+# IDE / editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Research logs — archived separately, not tracked in Git (see RUN_MANIFEST.json
+# for what these contain and how to locate them; excluded for size, not privacy —
+# see conversation/REPRODUCIBILITY_NOTES.md for the reasoning)
+logs/

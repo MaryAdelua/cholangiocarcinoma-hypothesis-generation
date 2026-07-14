@@ -1,0 +1,689 @@
+{
+  "run_ids": {
+    "baseline": "baseline_20260713T200812Z",
+    "multiagent": "multiagent_20260713T202858Z"
+  },
+  "system_evaluations": [
+    {
+      "system": "baseline",
+      "n_hypotheses": 10,
+      "hallucinated_citation_rate": {
+        "successes": 0,
+        "n": 25,
+        "rate": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.13319649395317873
+      },
+      "citation_support": {
+        "successes": 3,
+        "n": 22,
+        "rate": 0.13636363636363635,
+        "ci_low": 0.04748917264236269,
+        "ci_high": 0.3333541187947
+      },
+      "citation_support_counts": {
+        "yes": 3,
+        "partially": 16,
+        "no": 3
+      },
+      "falsification_survival": {
+        "successes": 0,
+        "n": 10,
+        "rate": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.2775401687666166
+      },
+      "falsification_verdict_counts": {
+        "survives": 0,
+        "weakened": 10,
+        "refuted": 0,
+        "unknown": 0
+      },
+      "novelty": {
+        "successes": 9,
+        "n": 10,
+        "rate": 0.9,
+        "ci_low": 0.5958436145024278,
+        "ci_high": 0.9821242504842788
+      },
+      "grounding_depth_avg": 2.2
+    },
+    {
+      "system": "multiagent",
+      "n_hypotheses": 10,
+      "hallucinated_citation_rate": {
+        "successes": 0,
+        "n": 92,
+        "rate": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.04008280329209862
+      },
+      "citation_support": {
+        "successes": 8,
+        "n": 25,
+        "rate": 0.32,
+        "ci_low": 0.17204987516891143,
+        "ci_high": 0.5159008626542329
+      },
+      "citation_support_counts": {
+        "yes": 8,
+        "partially": 15,
+        "no": 2
+      },
+      "falsification_survival": {
+        "successes": 1,
+        "n": 10,
+        "rate": 0.1,
+        "ci_low": 0.01787574951572113,
+        "ci_high": 0.4041563854975721
+      },
+      "falsification_verdict_counts": {
+        "survives": 1,
+        "weakened": 9,
+        "refuted": 0,
+        "unknown": 0
+      },
+      "novelty": {
+        "successes": 8,
+        "n": 10,
+        "rate": 0.8,
+        "ci_low": 0.49015684672072335,
+        "ci_high": 0.9433190520193067
+      },
+      "grounding_depth_avg": 2.5
+    }
+  ],
+  "per_hypothesis": [
+    {
+      "system": "multiagent",
+      "claim": "Persistently elevated serum gamma-glutamyl transferase (GGT), together with emerging metabolic risk factors (MASLD/NAFLD, diabetes, obesity, hypertension), may serve as a low-cost, widely available signal to flag patients for closer hepatobiliary imaging surveillance, reflecting a shift in cholangiocarcinoma etiology from infection-driven to metabolic-driven risk even in non-endemic regions.",
+      "citation_checks": [
+        {
+          "citation_id": "PMID:42192874",
+          "supports_claim": "partially",
+          "reasoning": "This citation establishes that persistently elevated GGT is associated with increased risk of hepatobiliary malignancies broadly, which supports the general premise that GGT could flag hepatobiliary cancer risk. However, it is not specific to cholangiocarcinoma (it covers hepatobiliary and pancreatic outcomes as a group), and does not directly address the claim about combining GGT with metabolic risk factors as a surveillance trigger, nor does it establish the etiologic shift from infection to metabolic drivers. It supports part of the claim (GGT-hepatobiliary malignancy link) but not the full compound claim."
+        },
+        {
+          "citation_id": "PMID:41781899",
+          "supports_claim": "partially",
+          "reasoning": "This citation supports the claim about an epidemiologic transition in biliary tract cancers toward metabolic risk factors (BMI, hypertension) in a Korean cohort, which is relevant to the etiologic shift portion of the claim. However, it does not address GGT as a marker at all, nor does it establish the proposed low-cost surveillance strategy combining GGT with metabolic risk factors. It's directly relevant to only one component of the compound hypothesis."
+        }
+      ],
+      "novelty": "non_obvious",
+      "novelty_reasoning": "While the individual facts (GGT associated with hepatobiliary cancer risk; metabolic risk factors increasingly implicated in BTC) are separately documented, the specific proposal to combine a nonspecific, low-cost biomarker (GGT) with metabolic risk factor screening as a triage tool for imaging surveillance in non-endemic populations is a genuinely novel synthesis. It is not yet a standard or established clinical practice, and the hypothesis appropriately acknowledges its own limitations (GGT nonspecificity, controversial MASLD-GI cancer link), reflecting a thoughtful, non-trivial proposal rather than restating settled facts.\"",
+      "falsification_verdict": "weakened",
+      "falsification_reasoning": "The hypothesis already candidly acknowledges its two biggest vulnerabilities (GGT nonspecificity and the 'controversial' MASLD-GI tumor literature), and my searches reinforce and extend both concerns rather than uncovering a fatal flaw.\n\n1) Nonspecificity of GGT is confirmed and broadened by additional evidence beyond alcohol/benign hepatobiliary disease. PMID:42009715 shows H. pylori infection independently raises liver enzyme/liver disease risk in a large cohort (unrelated to hepatobiliary cancer), PMID:42291724 shows hepatic enzyme abnormalities are common in sickle cell disease via hemolysis, and PMID:40978954 shows even routine medications (metformin) modulate liver enzymes in diabetics. This is a diverse, unglamorous but real set of confounders that would degrade any GGT-based flagging rule's positive predictive value in a general non-endemic population where hepatobiliary malignancy remains a rare outcome — the classic 'nonspecific marker, rare disease, low base rate' problem for screening.\n\n2) The claimed metabolic 'etiologic shift' rests on a comparatively thin evidentiary base (one real-world TriNetX cohort on GGT and a single Korean regional cancer center cohort), while the broader systematic review (PMID:41769402) explicitly states the MASLD–GI tumor relationship 'remains controversial' after pooling 29 studies — a direct hit on the mechanistic premise that metabolic dysfunction is a well-established, generalizable CCA driver. Additionally, PMID:41831392 (MASLD status and HCC outcomes) and PMID:40485101 (Mendelian randization review noting hepatobiliary cancer MR results are 'scattered, biologically not plausible or even controversial') further show that causal inference for MASLD/metabolic factors and liver-adjacent malignancies is unsettled, undermining confidence that metabolic markers reliably signal biliary tract cancer risk specifically (as opposed to HCC, for which the metabolic link is more established).\n\n3) I found no dedicated screening/surveillance trial testing GGT (or metabolic risk composite) as a trigger for hepatobiliary imaging in cholangiocarcinoma — the ClinicalTrials.gov search returned zero results — indicating this remains a conceptual/retrospective-association-based proposal without prospective validation of clinical utility, cost-effectiveness, or false-positive burden management (unlike HCC surveillance, where biomarker-based surveillance economic evaluations already exist, e.g. PMID:41490253, highlighting how far CCA is behind in this regard).\n\nNone of this refutes the core epidemiologic signal (GGT associations with hepatobiliary malignancy and a metabolic risk factor uptick in BTC cohorts are real, per the cited primary studies), but it meaningfully weakens the leap from 'statistical association in retrospective cohorts' to 'a validated low-cost screening trigger for imaging surveillance,' especially given the nonspecific and confounded nature of GGT and the unsettled state of the MASLD-biliary cancer causal literature.",
+      "new_conflicting_evidence": [
+        "PMID:42291724",
+        "PMID:40978954",
+        "PMID:41831392"
+      ]
+    },
+    {
+      "system": "baseline",
+      "claim": "Serum beta-hCG, discovered via multi-omics analysis of the LHCGR receptor pathway, combined with traditional tumor markers (e.g., CA19-9), improves detection sensitivity for CCA relative to CA19-9 alone, particularly in high-incidence Southeast Asian populations.",
+      "citation_checks": [
+        {
+          "citation_id": "PMID:42353153",
+          "supports_claim": "yes",
+          "reasoning": "The abstract directly describes the multi-omics identification of LHCGR upregulation correlating with advanced stage, identification of beta-hCG as ligand, and validation combined with traditional tumor markers for improved detection efficacy in CCA in Northeast Thailand, matching the claim closely."
+        },
+        {
+          "citation_id": "PMCID:PMC13299596",
+          "supports_claim": "partially",
+          "reasoning": "This is the same paper (title only, no abstract text provided), so it corroborates existence of the study but does not provide additional independent evidence beyond confirming the title matches."
+        }
+      ],
+      "novelty": "non_obvious",
+      "novelty_reasoning": "The specific finding that LHCGR pathway/beta-hCG serves as a combinable biomarker with CA19-9 to improve CCA detection, discovered via multi-omics in a Thailand-specific opisthorchiasis-related CCA cohort, is a fairly specific and non-obvious biomarker discovery, not a well-known or textbook fact about CCA biology. It is highly specific to one study and one population, limiting generalizability, but the claim itself is not a trivial restatement of established knowledge like 'FGFR2 fusions are targetable.'",
+      "falsification_verdict": "weakened",
+      "falsification_reasoning": "The core empirical claim rests entirely on a single study (PMID:42353153/PMC13299596) from one Northeast Thailand cohort — there is no independent replication, and my search for related clinical trials testing this marker for CCA screening returned nothing, confirming the hypothesis has not progressed beyond discovery-stage evidence in one population, exactly as the reasoning itself acknowledges.\n\nMore importantly, the literature reveals a substantial specificity problem for β-hCG as a cancer biomarker: it is a well-documented paraneoplastic/ectopic secretion product across many unrelated tumor types (pineal tumors, endometrial carcinoma, breast phyllodes tumors, colorectal cancer) and even benign conditions, plus physiological states (pregnancy) that would need to be excluded — a major practical confound for a population-level screening marker, especially in women of reproductive age in the target Southeast Asian population, which the original study and reasoning do not address. Additionally, the comparator itself, CA19-9, has well-known confounders (cholestasis-driven false positives, Lewis-antigen-negative false negatives) that are not resolved by adding β-hCG, and a related review on Clonorchis/CCA biomarkers explicitly cautions that current novel biomarker candidates broadly remain unvalidated at small, single-center scale — a direct, independent corroboration of the exact limitation the hypothesis already flags as a weakness.\n\nNone of this outright refutes the specific finding (LHCGR/β-hCG upregulation correlating with CCA stage and IHC/serum validation in the cited cohort still stands unchallenged by any direct contradicting CCA study), but the broader biomarker specificity literature and absence of independent validation or trials meaningfully weakens confidence that this will generalize to real-world screening, particularly given β-hCG's known lack of specificity across a wide range of malignancies and physiological states.",
+      "new_conflicting_evidence": []
+    },
+    {
+      "system": "multiagent",
+      "claim": "In Opisthorchis viverrini-endemic populations, oncogenic chromosomal driver alterations (e.g., TP53, PTEN, FGFR2 amplifications) arise in the bile duct epithelium decades before clinical cholangiocarcinoma diagnosis, suggesting that molecular or serologic screening of chronically infected individuals in their 30s-40s could identify a pre-malignant window for early intervention long before symptomatic disease.",
+      "citation_checks": [
+        {
+          "citation_id": "PMID:41071656",
+          "supports_claim": "partially",
+          "reasoning": "This citation directly supports the core epidemiological/timing claim that driver chromosomal amplifications (including in genes like TP53, PTEN, FGFR2 as commonly implicated in CCA genomics) occur decades (two to four decades, ~age 30) before cancer diagnosis in O. viverrini-exposed patients. However, the abstract snippet does not explicitly name TP53, PTEN, or FGFR2 as the specific driver genes found amplified - it just says 'driver genes' generically. So it supports the timing/latency claim well but doesn't fully verify the specific gene list cited in the hypothesis."
+        },
+        {
+          "citation_id": "PMID:41919759",
+          "supports_claim": "partially",
+          "reasoning": "This citation is about Clonorchis sinensis (a related but distinct liver fluke from Opisthorchis viverrini) and supports the general feasibility of biomarker approaches (miRNAs, methylation, antigens) for early detection, consistent with the reasoning's caveat about lab-stage findings. However, it does not directly address O. viverrini populations, the 30s-40s screening window, or the decades-long latency claim - it is more general support for the biomarker feasibility part of the hypothesis, not the core chromosomal driver timing claim."
+        }
+      ],
+      "novelty": "non_obvious",
+      "novelty_reasoning": "The general facts that O. viverrini causes CCA and that TP53/FGFR2 are involved in CCA genomics are well known. However, the specific quantitative claim about a decades-long latency window (driver amplifications emerging ~2-4 decades before diagnosis, around age 30) and the translational proposal to leverage this specific latency for targeted molecular/serologic screening in chronically infected individuals in their 30s-40s is a more specific, non-obvious synthesis. It moves beyond simple restatement of known carcinogenesis mechanisms to propose a concrete early-detection window based on emerging population genomics data, which is a reasonably novel translational hypothesis, even though the underlying biomarker feasibility (miRNAs, methylation) is a well-trodden research area.\"",
+      "falsification_verdict": "weakened",
+      "falsification_reasoning": "The core biological claim—that driver alterations can be seeded decades before clinical CCA diagnosis—is not directly refuted by anything I found; it rests on population-genomics modeling not challenged in the literature I retrieved. However, several aspects of the translational leap ('screening in the 30s-40s is a theoretically viable strategy') are meaningfully complicated: (1) the specific example driver FGFR2 amplification appears mismatched to fluke-associated etiology, since FGFR2 fusions are recognized as more characteristic of non-liver-fluke iCCA, undermining the illustrative mechanism; (2) proposed biomarkers (miRNA, methylation, antigens, PIGR strips) remain firmly in small-cohort, case-control, lab-stage development, consistent with the reasoning's own caveat; (3) analogous, better-resourced blood-based screening efforts in HCC still require dedicated multi-year phase IV prospective trials before adoption, suggesting the CCA biomarker pipeline is far from screening-ready despite promising preclinical signals; (4) real serologic cross-reactivity/standardization problems for co-endemic helminths (e.g., Strongyloides) are documented, validating the logistical concern raised in the reasoning; and (5) even simpler, already-deployed ultrasound surveillance in the same endemic populations shows only modest predictive performance and still-uncertain cost-effectiveness, casting doubt on the practical feasibility of implementing a more complex molecular screening program at population scale. Together these findings do not refute the latency-window biology but substantially weaken confidence that near-term molecular/serologic screening in this age group is a realistic, well-supported near-future intervention.",
+      "new_conflicting_evidence": [
+        "PMID:41773262",
+        "PMID:42322834",
+        "PMID:39495136",
+        "PMID:41056497",
+        "PMID:42022539",
+        "PMID:38968318",
+        "PMID:39902967",
+        "PMID:37043507",
+        "PMID:39733414",
+        "PMID:38156846",
+        "PMID:39381227"
+      ]
+    },
+    {
+      "system": "baseline",
+      "claim": "Serum N-glycoproteomic signatures (altered protein glycosylation patterns), which differ between intrahepatic and extrahepatic CCA subtypes, could be combined with CA19-9 (itself a glycan epitope) to create a more specific early detection glycomic panel.",
+      "citation_checks": [
+        {
+          "citation_id": "PMID:41061966",
+          "supports_claim": "partially",
+          "reasoning": "This citation directly supports the premise that iCCA and eCCA have distinct N-glycoproteomic signatures and links glycosylation to immune evasion, which is the basis of the claim. However, it is tissue-based proteomic data from resected/diagnosed tumors, not serum, and does not address CA19-9 combination or early detection/pre-diagnostic feasibility. So it substantiates part of the hypothesis (subtype-specific glycosylation differences) but not the extrapolation to a serum-based early detection panel combined with CA19-9."
+        }
+      ],
+      "novelty": "non_obvious",
+      "novelty_reasoning": "While CA19-9 is a well-known glycan-based marker for CCA (somewhat established), the specific proposal to build a multiplexed glycomic panel that incorporates subtype-specific (iCCA vs eCCA) N-glycoproteomic signatures alongside CA19-9 for improved specificity in early detection is a non-trivial, forward-looking combination not currently standard practice. It goes beyond simply restating that CA19-9 is used clinically or that glycosylation is altered in cancer; it proposes a specific translational strategy using subtype-differential glycomics. The hypothesis's own reasoning appropriately flags that this is speculative given the tissue-only evidence, which supports its non-obvious, exploratory nature rather than being a truism.</novelty_reasoning>\n",
+      "falsification_verdict": "weakened",
+      "falsification_reasoning": "The literature search surfaced several concrete complications that the original hypothesis does not adequately address:\n\n1. **CA19-9's specificity problem is not primarily a 'glycan panel resolution' problem — it's a biological confound.** PMID:41948245 explicitly documents that CA19-9 is 'confounded by false positives in patients with cholestasis and false negatives in Lewis antigen-negative patients.' PMID:41463153 reinforces that CA19-9 'lacks expression in the Lewis antigen-negative population' (roughly 5-10% of people) and has 'low sensitivity for early-stage disease.' Since the hypothesis proposes combining a novel glycoproteomic signature *with* CA19-9 to improve specificity, it inherits CA19-9's structural blind spots (Lewis-negative false negatives) unless the new glycomic markers are shown to be independent of Lewis antigen status — a point the original reasoning never addresses.\n\n2. **Benign/inflammatory biliary and pancreatic conditions elevate CA19-9 and mimic malignancy, and glycosylation changes generally track with inflammation, not just cancer.** Case evidence (PMID:41924610 — eosinophilic cholangitis misdiagnosed as CCA with elevated tumor markers; PMID:42170562 and PMID:42210969 — IgG4-related disease/autoimmune pancreatitis mimicking malignancy with elevated CA19-9) illustrates that the biliary-disease population in which early CCA detection would actually be attempted (PSC, cholangitis, strictures, stones) is exactly the population prone to inflammatory glycan/CA19-9 elevation, which could just as easily confound a glycoproteomic panel as it does CA19-9 alone. PMID:41095804 notes broadly that conventional biliary biomarkers 'lack the sensitivity and specificity needed for early detection' precisely because benign and malignant biliary disease overlap so much biochemically.\n\n3. **No blood-based validation or clinical trials exist for this tissue-derived signature.** A clinicaltrials.gov search for a glycan biomarker panel for CCA early detection/screening returned zero results, and PMID:42123365 (a 2025 review of CCA in-vitro diagnostics) frames liquid biopsy (ctDNA, EVs, CTCs, CLU) as the emerging non-invasive approach, without highlighting N-glycoproteomic panels as a validated or even actively-trialed strategy. This corroborates the original reasoning's own admission that translation from tissue proteomics to a pre-diagnostic serum assay is speculative, and adds that there is apparently no active trial infrastructure yet testing this specific concept.\n\nNone of this outright refutes the biological premise (subtype-specific glycosylation differences in tissue are real, per PMID:41061966), but it substantially weakens the practical claim that adding these signatures to CA19-9 would yield a 'more specific' early-detection panel — the confounders that already erode CA19-9's specificity (benign cholestasis, inflammation, Lewis-antigen status) are not clearly bypassed by generic N-glycoproteomic markers, and there is no clinical validation trail yet.",
+      "new_conflicting_evidence": [
+        "PMID:41948245",
+        "PMID:41463153",
+        "PMID:41924610",
+        "PMID:42170562",
+        "PMID:42210969",
+        "PMID:41095804",
+        "PMID:42123365"
+      ]
+    },
+    {
+      "system": "baseline",
+      "claim": "Gut/biliary microbiome composition and secondary bile acid profiles (via FXR/TGR5/S1PR2 signaling) are altered before overt CCA development and could serve as an early risk biomarker or stratification tool, especially in patients with PSC, IBD, or biliary stents who have known dysbiosis.",
+      "citation_checks": [
+        {
+          "citation_id": "PMID:42293159",
+          "supports_claim": "partially",
+          "reasoning": "This review supports the mechanistic bile acid-microbiome-FXR/TGR5/S1PR2 axis in biliary tract carcinogenesis generally, but it does not demonstrate that microbiome/bile acid alterations occur BEFORE overt CCA development or serve as an early risk biomarker/stratification tool. It establishes plausible mechanism, not the specific early-detection biomarker claim."
+        },
+        {
+          "citation_id": "PMID:41944905",
+          "supports_claim": "partially",
+          "reasoning": "This review discusses gut-liver axis disruption in IBD and its link to PSC and other hepatobiliary conditions, supporting the premise of dysbiosis in these populations, but does not address bile acid signaling changes preceding CCA or biomarker utility for early detection/risk stratification specifically for CCA."
+        },
+        {
+          "citation_id": "PMID:41695353",
+          "supports_claim": "partially",
+          "reasoning": "This is about biliary stents altering microbiota and promoting pancreatic cancer progression, not cholangiocarcinoma. It is analogous/relevant but does not directly support that biliary stent-associated dysbiosis precedes or predicts CCA risk; it's evidence for a different cancer type used by extension/analogy."
+        }
+      ],
+      "novelty": "non_obvious",
+      "novelty_reasoning": "While the individual components (bile acid-microbiome signaling in biliary carcinogenesis, gut-liver axis disruption in IBD/PSC, stent-associated dysbiosis) are each described in existing literature, the specific hypothesis—that microbiome/bile acid profiles change before overt CCA and could serve as an early risk-stratification biomarker, particularly in PSC/IBD/stent patients—is a novel synthesis and translational proposal rather than a restatement of an established fact. It goes beyond simply noting that dysbiosis is associated with CCA risk factors, proposing a specific pre-diagnostic biomarker application that is not yet validated, as the reasoning itself acknowledges. This is exploratory and non-obvious, though the evidentiary support for the specific temporal/predictive claim is weak.\"",
+      "falsification_verdict": "weakened",
+      "falsification_reasoning": "The literature confirms mechanistic and associative links between gut/biliary dysbiosis, altered bile acid metabolism, and biliary tract pathology, but several findings complicate the specific claim that this axis can serve as an early, CCA-specific risk biomarker.\n\n1) Specificity problem: PMID:41975274 (compositional/functional gut microbiome and metabolome differences in PSC vs PBC vs matched controls, n=245/280) shows dysbiosis signatures are a feature of chronic cholestatic liver disease broadly (both PSC and PBC), not specific to malignant transformation. This means dysbiosis found in 'high-risk' PSC/IBD patients may simply reflect the underlying cholestatic/inflammatory disease state rather than an early signal of cancer development, undermining its use for cancer-specific risk stratification versus benign disease-activity monitoring.\n\n2) Disease-level vs cancer-prediction gap: PMID:41903026 develops a plasma metabolite/microbiome-driven signature that distinguishes PSC-IBD from IBD alone (diagnosing an intermediate condition), not one that predicts which PSC/IBD patients will progress to CCA. The paper explicitly frames early diagnostic biomarkers as still needed, i.e., the field has models for disease subtype classification but not validated pre-cancer risk prediction.\n\n3) General translational limitations of microbiome biomarkers: PMID:39732609 (broad review on microbiome-based disease prediction) explicitly flags that 'conflicting study outcomes' and 'demographic and technological biases' have hindered integration of microbiome signatures into clinical practice — a generic but relevant caution against over-interpreting associative biliary/gut microbiome findings as a near-term risk-stratification tool.\n\n4) Cross-disease heterogeneity/lack of CCA-specific signal: PMID:41408188, a systematic review of the biliary microbiome across multiple hepatopancreatobiliary disorders (CCA, pancreatic cancer, PSC, gallstone disease), pools diagnostic potential across several distinct diseases, suggesting overlapping dysbiotic signatures across benign and malignant biliary conditions rather than a clean, CCA-specific fingerprint — a specificity concern for any proposed biomarker panel.\n\n5) Mismatch between existing validated models and the 'early/pre-cancer' framing of the hypothesis: PMID:41816992 reports a high-performing (AUC 80–99%) multicohort gut microbiome diagnostic model, but this was built and validated to distinguish already-diagnosed CCA patients from controls/other conditions — i.e., it is a diagnostic classifier for overt disease, not a demonstrated pre-diagnostic risk-stratification tool in at-risk PSC/IBD/stent populations. This actually argues against conflating 'diagnostic microbiome signature exists' with 'validated early-risk biomarker exists,' which is precisely the gap the hypothesis's own reasoning already flags.\n\n6) Cross-cancer confound in the supporting evidence itself: PMID:41695353, cited as supporting evidence, actually demonstrates biliary stent-driven microbiota changes promoting pancreatic cancer progression, not cholangiocarcinoma — indicating the mechanistic literature invoked to support CCA risk is partly borrowed from an adjacent but distinct malignancy, weakening the direct evidentiary chain for CCA specifically.\n\nTaken together, these findings don't refute the mechanistic plausibility of the bile acid-microbiome-FXR/TGR5/S1PR2 axis in biliary carcinogenesis, but they substantially reinforce the hypothesis's own stated caveat: current evidence is associative/mechanistic and diagnostic-stage at best, confounded by general cholestatic disease state, lacks demonstrated specificity for cancer risk versus benign dysbiosis, and has not been prospectively validated as an early risk-stratification tool in PSC/IBD/stent populations. This is a genuine weakening of confidence beyond what the original hypothesis already acknowledged, primarily on the specificity and validation-stage axes.",
+      "new_conflicting_evidence": [
+        "PMID:41975274",
+        "PMID:41903026",
+        "PMID:39732609",
+        "PMID:41408188",
+        "PMID:41816992",
+        "PMID:41695353"
+      ]
+    },
+    {
+      "system": "multiagent",
+      "claim": "Bile-based cell-free DNA (cfDNA) mutation/methylation profiling collected during ERCP (or via minimally invasive biliary drainage) outperforms plasma cfDNA for detecting somatic alterations in cholangiocarcinoma and could be developed into a low-additional-cost adjunct to routine ERCP biliary sampling for earlier molecular detection in patients undergoing biliary intervention for strictures.",
+      "citation_checks": [
+        {
+          "citation_id": "PMID:41399682",
+          "supports_claim": "yes",
+          "reasoning": "This is a direct study comparing bile and plasma cfDNA in resectable CCA patients, finding bile cfDNA superior for somatic mutation detection due to higher tumor DNA abundance and better analytical accuracy - directly supports the core claim about bile cfDNA outperforming plasma."
+        },
+        {
+          "citation_id": "PMID:41178929",
+          "supports_claim": "yes",
+          "reasoning": "This review explicitly states bile is a reliable ctDNA source with higher concordance to tumor tissue than plasma, directly supporting the comparative claim, though it is a review rather than primary evidence for the ERCP-adjunct workflow specifically."
+        },
+        {
+          "citation_id": "PMID:41487574",
+          "supports_claim": "partially",
+          "reasoning": "This is a general review on liquid biopsy in biliary tract cancers covering early diagnosis, precision therapy, and prognosis broadly; the snippet does not specifically confirm the bile-vs-plasma superiority claim or the ERCP-adjunct concept, so it is topically relevant but doesn't directly establish the specific comparative claim."
+        }
+      ],
+      "novelty": "non_obvious",
+      "novelty_reasoning": "While the general concept that bile is a good proximal fluid for ctDNA in biliary cancers is increasingly recognized in recent literature (and thus the basic 'bile cfDNA beats plasma' finding is becoming established knowledge), the specific translational proposal to formalize this into a low-additional-cost adjunct integrated into routine ERCP workup for indeterminate strictures, explicitly positioned as a triage/risk-stratification tool rather than population screening, is a more specific and non-trivial synthesis with practical implementation implications (workflow integration, cost considerations, patient selection strategy) beyond just restating that bile ctDNA has higher concordance than plasma.",
+      "falsification_verdict": "weakened",
+      "falsification_reasoning": "The core analytical claim (bile cfDNA has higher tumor DNA concordance than plasma) is plausible and supported by the cited reviews, but several pieces of real evidence complicate the practical hypothesis that this can become a 'low-additional-cost adjunct' that meaningfully outperforms existing ERCP-based workflows or plasma approaches:\n\n1. Competing technology already exists within the same procedure. PMID:41904891 and PMID:40932825 show that targeted NGS performed directly on brush cytology/biopsy specimens (cellular material, not bile fluid cfDNA) already substantially improves diagnostic yield over cytology/FISH for indeterminate strictures. If NGS-on-brushings already captures most of the incremental molecular value during the same ERCP, the additional benefit of a separate bile cfDNA extraction/analysis step is less clear, undermining the 'low additional cost/effort' framing — you would be adding a second assay pipeline (cfDNA extraction, library prep, bioinformatics) rather than simply extending an already-collected specimen.\n\n2. PSC-related field mutations threaten specificity in exactly the population being proposed for triage. PMID:38551383 demonstrates that oncogenic mutations accumulate in biliary epithelium during PSC-associated carcinogenesis before frank malignancy (high-grade dysplasia), meaning bile-based mutation detection (cfDNA or cellular) in the PSC/indeterminate stricture population — the very group this hypothesis targets — risks false-positive calls from premalignant or reactive clonal mutations, complicating the 'somatic alteration = cancer' interpretation that underlies triage utility.\n\n3. Longstanding, still-unresolved investigation into bile 'free DNA' analysis. CT:NCT02000999 shows that comparing brush cytology + FISH vs brush cytology + bile free-DNA analysis has already been under prospective study for roughly a decade without becoming standard of care, suggesting real-world barriers (assay standardization, cost-effectiveness, workflow integration, regulatory approval) beyond pure analytical sensitivity that the hypothesis does not address. CT:NCT06277531 reflects that the field is still searching for the right bile-based biomarker (extrachromosomal circular DNA as an alternative), indicating no consensus that mutation/methylation cfDNA is the winning modality.\n\n4. Advances in plasma-based methods narrow the performance gap. PMID:42165910 describes a plasma cfDNA fragmentomics approach (fragment size, CNV, genome-wide fragmentation patterns) for BTC detection and prognostic stratification using low-pass WGS — a purely non-invasive blood-based strategy that does not require ERCP at all. If plasma-based methods continue to improve via fragmentomic/multi-feature approaches rather than relying on raw mutation abundance, the 'bile is needed because plasma has too little tumor DNA' argument weakens for at least some clinical use cases, and could eventually make ERCP-based sampling unnecessary for detection purposes, undercutting the specific translational niche proposed (adjunct during ERCP).\n\nNone of this refutes the narrower, more defensible claim that bile cfDNA shows better concordance with tumor tissue in resectable CCA (PMID:41399682 stands on its own for that specific comparison). But it meaningfully weakens the broader translational hypothesis that this concordance advantage straightforwardly translates into a practical, low-cost, clinically superior adjunct test for ERCP-based stricture workup, given (a) redundancy with existing brushing-based NGS, (b) specificity concerns from PSC field mutations, (c) a decade of prior investigation without adoption, and (d) competing non-invasive plasma innovations that could erode the invasiveness/proximity rationale.",
+      "new_conflicting_evidence": [
+        "PMID:38551383",
+        "PMID:41905556",
+        "PMID:42165910"
+      ]
+    },
+    {
+      "system": "multiagent",
+      "claim": "A blood-based cell-free DNA methylation panel (analogous to multi-cancer early detection tests) is a promising emerging practical signal for biliary tract cancer screening in average-detection settings, but remains investigational and unproven for true early-stage (pre-symptomatic) detection.",
+      "citation_checks": [
+        {
+          "citation_id": "CT:NCT07176962",
+          "supports_claim": "partially",
+          "reasoning": "This confirms an active clinical trial testing a cfDNA methylation blood test for BTC screening, supporting the 'emerging investigational' aspect of the claim and the motivation (low resection rate, poor survival). However, it does not itself provide evidence about performance for early-stage detection, so it only partially supports the full claim including the caveat about unproven early-stage utility."
+        },
+        {
+          "citation_id": "PMID:41866828",
+          "supports_claim": "yes",
+          "reasoning": "This review explicitly covers ctDNA/cfDNA methylation as an emerging liquid biopsy modality for GI cancers, and per the reasoning given, flags limited sensitivity for stage I disease due to low analyte shedding early in tumor development—directly supporting both halves of the claim (promising but unproven for early-stage)."
+        },
+        {
+          "citation_id": "PMID:38398194",
+          "supports_claim": "no",
+          "reasoning": "This is a general review of CCA molecular pathobiology and therapeutic approaches; it is not specifically about cfDNA methylation screening or liquid biopsy early detection performance, so it does not directly support the specific claim about a blood-based methylation panel's screening utility or its early-stage detection limitations."
+        }
+      ],
+      "novelty": "non_obvious",
+      "novelty_reasoning": "While the general concept of liquid biopsy/ctDNA for cancer screening is well known, the specific, appropriately hedged claim—that a cfDNA methylation panel is a promising but still investigational and unproven signal specifically for early-stage BTC detection—is a reasonably nuanced, non-trivial synthesis. It ties together an active clinical trial, general GI liquid biopsy limitations (stage I sensitivity), and CCA-specific unmet need, rather than merely restating an established fact like 'FGFR2 fusions are targetable.' It's not a groundbreaking novel hypothesis, but it does go beyond a simple truism and reflects a synthesized, appropriately calibrated judgment about the state of evidence.",
+      "falsification_verdict": "survives",
+      "falsification_reasoning": "The claim is cautious and hedged (calling the signal \"promising but investigational and unproven for early-stage detection\"), and my adversarial search largely reinforces rather than refutes this hedge — but it also surfaces additional complications the original reasoning did not fully articulate, which further weaken any temptation to upgrade confidence.\n\nReinforcing/extending the limitation: PMID:41866828 (already cited) explicitly states sensitivity in stage I disease remains limited across cfDNA methylation approaches due to low tumor burden/minimal analyte shedding, causing false negatives — this directly supports the 'unproven for early-stage' framing and was already accounted for. A structurally analogous finding in ovarian cancer (PMID:42073634) shows the same low-tumor-shedding problem in stage I disease as a general liquid-biopsy limitation, reinforcing that this is a class-wide bottleneck, not a solvable quirk unique to a specific assay design.\n\nAdditional complications not previously incorporated:\n1. Base-rate/PPV problem: Biliary tract cancer is rare (6th most common GI malignancy but low absolute incidence). Even a highly specific MCED-style panel will suffer poor positive predictive value in an average-risk screening population, meaning most positive signals could be false positives requiring costly, invasive follow-up (ERCP/biopsy) — a critical practical barrier not mentioned in the original reasoning.\n2. Competing/alternative liquid biopsy modalities are being actively pursued instead of or alongside methylation, e.g., cfDNA fragmentomics (PMID:42165910) and mutation-based ctDNA panels (PMID:41652428, PMID:41883993, PMID:41178929), suggesting the field views methylation as one candidate among several unproven approaches rather than a clear front-runner — tempering the framing of methylation cfDNA specifically as 'the' emerging practical signal.\n3. No direct BTC-specific stage-stratified sensitivity/specificity data were found — searches for cholangiocarcinoma-specific cfDNA methylation validation studies, PSC-related false-positive/inflammatory confounding data, and Galleri/PATHFINDER biliary-specific performance did not return biliary-tract-specific results, meaning the claim's caveat about lacking validated early-stage performance data is, if anything, understated — there appears to be essentially no biliary-tract-specific stage I performance data at all, only extrapolation from pan-cancer or other GI cancer literature.\n\nNo sources were found that actively refute the biological plausibility or contradict the trial's existence; the single active trial (NCT07176962) is real and appropriately characterized as investigational. Nothing found suggests the panel has failed in trials or been shown ineffective — because it simply has not yet been tested for this specific early-detection use case in BTC. The hedged, low-confidence claim (0.28) is appropriately calibrated to this state of genuine uncertainty and lack of contradicting (or confirming) stage-specific evidence.",
+      "new_conflicting_evidence": [
+        "PMID:42165910",
+        "PMID:41883993",
+        "PMID:41178929"
+      ]
+    },
+    {
+      "system": "multiagent",
+      "claim": "Multimodality tissue sampling of indeterminate biliary strictures (combining brush cytology, fluorescence in situ hybridization (FISH), and cholangioscopy-directed biopsy) increases diagnostic yield for early/pre-clinical cholangiocarcinoma compared to brush cytology alone, but false-negative rates remain substantial and clinically important.",
+      "citation_checks": [
+        {
+          "citation_id": "PMID:42435259",
+          "supports_claim": "partially",
+          "reasoning": "This network meta-analysis compares cholangioscopy-based modalities (SOC, IDB, FISH, brush cytology) for indeterminate biliary strictures and likely shows relative diagnostic accuracy differences, supporting the general premise that combining/upgrading sampling techniques improves detection over brush cytology alone. However, it is framed around biliary strictures broadly (including benign conditions like IgG4-related disease), not specifically 'early/pre-clinical' cholangiocarcinoma detection, and does not directly address false-negative rates of multimodal combined sampling as a unified strategy."
+        },
+        {
+          "citation_id": "PMID:41537059",
+          "supports_claim": "partially",
+          "reasoning": "This study compares ERCP brush cytology vs biopsy diagnostic accuracy against histopathology, which is relevant to the claim that biopsy-based sampling may outperform cytology alone. However, it is a two-modality comparison, not a true multimodal (brush+FISH+cholangioscopy-directed biopsy) combination, so it only partially supports the specific claim about combined multimodality sampling increasing yield for early/pre-clinical CCA."
+        },
+        {
+          "citation_id": "PMID:42122131",
+          "supports_claim": "partially",
+          "reasoning": "This review proposes integrating advanced endoscopic techniques and confocal microscopy to address the limitation that periductal infiltrating growth patterns evade luminal sampling, which supports the rationale for multimodal integration. But it is a conceptual/review framework rather than direct empirical evidence of increased diagnostic yield or quantified false-negative rates, so it only partially substantiates the specific claim."
+        }
+      ],
+      "novelty": "trivial_restatement",
+      "novelty_reasoning": "It is well established in the biliary endoscopy literature that combining brush cytology with FISH and cholangioscopy-guided biopsy improves diagnostic yield over cytology alone for indeterminate biliary strictures, and that false-negative rates remain a persistent clinical problem due to the submucosal/periductal infiltrative growth pattern of cholangiocarcinoma. This is a widely recognized clinical issue in interventional gastroenterology/hepatology guidelines and reviews, not a novel or non-obvious proposal. The hypothesis essentially restates known limitations and known incremental benefits of multimodal tissue sampling without proposing a new mechanism, biomarker, technology, or actionable strategy to overcome the false-negative blind spots identified.\"",
+      "falsification_verdict": "weakened",
+      "falsification_reasoning": "The core claim (multimodal sampling improves yield over single-modality but leaves substantial false-negative rates) is directionally supported, but adversarial search surfaces several complications beyond what was already acknowledged:\n\n1. Confirmed 40-50% false-negative rate for FISH (PMID:40689505) is a major, quantitatively large blind spot — this isn't a minor caveat but suggests one of the three 'multimodal' pillars is unreliable in nearly half of true cancers, undermining confidence that 'combining' with FISH meaningfully closes the detection gap rather than adding cost/complexity with modest incremental yield.\n\n2. False positives are also a real problem, not just false negatives: FISH polysomy occurred in a biopsy-confirmed benign eosinophilic cholangitis case (PMID:40084063), and IgG4-sclerosing cholangitis mimics cholangiocarcinoma despite tissue sampling (PMID:42004961). This complicates the \"increases diagnostic yield\" framing because yield gains may come at the cost of specificity — relevant for early detection where prevalence of true early CCA among strictures is low, so even modest false-positive rates produce many unnecessary interventions.\n\n3. A systematic review (PMID:39518600) shows FISH diagnostic accuracy varies substantially depending on which \"positive\" threshold definition is used (polysomy-only vs. polysomy/trisomy/tetrasomy vs. 9p21 loss), indicating the 40-50% false-negative figure and yield-improvement claims are sensitive to assay/interpretation criteria — not a fixed, generalizable number.\n\n4. Newer molecular endoscopy/NGS approaches (PMID:41904891) reportedly outperform cytohistology+FISH combined, suggesting the specific \"brush cytology + FISH + cholangioscopy biopsy\" combination proposed in the hypothesis may already be a suboptimal or soon-outdated multimodal strategy relative to emerging alternatives — weakening the claim that this particular combination is the right one to invest confidence in.\n\n5. Cholangioscopy-directed biopsy, while improving yield, carries a non-trivial infectious complication burden (PMID:42344408: elevated bacteremia/cholangitis risk vs standard ERCP), a practical cost the hypothesis doesn't weigh — relevant to whether the \"increased yield\" is net beneficial for early detection screening use.\n\n6. Even with multimodal sampling, definitive preoperative histologic confirmation remains elusive in many perihilar/infiltrative cases, and some centers proceed to major surgery without it (PMID:41869113), and pancreatobiliary cytopathology has documented interpretive pitfalls with limited specimens (PMID:38631319) — reinforcing that combining modalities does not solve the fundamental problem of sparse, ambiguous cellular material in early/infiltrative lesions.\n\nNet effect: the hypothesis's directional claim (multimodal > single-modality, but false-negatives remain clinically important) survives at a qualitative level, but the specific magnitude, the specificity trade-offs, the assay-definition sensitivity, and the existence of superior emerging alternatives all argue for a more cautious/lower confidence than the original framing, which somewhat glossed over false positives and comparative superiority of newer molecular methods.",
+      "new_conflicting_evidence": [
+        "PMID:40084063",
+        "PMID:42344408",
+        "PMID:41869113",
+        "PMID:38631319",
+        "PMID:42004961"
+      ]
+    },
+    {
+      "system": "baseline",
+      "claim": "Serum or urinary volatile organic compound (VOC) profiles, analyzed via gas chromatography-ion mobility spectrometry (GC-IMS) combined with machine learning, can non-invasively distinguish biliary tract cancer from benign biliary disease and could be adapted as a low-cost triage/early-detection tool.",
+      "citation_checks": [
+        {
+          "citation_id": "PMID:40342815",
+          "supports_claim": "partially",
+          "reasoning": "The citation directly supports the core factual basis of the claim (158 serum samples, GC-IMS VOC detection, machine learning models distinguishing BTC from benign biliary disease, 40 VOCs detected). This matches the reasoning statement closely. However, the citation is about serum VOCs specifically, while the claim broadens to 'serum or urinary' VOC profiles - urinary VOCs are not addressed by this study. Also the citation does not establish or discuss use as an early-detection or triage tool for asymptomatic populations - it compares already symptomatic BTC vs BBD patients, so the extrapolation to 'early-detection' is not directly supported by the source, only the diagnostic distinction between two symptomatic groups is shown."
+        }
+      ],
+      "novelty": "non_obvious",
+      "novelty_reasoning": "The use of VOC profiling via GC-IMS combined with machine learning for biliary tract cancer detection is a relatively novel diagnostic approach, not a well-established or obvious fact in the field. It is not a trivial restatement of common knowledge like 'FGFR2 fusions are targetable' - VOC-based diagnostics for BTC are an emerging, non-standard research direction. However, the claim's extension to 'early-detection' and 'low-cost triage' is a reasonable but somewhat speculative extrapolation beyond what a single study demonstrated, which the reasoning appropriately flags as a limitation.</novelty_reasoning>\n",
+      "falsification_verdict": "weakened",
+      "falsification_reasoning": "The core single study (PMID:40342815) remains uncontradicted on its own terms, but several independent lines of evidence complicate the broader claim that GC-IMS VOC profiling is a robust, generalizable, low-cost early-detection tool for biliary tract cancer:\n\n1. Confounding by non-malignant factors is a demonstrated problem for VOC-based diagnostics generally. PMID:42340975 shows that antibiotic administration itself produced the strongest VOC discrimination signal in a breath-disease model, overwhelming the disease-related signal — a direct analog to the biliary cancer setting, where BTC and benign biliary disease patients frequently receive antibiotics, undergo biliary drainage, or have cholestasis/cholangitis, any of which could plausibly drive VOC differences unrelated to malignancy itself.\n\n2. The same GC-IMS-serum/urine-VOC-plus-machine-learning pipeline has been applied near-simultaneously to unrelated benign conditions (gallstones with cholecystitis, PMID:41593140) and to gastric cancer with a separate precancerous-disease arm (PMID:41786899). This pattern suggests a generic, easily-produced type of study (small-to-moderate n, single center, many-VOC panel, multiple ML models) rather than a well-replicated, disease-specific signature — raising concern about publication-pattern bias and about whether the 14 \"significant\" VOCs in the BTC study are BTC-specific or reflect nonspecific inflammatory/metabolic perturbation shared across biliary and other GI diseases.\n\n3. Cross-platform reproducibility is questionable: a COPD-focused meta-analysis (PMID:41316246) found diagnostic performance differs meaningfully between eNose and GC-MS VOC methods, and it explicitly states that comparative diagnostic efficacy of these VOC detection technologies \"remains unclear.\" This undercuts confidence that a single-technology (GC-IMS), single-cohort result will translate to a robust, deployable clinical test.\n\n4. Competing/alternative biomarker modalities in the same clinical niche (bile lipidomics, PMID:40897822) report high sensitivity/specificity for distinguishing CCA from benign biliary disease using a different biofluid and analyte class, suggesting VOC profiling is not obviously superior and has not been benchmarked head-to-head against more mechanistically-grounded candidates.\n\n5. Biological plausibility for specificity is undermined by literature showing that bile acid metabolism and gut microbiome composition — both of which are altered by benign biliary obstruction, diet, and antibiotic use, not just malignancy — are tightly linked to biliary tract cancer pathophysiology (PMID:42293159, PMID:41018102). Serum/urine VOCs are heavily influenced by microbiome and bile acid metabolism, so it is difficult to know whether the reported VOC differences are tumor-specific or reflect nonspecific microbiome/bile-flow perturbations correlated with, but not causally tied to, malignancy.\n\n6. An active liver-cancer breath-test trial (NCT06864195, VOCAL2) explicitly enrolls cirrhosis and primary sclerosing cholangitis (PSC) patients alongside CCA and HCC patients — implicitly acknowledging that a major clinical challenge for VOC-based detection is distinguishing cancer from its own high-risk precursor/benign inflammatory conditions, which is exactly the early-detection use case the original hypothesis aims for and exactly what the single retrospective study did NOT test (it compared already-diagnosed cancer vs. symptomatic benign disease, not pre-cancer surveillance populations like PSC).\n\nTaken together, these findings don't refute the original single study's internal findings, but they substantially reinforce and extend the reasoning's own caveat: the approach is unreplicated, platform-dependent, potentially confounded by inflammation/antibiotics/microbiome/bile flow rather than malignancy per se, and has not been tested in the actual target population (asymptomatic or high-risk pre-cancer patients) needed to support an early-detection triage claim. This moves the verdict from \"survives\" to \"weakened\" rather than \"refuted,\" since no evidence was found that directly falsifies the reported diagnostic accuracy in the original cohort.",
+      "new_conflicting_evidence": [
+        "PMID:42340975",
+        "PMID:41593140",
+        "PMID:41786899",
+        "PMID:41316246",
+        "PMID:40897822",
+        "PMID:42293159",
+        "PMID:41018102",
+        "CT:NCT06864195"
+      ]
+    },
+    {
+      "system": "multiagent",
+      "claim": "Targeted next-generation sequencing panels (covering KRAS, TP53, CDKN2A, SMAD4 and other biliary tract cancer driver genes) applied to endoscopically obtained bile duct brushing, biopsy, or aspiration specimens can improve sensitivity for detecting early or indeterminate cholangiocarcinoma beyond conventional cytology and FISH.",
+      "citation_checks": [
+        {
+          "citation_id": "PMID:42196882",
+          "supports_claim": "partially",
+          "reasoning": "This is a narrative review describing the rationale and challenges of NGS on transpapillary brushing/biopsy/aspiration specimens for biliary tract cancer diagnosis. It supports the general feasibility and rationale but as a review it does not itself provide new comparative sensitivity data versus cytology/FISH; it's supportive background rather than direct primary evidence."
+        },
+        {
+          "citation_id": "PMID:41904891",
+          "supports_claim": "yes",
+          "reasoning": "This is a prospective study directly comparing targeted NGS to cytohistology and FISH on cholangioscopy-obtained samples in patients with extrahepatic biliary strictures, directly supporting the claim of improved diagnostic performance using NGS panels on endoscopically obtained specimens."
+        },
+        {
+          "citation_id": "PMID:41905556",
+          "supports_claim": "partially",
+          "reasoning": "This study uses a SNP microarray (OncoScan), not a targeted NGS mutation panel per se, on bile duct brushings compared to cytology, supporting the general theme of molecular augmentation of cytology but using a different technology than the specific NGS panels (KRAS, TP53, CDKN2A, SMAD4) described in the claim."
+        }
+      ],
+      "novelty": "trivial_restatement",
+      "novelty_reasoning": "The idea that molecular/NGS mutation panels on ERCP-obtained brush/biopsy specimens can improve sensitivity over cytology and FISH for biliary strictures is now a well-established line of research in biliary tract cancer diagnostics (analogous to pancreatic cyst fluid NGS testing), with multiple prior studies (e.g., using KRAS/TP53/CDKN2A/SMAD4 panels, similar to pancreatic IPMN NGS panels) already demonstrating this. This is a fairly well-known and expected finding in the field rather than a novel or surprising proposal, and the hypothesis itself acknowledges it is more about incremental diagnostic improvement in an already-invasive procedure rather than a new screening paradigm.</novelty_reasoning>\n",
+      "falsification_verdict": "weakened",
+      "falsification_reasoning": "The supporting studies (PMID:41904891, PMID:41905556, and the review PMID:42196882) do show that molecular panels add diagnostic yield over cytology/FISH alone in symptomatic strictures, but several independent findings complicate the strength and generalizability of the claim:\n\n1. Incremental-value studies are mixed. PMID:40932825 explicitly set out to test whether NGS adds value beyond morphologic interpretation in suspicious strictures and frames this as an open, non-guaranteed question — i.e., not all cohorts confirm a large, reproducible sensitivity gain, and the impact on actual clinical decision-making (as opposed to just concordance statistics) is uncertain.\n\n2. The comparator itself (FISH) is not a stable, well-defined benchmark: PMID:39518600's systematic review/meta-analysis shows that FISH \"positivity\" definitions vary substantially across studies (polysomy-only vs. polysomy/tetrasomy/trisomy vs. other combinations), which means claims of NGS being \"better than FISH\" are sensitive to which FISH definition was used as the comparator, undermining head-to-head comparability across the cited studies. Similarly, PMID:40689505 shows FISH false-negative rates of 40-50% in some series, meaning the bar NGS is being compared against is already known to be poor and inconsistent, so \"improvement over FISH\" is a low bar rather than proof of adequate absolute performance.\n\n3. Pre-analytic/specimen-quality confounders remain unresolved by NGS. PMID:38631319 documents that pancreatobiliary cytology specimens are frequently paucicellular and prone to interpretive pitfalls; this same limited/low-cellularity material is what feeds NGS assays, so DNA input adequacy and sampling variability likely still constrain NGS sensitivity, particularly for small or early lesions — a limitation not fully addressed by the cited papers.\n\n4. Diagnostic overlap and biology of benign strictures. PMID:39941254 (review of diagnostic approach to biliary strictures) and PMID:37894314 (PSC-associated CCA review) underscore that benign inflammatory/fibrotic strictures (e.g., chronic pancreatitis, PSC, post-surgical) can show overlapping morphologic and potentially low-level mutational signals, raising the specter of false positives or indeterminate molecular calls in exactly the population (indeterminate strictures) where the test is most needed — a concern the hypothesis text itself half-acknowledges but does not resolve with cited evidence.\n\n5. cfDNA/bile-based NGS (PMID:34285068) and OCA/OPCCFA bile-fluid assays (PMID:39273408) represent a somewhat different technical approach (cell-free DNA vs. brushing cellular DNA) with its own reported yield issues, suggesting performance is assay- and specimen-type dependent rather than a uniform \"NGS panel\" effect, complicating claims of a generalizable improvement.\n\n6. All of the affirmative studies are single-center, moderate-sample-size (n~60-130), retrospective-or-mixed-design studies; none directly address performance in truly asymptomatic/preclinical early lesions (the hypothesis's own stated goal), only in patients already presenting with strictures worked up endoscopically — a population selection bias toward more advanced/symptomatic disease that the reasoning text itself flags as unresolved.\n\nOverall, the core comparative claim (NGS beats cytology/FISH in stricture cohorts) is reasonably well supported by multiple concordant prospective studies, but the claim of benefit for \"early or indeterminate\" cholangiocarcinoma detection is weakened by inconsistent incremental-value data, an unstable comparator (FISH definitions/high false-negative rates), specimen adequacy issues, and lack of true pre-symptomatic validation. This does not refute the hypothesis but tempers the confidence that this represents a clear, robust step toward earlier detection rather than modestly better triage of already-symptomatic strictures.",
+      "new_conflicting_evidence": [
+        "PMID:39518600",
+        "PMID:38631319",
+        "PMID:40689505",
+        "PMID:37894314"
+      ]
+    },
+    {
+      "system": "multiagent",
+      "claim": "FGFR2 gene fusions (e.g., FGFR2-BICC1, FGFR2-AHCYL1), which occur preferentially in intrahepatic cholangiocarcinoma, could be used as a rearrangement-specific diagnostic marker detectable via RNA-based or fusion-spanning ctDNA/cfRNA assays to identify a molecularly distinct, potentially earlier-detectable subset of biliary tract cancer.",
+      "citation_checks": [
+        {
+          "citation_id": "CIVIC:EID1846",
+          "supports_claim": "partially",
+          "reasoning": "Directly supports the existence and diagnostic detection (via transcriptome sequencing and RT-PCR) of FGFR2-BICC1 fusion specifically in intrahepatic cholangiocarcinoma at ~13.6% prevalence. This substantiates the molecular signature and RNA-based detectability part of the claim, but says nothing about ctDNA/cfRNA-based liquid biopsy detection or early/pre-symptomatic detection utility, which is the actual novel proposal being made."
+        },
+        {
+          "citation_id": "CIVIC:EID1847",
+          "supports_claim": "partially",
+          "reasoning": "Same underlying study as EID1846, showing FGFR2-AHCYL1 fusion detected via transcriptome sequencing/RT-PCR in intrahepatic cholangiocarcinoma. Confirms fusion existence and detectability in tissue but does not address cfRNA/ctDNA liquid-biopsy-based early detection claim specifically."
+        },
+        {
+          "citation_id": "CIVIC:EID11230",
+          "supports_claim": "no",
+          "reasoning": "This is a predictive/therapeutic response citation (infigratinib response in FGFR2 fusion-positive cholangiocarcinoma), not related to diagnostic or early-detection assay development. It supports the treatment-relevance of FGFR2 fusions but not the specific claim about using fusions as an early-detection biomarker in ctDNA/cfRNA assays."
+        }
+      ],
+      "novelty": "non_obvious",
+      "novelty_reasoning": "The existence of FGFR2 fusions in intrahepatic cholangiocarcinoma and their utility as a predictive biomarker for FGFR-targeted therapy is well established and widely known in the field (a fairly trivial restatement in that respect). However, the specific proposal to repurpose this fusion as a rearrangement-spanning marker for ctDNA/cfRNA-based liquid biopsy assays aimed at early or pre-symptomatic detection (rather than diagnostic confirmation in already-diagnosed, symptomatic patients or therapy selection) is a nontrivial extension. This combination—leveraging known fusion junctions for a screening-oriented liquid biopsy application in an unscreened/at-risk population—goes beyond simple restatement of the well-known fusion-therapy link, though it is a fairly incremental/natural extension that many in liquid biopsy biomarker research would consider almost obvious given the specificity of fusion junctions for such assays. Given the modest prevalence and lack of validation data for this exact application, it sits between purely trivial and highly novel, but leans toward being a genuinely proposed application rather than a mere restatement of known biology.",
+      "falsification_verdict": "weakened",
+      "falsification_reasoning": "The core molecular observation (FGFR2-BICC1/AHCYL1 fusions in a subset of intrahepatic cholangiocarcinoma) is real and well-curated (CIViC EID1846/1847), but several independent lines of evidence complicate the diagnostic/early-detection framing beyond what the original reasoning already conceded:\n\n1. Specificity is imperfect, not absolute. PMID:41632446 (Lirafugratinib resistance study) explicitly reports that only 60% of patients enrolled for 'FGFR2-driven cancers' had intrahepatic cholangiocarcinoma — 40% had other tumor types. PMID:41092072, a large pan-cancer Chinese cohort, found FGFR2/FGFR fusions across multiple cancers, with the highest incidence actually in parotid gland carcinoma (40%), not iCCA, and an overall low pan-cancer rate (~0.96%). PMID:41369841 and PMID:41514604 further document FGFR2 fusions/alterations as a recurring oncogenic mechanism in breast cancer and 'multiple solid tumors' generally. This means a positive FGFR2 fusion signal in cfRNA/ctDNA would not be unambiguously attributable to cholangiocarcinoma without site-of-origin context — undermining the claim of a 'molecularly distinct' signature restricted to one subtype, which matters for a screening context where tumor origin is precisely what's unknown.\n\n2. Prevalence is geographically/etiologically variable. PMID:41773262 and PMID:41682001 both note FGFR2 fusion prevalence in iCCA ranges ~10-16% and varies by region and etiology (e.g., liver-fluke-associated disease), meaning the 13.6% figure may not generalize across populations, further limiting population-level screening utility.\n\n3. No evidence of early-detection/screening validation — only downstream clinical uses. Every ctDNA/liquid-biopsy CCA paper retrieved (PMID:41883993, PMID:41652428, PMID:40311184, PMID:41912863, PMID:41873318) frames ctDNA/FGFR2 utility around treatment selection, resistance monitoring, or postoperative minimal-residual-disease/recurrence surveillance in already-diagnosed patients — not de novo detection in asymptomatic or at-risk populations. PMID:41652428 explicitly frames early detection in pancreatic/biliary cancers as an area of 'evidence, barriers, and opportunities' rather than settled fact, and no clinical trial search returned any screening trial using FGFR2 fusion detection.\n\n4. General liquid-biopsy assay limitations apply. PMID:35328301 highlights unresolved standardization/harmonization issues limiting translation of liquid profiling (including fusion detection) into routine care, and tumor tissue-plasma discordance is a recognized general problem for ctDNA fusion calling — relevant since early-stage tumors shed less ctDNA/cfRNA, and fusion transcripts require RNA-based assays with additional technical fragility (RNA degradation in plasma) compared to SNV-based ctDNA assays, which the supporting evidence did not directly address.\n\nTaken together, this doesn't refute the underlying molecular finding, but it meaningfully weakens the leap from 'diagnostic/predictive marker in known tumors' to 'viable early-detection screening marker': imperfect tissue specificity, variable prevalence, and a total absence of screening-context validation are compounding limitations beyond the modest ~14% prevalence already acknowledged in the original reasoning.",
+      "new_conflicting_evidence": [
+        "PMID:41632446",
+        "PMID:41092072",
+        "PMID:41369841",
+        "PMID:41773262",
+        "PMID:41682001",
+        "PMID:41883993",
+        "PMID:40311184",
+        "PMID:35328301",
+        "PMID:41912863",
+        "PMID:41873318"
+      ]
+    },
+    {
+      "system": "multiagent",
+      "claim": "A panel of tissue-informed DNA methylation biomarkers (identified by reduced representation bisulfite sequencing and validated by droplet digital PCR) can be measured in bile and plasma to detect cholangiocarcinoma arising in patients with primary sclerosing cholangitis (PSC) earlier and more accurately than current bile cytology/imaging surveillance.",
+      "citation_checks": [
+        {
+          "citation_id": "PMID:42067191",
+          "supports_claim": "yes",
+          "reasoning": "This citation is the direct source study describing identification of DNA methylation biomarkers via RRBS in tissue, ddPCR assay development, and validation in bile and plasma samples from PSC and CCA patients for improved detection accuracy over current methods—precisely matching the claim's specific methodology and application."
+        }
+      ],
+      "novelty": "non_obvious",
+      "novelty_reasoning": "While liquid biopsy and methylation biomarkers are established concepts in oncology generally, the specific combination of tissue-informed biomarker discovery via RRBS, ddPCR validation, and application to both bile and plasma specifically for PSC-associated CCA surveillance represents a non-trivial, disease-specific advance beyond generic biomarker claims. It is not simply restating a well-known fact like 'FGFR2 fusions are targetable'—it proposes a specific diagnostic pipeline and validated panel for an under-served clinical problem (early CCA detection in PSC surveillance, where current cytology/imaging is known to be poor).\"",
+      "falsification_verdict": "weakened",
+      "falsification_reasoning": "The core claim rests on a single (albeit multi-center, reasonably sized) case-control study (PMID:42067191). My adversarial search did not find a direct refutation or failed replication of this specific methylation panel, but it surfaced several categories of evidence that meaningfully complicate the claim:\n\n1. Generic liquid-biopsy limitation confirmed broadly: PMID:41866828 explicitly states that across GI cancers, 'sensitivity in stage I disease remains limited due to low tumour burden and minimal analyte scaling, resulting in false-negative results' — this is not specific to CCA but reinforces that the study's case-control design (established PSC-CCA cases vs. non-cancer PSC) likely overestimates real-world sensitivity for pre-symptomatic, truly early lesions, which is exactly the clinical use-case (surveillance) the hypothesis targets.\n\n2. Existing bile-based diagnostics for PSC/biliary strictures already have well-documented false-negative and false-positive problems that a new biomarker panel must overcome and that create a difficult comparator/confounding backdrop: PB-FISH has a 40-50% false-negative rate in biliary strictures (PMID:40689505), and FISH polysomy definitions vary widely in diagnostic performance depending on threshold (PMID:39518600), while indeterminate biliary strictures remain diagnostically messy in general (PMID:37901449). Chronic inflammatory/benign biliary conditions (e.g., eosinophilic cholangitis mimicking PSC/CCA, per case literature) can also produce abnormal cytologic/molecular signals, raising concern about specificity of any biomarker-based approach in the inflamed PSC biliary tree — methylation changes driven by chronic inflammation rather than neoplasia are a recognized confounder class, though I did not find a paper specifically showing this for this exact methylation panel.\n\n3. Competing/alternative liquid-biopsy modalities are being developed in parallel (cfDNA fragmentomics for BTC, PMID:42165910; ctDNA-based approaches, PMID:41883993, PMID:41652428), none of which yet show a clear winner, suggesting the field has not converged on methylation panels as superior, and head-to-head comparisons against bile cytology/imaging in prospective, real-world PSC surveillance cohorts are still lacking.\n\n4. I found no independent external validation or replication cohort for this exact 4-marker panel beyond the original study, and no clinical trial specifically testing it in a prospective surveillance setting — meaning the 'proof of concept' remains single-study evidence pending prospective confirmation.\n\nNone of this evidence outright refutes the study's reported accuracy in its tested cohort, so the hypothesis is not refuted. But it is meaningfully weakened by (a) generic evidence that stage I/early lesion sensitivity is a known Achilles' heel of liquid biopsy that the retrospective case-control design cannot fully address, and (b) the messy performance history of prior bile-based molecular diagnostics (FISH, cytology) in the same inflamed-biliary-tree setting, which raises unresolved specificity concerns for any new marker until prospectively validated in an actual surveillance cohort with pre-symptomatic lead time.",
+      "new_conflicting_evidence": [
+        "PMID:41883993",
+        "PMID:41652428",
+        "PMID:40689505",
+        "PMID:39518600",
+        "PMID:39273408",
+        "PMID:37901449",
+        "PMID:42165910"
+      ]
+    },
+    {
+      "system": "baseline",
+      "claim": "Longitudinal plasma ctDNA surveillance for IDH1/IDH2 hotspot mutations (and other actionable drivers like FGFR2 fusions) can serve as an early, non-invasive signal of tumor recurrence or occult residual disease in resected/treated CCA, and could be adapted for earlier primary detection in at-risk individuals.",
+      "citation_checks": [
+        {
+          "citation_id": "PMID:41912863",
+          "supports_claim": "yes",
+          "reasoning": "This directly supports the MRD detection component of the claim: ctDNA-based detection of molecular residual disease specifically in IDH-mutant CCA for biomarker-guided therapy, which is the core of the recurrence-monitoring claim."
+        },
+        {
+          "citation_id": "PMID:41883993",
+          "supports_claim": "partially",
+          "reasoning": "Supports the general framework of ctDNA in CCA precision oncology and use of genetic alterations to guide treatment, but from the abstract snippet it is not clear it specifically addresses longitudinal surveillance for recurrence or early detection distinctions - it's a broader roadmap review."
+        },
+        {
+          "citation_id": "CIVIC:EID10886",
+          "supports_claim": "no",
+          "reasoning": "This is about IDH1 R132 predicting response to ivosidenib in advanced/progressed CCA (therapeutic response), not about ctDNA surveillance, MRD detection, or recurrence monitoring. It supports the actionability of IDH1 mutations as a drug target but not the surveillance claim."
+        },
+        {
+          "citation_id": "CIVIC:EID1846",
+          "supports_claim": "no",
+          "reasoning": "This establishes FGFR2-BICC1 fusion as a diagnostic marker found via RNA-seq/RT-PCR in tumor tissue specimens, not via liquid biopsy/ctDNA, and does not address recurrence surveillance or early detection utility."
+        },
+        {
+          "citation_id": "CIVIC:EID1847",
+          "supports_claim": "no",
+          "reasoning": "Same evidence as EID1846 - establishes FGFR2-AHCYL1 fusion as a tissue-based diagnostic marker via transcriptome sequencing, not related to ctDNA liquid biopsy surveillance or recurrence detection."
+        }
+      ],
+      "novelty": "trivial_restatement",
+      "novelty_reasoning": "The core assertions - that IDH1/2 mutations and FGFR2 fusions are actionable CCA drivers, and that ctDNA can be used for MRD detection in IDH-mutant CCA - are already established in the literature (as shown by the first citation being a direct MRD study). The extension to 'earlier primary detection in at-risk individuals' is a natural, often-proposed extrapolation of ctDNA/liquid biopsy technology which the hypothesis itself acknowledges is limited by low sensitivity in early-stage disease. This is a well-recognized concept in the liquid biopsy field (ctDNA for MRD is established; extending to screening is a commonly discussed but yet-unrealized goal due to known sensitivity limits) rather than a novel, non-obvious proposal or specific new combination/mechanism.",
+      "falsification_verdict": "weakened",
+      "falsification_reasoning": "The core mechanistic premise (IDH1/2 hotspot mutations and FGFR2 fusions are real, actionable, detectable CCA drivers, and ctDNA-based MRD monitoring is feasible post-resection) is supported. But several independent sources complicate the specific claim that this approach is ready for, or straightforwardly extensible to, either robust MRD surveillance or true early/primary detection:\n\n1. Technical feasibility gaps in MRD assays: PMID:41563984, a prospective feasibility study of tumor-informed ctDNA for MRD detection in surgically resected biliary tract cancer, found that personalized panels could not even be constructed for 3 of ~17 evaluable patients due to an insufficient number of tumor-specific target mutations — highlighting that low mutational burden in some BTC/CCA tumors is a barrier not just for primary detection but for building the tumor-informed assays needed for MRD monitoring itself. This directly complicates the 'strong concordance, ready-to-use MRD tool' framing.\n\n2. Concordance is not perfect: PMID:40938601 explicitly set out to quantify ctDNA–tissue mutation concordance rates in CCA/PDAC and treats this as an open, retrospectively-assessed question rather than an established strength — implying real-world concordance is variable rather than uniformly 'strong' as asserted in the reasoning.\n\n3. Explicit barriers reviews: PMID:41652428 ('evidence, barriers, and opportunities') and PMID:40311184 ('clinical applications are currently still limited... even though clinical applications are currently still limited') both frame ctDNA early-detection/screening and MRD monitoring in biliary tract cancer as promising but immature, reinforcing that low tumor burden/shedding and lack of validated early-detection assays remain unresolved barriers — consistent with the reasoning's own caveat but undercutting the confidence that this can be readily 'adapted for earlier primary detection.'\n\n4. Postoperative surveillance framing: PMID:41873318 notes that ctDNA-based MRD frameworks are still 'proposed' (hybrid imaging-molecular framework), i.e., not yet standard practice, and current surveillance still relies primarily on imaging — meaning the claimed non-invasive surveillance paradigm is aspirational, not established.\n\n5. FGFR2-specific complication: PMID:41682001 discusses acquired resistance mechanisms in FGFR2-rearranged BTC, which is a downstream complication for using FGFR2 status as a stable longitudinal marker (fusion-negative escape clones, secondary kinase domain mutations) — could confound serial ctDNA fusion tracking as a recurrence signal if resistant subclones diverge from the fusion-bearing clone.\n\n6. General diagnostic landscape review (PMID:42123365) reiterates that CCA is 'difficult to diagnose early' and that liquid biopsy remains an emerging rather than validated modality, consistent with sensitivity limitations for early/occult disease.\n\nNo single study outright refutes the MRD application (which has reasonably direct supporting evidence, e.g., PMID:41912863), but the additional evidence shows that (a) assay feasibility itself can fail in a meaningful subset of BTC patients due to low mutation counts, (b) tissue-plasma concordance is imperfect and still being characterized, and (c) the extension to true primary/early detection in at-risk individuals remains explicitly aspirational across multiple independent reviews. This moderately weakens the hypothesis, particularly the 'could be adapted for earlier primary detection' clause, while leaving the narrower MRD-monitoring claim comparatively better supported.",
+      "new_conflicting_evidence": [
+        "PMID:41563984",
+        "PMID:40938601",
+        "PMID:41652428",
+        "PMID:41873318",
+        "PMID:40311184",
+        "PMID:41682001",
+        "PMID:42123365"
+      ]
+    },
+    {
+      "system": "multiagent",
+      "claim": "Structured, hepatologist-directed MRCP surveillance (approximately annual) in patients with primary sclerosing cholangitis (PSC) improves early detection of cholangiocarcinoma compared to no surveillance, but may still miss tumors arising in small-duct PSC where large ducts appear radiographically normal.",
+      "citation_checks": [
+        {
+          "citation_id": "PMID:41964937",
+          "supports_claim": "yes",
+          "reasoning": "This is a retrospective cohort study directly comparing hepatologist-directed annual MRCP surveillance versus non-surveillance in PSC patients, which is exactly the claim being made about structured surveillance improving detection outcomes."
+        },
+        {
+          "citation_id": "PMID:42435161",
+          "supports_claim": "partially",
+          "reasoning": "This meta-analysis establishes epidemiology (prevalence/incidence) of PSC in general and IBD populations, which is tangential background context but does not itself support the specific claim about MRCP surveillance improving CCA detection or missing small-duct PSC tumors."
+        }
+      ],
+      "novelty": "non_obvious",
+      "novelty_reasoning": "The first part of the claim (that MRCP surveillance improves detection in PSC) is a fairly well-accepted premise in hepatology guidelines, bordering on restatement of established practice. However, the specific combination with the caveat about small-duct PSC blind spots—where large ducts appear radiographically normal despite intrahepatic CCA—adds a genuinely non-obvious, clinically nuanced insight, essentially proposing a specific gap in current surveillance paradigms that isn't obvious or trivial. The overall hypothesis synthesizes two distinct pieces of evidence (cohort comparison and a case report) into a novel critique of imaging-based surveillance limitations, which goes beyond simple restatement of a well-known fact. However, no citation was provided to directly substantiate the case-report claim about small-duct PSC and normal-appearing ducts, which is the more novel part of the hypothesis and remains unsupported by the citations given.",
+      "falsification_verdict": "weakened",
+      "falsification_reasoning": "The core surveillance-benefit claim (PMID:41964937) and epidemiology claim (PMID:42435161) remain reasonably supported, but the second half of the hypothesis — that small-duct PSC represents a meaningful, generalizable 'blind spot' requiring protocol change — rests on very thin evidence. The cited case report (PMID:42136955) is explicitly a single, first-ever-reported case ('First Reported Case') of iCCA in small-duct PSC, and the report itself states that small-duct PSC is 'traditionally regarded as a milder variant of PSC with a lower risk of hepatobiliary malignancy.' A general PSC review (PMID:30725866) corroborates that small-duct PSC constitutes only ~5% of PSC cases and has historically been considered lower-risk for malignancy than classic large-duct PSC. This substantially undercuts the strength of the inference: extrapolating a systemic surveillance blind-spot and calling for new parenchymal/biomarker protocols from a single anecdotal case in a subgroup traditionally considered low-risk is an overreach — the case report demonstrates *possibility*, not *frequency* or *clinical significance* at a population level. Additionally, I found no clinical trials or comparative studies evaluating parenchymal imaging or biomarker adjuncts specifically for small-duct PSC surveillance, meaning the hypothesis's proposed remedy is speculative and untested. I could not retrieve the full results section of PMID:41964937 (snippet truncates before outcome data), so I cannot independently verify whether the surveillance benefit was statistically robust or potentially confounded by selection bias (e.g., healthier/more engaged patients preferentially receiving surveillance) or lead-time bias — a common methodological concern in retrospective surveillance-vs-no-surveillance comparisons that the hypothesis does not address. Overall the surveillance-benefit component survives reasonably well, but the small-duct blind-spot generalization is weakened by reliance on a single low-risk-subgroup case report.",
+      "new_conflicting_evidence": [
+        "PMID:30725866"
+      ]
+    },
+    {
+      "system": "baseline",
+      "claim": "Circulating microRNA signatures (e.g., miR-302d-3p and related panels) in serum can distinguish early/non-metastatic intrahepatic CCA from healthy controls and could be developed into a blood-based early screening panel, particularly in high-incidence regions like Southeast Asia.",
+      "citation_checks": [
+        {
+          "citation_id": "PMID:41569199",
+          "supports_claim": "partially",
+          "reasoning": "The citation confirms a Nanostring-based serum miRNA study in intrahepatic CCA from Thailand (Southeast Asia) that found differentially expressed miRNAs among healthy, non-metastatic, and metastatic groups, supporting the general premise that circulating miRNA panels differ by disease stage/status. However, the study explicitly focuses on advanced-stage patients (n=24) and was designed as a prognosis biomarker study, not an early/asymptomatic screening study, and used only 8 healthy controls. It does not directly establish that these miRNAs can distinguish 'early' or pre-diagnostic CCA from healthy controls in a screening context, nor does it specifically validate miR-302d-3p as named in the claim (the abstract does not confirm this specific miRNA is highlighted). Thus it partially supports the broader claim about miRNA signatures differentiating CCA groups but does not support the specific early-detection screening claim."
+        }
+      ],
+      "novelty": "non_obvious",
+      "novelty_reasoning": "While circulating miRNAs as CCA biomarkers is a known research area, proposing a specific blood-based early screening panel (naming miR-302d-3p and related panels) targeted at high-incidence regions for early/non-metastatic detection is a more specific and non-trivial translational proposal, not simply restating the well-known fact that miRNAs are dysregulated in cancer. However, the hypothesis's novelty is somewhat undercut by the fact that the cited study does not actually support the early-detection framing, making the extrapolation speculative rather than a well-grounded novel synthesis.\"",
+      "falsification_verdict": "weakened",
+      "falsification_reasoning": "The core supporting study (PMID:41569199) is a single-center, small (n=24 cases/8 controls), case-control study of already-diagnosed advanced-stage intrahepatic CCA patients in Thailand analyzed with an exploratory Nanostring panel (239/803 miRNAs nominally significant at p<0.001, with no correction for multiple testing reported in the snippet). Several independent lines of evidence complicate extrapolating this to an early/asymptomatic screening panel:\\n\\n1. Field-wide small-cohort problem: A recent review of Clonorchis sinensis-associated CCA biomarkers (PMID:41919759) explicitly states that circulating miRNA and other molecular biomarker studies for CCA 'mainly remain at the laboratory stage' with 'small-scale cohorts, lacking multi-center, large-sample prospective validation' — directly echoing (and reinforcing, from an independent source) the reasoning's own caveat rather than refuting it, but confirms this is a systemic limitation, not unique to one study, and no one has yet closed this gap.\\n\\n2. Fundamental biology of early detection: A 2025 review of liquid biopsy for GI cancers (PMID:41866828) notes that sensitivity for stage I disease remains limited across ctDNA/EV/miRNA modalities 'due to low tumour burden and minimal analyte scaling, resulting in false-negative' results — a general biophysical constraint that applies to circulating miRNA panels derived mostly from tumor-shed material, and is especially relevant since the source study's cases were advanced-stage, not early/asymptomatic.\\n\\n3. Methodological rigor concerns are common in this class of biomarker study: a systematic review of EV-miRNA biomarkers in pancreatic cancer (PMID:41180592) found substantial variability in methodological quality across the literature — an analogous cautionary precedent for uncritically accepting a single small Nanostring discovery cohort as screening-ready.\\n\\n4. Existing CCA biomarker reviews (PMID:40647454) emphasize that current markers (e.g., CA19-9) 'lack specificity and sensitivity, particularly in early-stage disease' and frame liquid biopsy/miRNA approaches as still investigational, not established — tempering enthusiasm for near-term clinical translation.\\n\\n5. Even within a plausible high-risk surveillance population (PSC patients), reviews describe early CCA detection as remaining very difficult (PMID:37894314), suggesting that whatever population is targeted (fluke-associated Southeast Asian cohorts or PSC), biomarker-based early detection has not yet been demonstrated to work, and benign inflammatory/cholestatic conditions common in these populations are a plausible source of false positives that the cited study did not address (its comparator was healthy controls, not disease mimics).\\n\\n6. Open Targets shows no curated disease association for MIR302D with cholangiocarcinoma (OT:ENSG00000199145 returns only unrelated rare disease associations), indicating miR-302d specifically has essentially no independent cross-database validation as a CCA-associated marker beyond the single source paper, and CIViC has no curated evidence at all for miR-302d in CCA.\\n\\nI did not find a study directly falsifying the miR-302d finding (e.g., a validation cohort showing it fails), but the convergent evidence about small-cohort/early-stage sensitivity limitations, lack of independent database corroboration, and the case-control design (advanced-stage patients vs. healthy controls, which is prone to reverse-causation/spectrum bias rather than true pre-diagnostic discrimination) meaningfully weakens confidence that this specific panel is ready to be considered a validated early-screening candidate, even though the underlying idea that circulating miRNAs could eventually serve this role remains plausible and not refuted outright.",
+      "new_conflicting_evidence": [
+        "PMID:41919759",
+        "PMID:41866828",
+        "PMID:41180592",
+        "PMID:40647454",
+        "PMID:37894314",
+        "OT:ENSG00000199145"
+      ]
+    },
+    {
+      "system": "multiagent",
+      "claim": "Serial circulating tumor DNA (ctDNA) monitoring after curative-intent resection, especially tracking IDH1/2 mutations, can detect molecular residual disease in cholangiocarcinoma before it becomes visible on cross-sectional imaging, enabling earlier intervention for recurrence.",
+      "citation_checks": [
+        {
+          "citation_id": "PMID:41912863",
+          "supports_claim": "yes",
+          "reasoning": "This citation is specifically about ctDNA-based MRD detection in IDH-mutant cholangiocarcinoma, directly stating that standard imaging cannot reliably detect microscopic MRD while ctDNA can serve this role, directly supporting the core claim."
+        },
+        {
+          "citation_id": "PMID:41873318",
+          "supports_claim": "yes",
+          "reasoning": "This citation directly proposes a hybrid imaging-molecular ctDNA surveillance framework after ICC resection, explicitly noting imaging's lack of sensitivity for microscopic residual disease and the opportunity for earlier detection than radiographic progression, which directly supports the claim."
+        },
+        {
+          "citation_id": "PMID:41883993",
+          "supports_claim": "partially",
+          "reasoning": "This is a general ctDNA precision oncology roadmap for CCA covering genotyping for targeted therapy selection; the excerpt does not specifically address post-resection MRD surveillance or the imaging-vs-ctDNA timing advantage, so it only partially supports the specific claim about early detection of residual disease before imaging."
+        }
+      ],
+      "novelty": "non_obvious",
+      "novelty_reasoning": "While ctDNA MRD monitoring is an increasingly established concept in oncology generally (e.g., colorectal cancer), its specific application to cholangiocarcinoma tracking IDH1/2 mutations for post-resection surveillance, integrated into a hybrid imaging-molecular framework to enable earlier intervention, is a more specific and non-trivial proposal reflecting recent emerging literature rather than settled dogma like 'FGFR2 fusions are targetable.' The hypothesis also appropriately acknowledges a key caveat (limited ctDNA sensitivity in low-burden/early-stage disease), showing nuanced reasoning rather than overclaiming. This combination of subtype-specific mutation tracking, surveillance timing advantage over imaging, and honest limitation acknowledgment makes it non-obvious.",
+      "falsification_verdict": "weakened",
+      "falsification_reasoning": "The core biological rationale (imaging misses microscopic disease; ctDNA can in principle detect it earlier) is plausible and supported by reviews, but several real findings complicate the specific claim as stated:\n\n1. Feasibility limits in the actual patient population (PMID:41563984): a prospective tumor-informed ctDNA MRD study in resected biliary tract cancer enrolled only 18 patients, and personalized mutation panels could not even be constructed for 3 of them 'due to a low number of target' mutations — i.e., some resected BTC/CCA tumors do not harbor enough clonal, trackable variants to build a sensitive tumor-informed assay in the first place. This is a direct, practical barrier to the 'serial IDH1/2 tracking' strategy in a meaningful fraction of real patients, independent of theoretical shedding kinetics.\n\n2. Explicit acknowledgment of 'barriers' in the field (PMID:41652428): a dedicated review of ctDNA-guided early detection and MRD monitoring in pancreatic/biliary cancers frames the evidence as still accompanied by significant unresolved barriers, not a validated clinical pathway — consistent with an early-stage, non-practice-changing technology rather than a proven route to 'enabling earlier intervention.'\n\n3. Clonal hematopoiesis (CH/CHIP) confounding (PMID:41899615): this GI-cancer ctDNA review explicitly flags CH/CHIP as a methodological confounder for MRD interpretation. This is particularly relevant to IDH1/2 mutation tracking specifically, because IDH1/2 hotspot mutations are also recurrent, well-described drivers of clonal hematopoiesis and myeloid neoplasms. Without rigorous tumor-informed matching (confirming the exact plasma IDH1/2 variant matches the resected tumor's variant/VAF context), an isolated IDH1/2 signal in plasma could reflect background hematopoietic clonal expansion rather than residual cholangiocarcinoma — a specificity risk the hypothesis doesn't address.\n\n4. Still 'currently... limited' clinical application (PMID:40311184): a dedicated liquid-biopsy-in-BTC review states clinical applications, including MRD detection and recurrence monitoring, remain limited in practice despite promise, reinforcing that this is a research-stage rather than a validated clinical tool.\n\n5. General GI ctDNA sensitivity/specificity shortfalls (PMID:41675329) reiterate that liquid biopsy methods 'often fall short in sensitivity, specificity' for GI malignancies broadly, a caveat the original hypothesis itself partially concedes but which searches confirm is a recurring, unresolved theme rather than a solved problem.\n\n6. No clinical trials were found (search for 'ctDNA surveillance recurrence cholangiocarcinoma resection' returned zero results) demonstrating that ctDNA-triggered early intervention actually improves survival or recurrence-free outcomes in cholangiocarcinoma specifically. The claim's final clause — 'enabling earlier intervention for recurrence' — implies a clinical benefit that has not yet been prospectively validated in CCA; earlier molecular detection could suffer from lead-time bias without proven benefit from earlier salvage therapy, a well-known unresolved issue in the broader MRD field (as also implied by analogous framework papers in UTUC/PDAC found in searches, which describe MRD-based intervention as an emerging 'framework' still requiring prospective validation rather than an established practice).\n\nTaken together, this evidence doesn't refute the biological premise (tissue-plasma IDH1/2 concordance and imaging's blind spot for microscopic disease are real), but it meaningfully weakens the practical and clinical-utility claims: feasibility failures in some patients, specificity risks from clonal hematopoiesis when tracking IDH1/2 specifically, explicit 'barriers' framing by domain reviews, and absence of outcome trials proving that earlier ctDNA-triggered intervention changes recurrence management or survival in cholangiocarcinoma. The original 0.4 confidence already reflected substantial uncertainty; this adversarial search supports keeping confidence modest-to-low rather than raising it, and highlights that the hypothesis conflates biomarker feasibility/concordance with proven clinical actionability.",
+      "new_conflicting_evidence": [
+        "PMID:41563984",
+        "PMID:41675329"
+      ]
+    },
+    {
+      "system": "baseline",
+      "claim": "AI/radiomics-based analysis of incidentally obtained CT/MRI/ultrasound images (obtained for unrelated indications) could be repurposed to flag subtle early intrahepatic cholangiocarcinoma lesions that would otherwise be missed by radiologists, similar to AI applications now emerging in HCC surveillance.",
+      "citation_checks": [
+        {
+          "citation_id": "PMID:41899542",
+          "supports_claim": "partially",
+          "reasoning": "This citation establishes that radiomics/AI models show promising diagnostic performance for detecting and differentiating ICC from other hepatic lesions. However, per the abstract itself, these studies are typically applied to already-identified lesions in symptomatic or known-risk patients, not to incidentally obtained scans for unrelated indications in asymptomatic individuals. It supports the general premise that AI/radiomics can detect ICC signal in imaging, but does not directly demonstrate or study the specific 'incidental scan repurposing' screening use-case claimed."
+        },
+        {
+          "citation_id": "PMID:41616271",
+          "supports_claim": "partially",
+          "reasoning": "This citation supports the analogy to HCC surveillance AI tools improving detection sensitivity, which is explicitly invoked in the claim. It mentions intrahepatic cholangiocarcinoma as part of the liver cancer continuum but the AI innovations described focus on dedicated surveillance/diagnostic imaging (ultrasound surveillance, contrast-enhanced CT/MRI for known liver cancer risk), not on repurposing incidental scans obtained for unrelated indications. So it partially supports the HCC-analogy portion but not the specific incidental-detection mechanism."
+        }
+      ],
+      "novelty": "non_obvious",
+      "novelty_reasoning": "While the individual components (radiomics for ICC lesion characterization; AI for HCC surveillance) are established areas of research, the specific proposal to repurpose incidentally obtained imaging (scans done for unrelated clinical indications) as an opportunistic screening tool for early ICC detection is a distinct and non-trivial application. This is analogous to 'incidentaloma' AI screening approaches seen in other cancers (e.g., pancreatic cancer on incidental CT), but has not been established as standard practice or specifically studied for ICC per the cited literature - both citations are about targeted diagnostic/surveillance imaging, not opportunistic incidental-scan mining. The hypothesis extrapolates beyond current evidence to a genuinely novel screening paradigm, though it remains speculative and is explicitly flagged as such in the reasoning (acknowledging current studies focus on already-detected lesions rather than asymptomatic screening).",
+      "falsification_verdict": "weakened",
+      "falsification_reasoning": "The hypothesis rests on an extrapolation from (a) a favorable systematic review of ICC radiomics and (b) emerging AI use in HCC surveillance, but the additional evidence surfaces several concrete gaps that weaken direct translation to 'incidental scan repurposing for early ICC detection':\n\n1. Small, single/dual-center datasets with weak external validation are the norm, not the exception, in the ICC radiomics literature. PMID:41904405 (186 patients, 2 centers, 52-patient external cohort) and PMID:41710662 (83 HCC/46 ICC training, only 20/20 external TCIA cases) show that even the best current radiomics models for differentiating ICC from HCC are built and tested on cohorts far too small and non-diverse to support confident deployment on heterogeneous, real-world incidental imaging acquired for unrelated indications (different scanners, protocols, contrast timing, non-standardized liver windows).\n\n2. Broader methodological quality concerns extend across the ICC prediction-model literature: PMID:41998539 found substantial variability in preoperative ICC prediction model performance tied to methodological quality (PROBAST), suggesting the field's models are not yet robust enough for generalization to new use-cases like incidental screening.\n\n3. Screening/incidental-detection contexts carry known risks of false positives and overdiagnosis that are distinct from the lesion-already-detected differentiation task the current ICC radiomics literature actually addresses. PMID:41878666 (whole-body MRI screening) explicitly documents low diagnostic yield, false positives, and overdiagnosis concerns when imaging tools are pushed from focused diagnostic use into asymptomatic screening — a direct analog to the proposed incidental-scan repurposing, and a caution not addressed in the supporting evidence.\n\n4. Even purpose-built AI detection tools for focal liver lesions on ultrasound (PMID:41991627) show meaningful residual false-positive rates (~3.5 FPs at 70% recall) and are explicitly noted as operator/experience-dependent, reinforcing that detection-oriented AI (as opposed to differentiation-oriented AI) still has non-trivial error rates even in its best current implementations.\n\n5. Reviews of AI in HCC itself — the analogy the hypothesis leans on — explicitly flag model instability, generalizability limits, and implementation barriers as unresolved (PMID:41976785, PMID:41625752), and a cross-cancer AI translational-readiness review (PMID:42192906) argues most AI oncology evidence is retrospective/single-institution and systematically diverges from real-world deployment conditions — undercutting the implicit assumption that HCC AI success translates smoothly to ICC incidental detection.\n\n6. Radiomics feature reproducibility across scanners/protocols remains an active, unsolved technical problem (PMID:41881591 on CT kV/dose harmonization), which is especially relevant because incidental scans (obtained for unrelated indications) would be acquired under highly variable, non-oncology-optimized protocols — exactly the scenario where radiomic feature instability is most likely to degrade model performance.\n\n7. Case reports of rare hepatic lesions radiologically mimicking ICC (carcinosarcoma, epithelioid hemangioendothelioma, inflammatory myofibroblastic tumor — PMID:42040540, PMID:42064482, PMID:42254446) illustrate that models trained predominantly on common ICC-vs-HCC differentials may be vulnerable to rare mimickers likely to appear unpredictably in an unselected incidental-imaging population, a training-distribution mismatch problem.\n\n8. No clinical trials were found testing AI/radiomics repurposing of incidental imaging for CCA detection specifically — the concept has essentially zero prospective validation, which is consistent with the original hypothesis's own caveat but is worth flagging as an empirical absence rather than just a caveat.\n\nNone of this evidence refutes the underlying premise that radiomics/AI can extract useful signal from liver imaging — that part is well supported. But it substantially weakens the specific claim that this could reliably flag early, otherwise-missed ICC lesions in incidentally obtained, non-standardized imaging, given persistent small-sample/generalizability problems, scanner/protocol-driven feature instability, documented overdiagnosis/false-positive risk when moving from diagnostic to screening contexts, and mimicker-related training-distribution gaps.",
+      "new_conflicting_evidence": [
+        "PMID:41904405",
+        "PMID:41710662",
+        "PMID:41998539",
+        "PMID:41878666",
+        "PMID:41991627",
+        "PMID:41976785",
+        "PMID:41625752",
+        "PMID:42192906",
+        "PMID:41881591",
+        "PMID:42040540",
+        "PMID:42064482",
+        "PMID:42254446"
+      ]
+    },
+    {
+      "system": "baseline",
+      "claim": "In Opisthorchis viverrini/Clonorchis sinensis-endemic populations, targeted molecular screening (e.g., for early TP53/PTEN/FGFR2 chromosomal amplifications or parasite-driven methylation changes) in infected individuals identified via stool/serology could enable risk-stratified surveillance decades before clinical CCA presentation, since driver mutations arise as early as age 30, decades before diagnosis.",
+      "citation_checks": [
+        {
+          "citation_id": "PMID:41071656",
+          "supports_claim": "partially",
+          "reasoning": "This directly supports the claim that TP53/PTEN/FGFR2-carrying chromosomal amplifications arise ~30 years old, decades before diagnosis, in O. viverrini-exposed tumors. However, it does not itself demonstrate or validate that targeted molecular screening in stool/serology-identified infected individuals can enable risk-stratified surveillance - that is an inferential leap from the finding of early somatic events in tumor tissue to a proposed screening strategy in living infected individuals. The paper studies tumor genomics and transmission dynamics, not a screening/surveillance intervention."
+        },
+        {
+          "citation_id": "PMID:41919759",
+          "supports_claim": "partially",
+          "reasoning": "This supports the general idea that candidate biomarkers (miRNA, methylation, metabolites) exist for Clonorchis-associated CCA, consistent with the reasoning's caveat about early-stage, single-center evidence. It does not support the specific claim of targeted screening for TP53/PTEN/FGFR2 chromosomal amplifications enabling risk-stratified surveillance decades before diagnosis; it's a general review of biomarker advances, not tied to the specific amplification-based screening approach or its early timing claim."
+        },
+        {
+          "citation_id": "PMID:42185667",
+          "supports_claim": "partially",
+          "reasoning": "This citation supports the feasibility of identifying infected individuals via stool and serology screening in fluke-endemic populations, which is relevant to the practical logistics of the proposed surveillance strategy. However, it does not address molecular screening for driver mutations, methylation changes, or any linkage to early CCA risk stratification - it is purely about helminth infection prevalence and co-endemicity, providing only indirect support for the feasibility of population identification, not the molecular surveillance concept itself."
+        }
+      ],
+      "novelty": "non_obvious",
+      "novelty_reasoning": "While it is well known that O. viverrini/C. sinensis infection is a major CCA risk factor and that early biomarkers are being explored, the specific idea of using the ~30-year-old average timing of driver gene amplification as a rationale for a proactive, risk-stratified molecular surveillance program (screening infected but asymptomatic individuals identified via stool/serology for early TP53/PTEN/FGFR2 amplifications or methylation changes) decades before clinical presentation is a non-trivial translational proposal. It combines population genomics timing data with public health screening logistics in a way that goes beyond simply restating known risk factors, though the individual components (fluke as carcinogen, biomarker discovery efforts) are separately well established.",
+      "falsification_verdict": "weakened",
+      "falsification_reasoning": "The core observational finding underlying the hypothesis (PMID:41071656 — earliest driver-gene chromosomal amplifications dated to ~age 30, decades before CCA diagnosis) appears solid as a piece of population/tumor genomics work, but the leap from that finding to \"targeted molecular screening could enable risk-stratified surveillance decades before clinical presentation\" runs into several real complications:\n\n1. Validation gap acknowledged by the field itself: PMID:41919759, the companion review cited in support, explicitly states that candidate early biomarkers (miRNA, methylation, metabolites) \"remain at the laboratory stage,\" in \"small-scale cohorts, lacking multi-center, large-sample prospective validation.\" This is not a minor caveat — it means no biomarker in this space has been shown to prospectively predict who among infected individuals will progress to CCA.\n\n2. Low positive predictive value analogy from clonal hematopoiesis: PMID:41641651, PMID:42122123, and PMID:41641638 describe how early clonal expansions carrying driver mutations (including TP53) are common with aging/chronic exposure but the overwhelming majority of carriers never progress to overt malignancy. This is directly analogous to the CCA scenario — detecting an early TP53/PTEN/FGFR2 amplification at age 30 does not establish that this finding has adequate specificity/PPV for eventual cancer, since only a small fraction of infected people (even chronically infected ones) ever develop CCA. The original study demonstrates mutation *timing*, not predictive *utility*, and these are conflated in the hypothesis.\n\n3. Sensitivity limits of liquid biopsy/methylation approaches for early lesions: PMID:41866828 notes that even modern liquid biopsy platforms have limited sensitivity for stage I disease due to low tumor/analyte burden — and detecting pre-malignant clonal amplifications decades earlier would face an even harder sensitivity problem (vanishingly small clonal fraction in bulk tissue/blood).\n\n4. Serology/stool specificity concerns in real-world co-endemic settings: The cited co-endemicity paper (PMID:42185667) and cross-reactivity literature (PMID:23671589) show that serological diagnosis of liver flukes in these regions is complicated by co-infections with other helminths (e.g., Strongyloides), raising concern about specificity of \"infected individuals identified via stool/serology\" as the entry criterion for molecular risk stratification.\n\n5. Existing, more mature risk-stratification tools (ultrasound-based CASCAP screening, e.g. PMID:39733414, PMID:38156850) already exist for this population and detect precursor lesions like periductal fibrosis, yet these programs still show imperfect predictive performance and ongoing uncertainty about which findings truly predict progression — suggesting that adding a molecular layer decades earlier will face at least as much difficulty establishing clinical utility, and no trials currently test the specific molecular approach proposed (searches for both stool/serology-linked molecular screening trials and TP53/PTEN/FGFR2 surveillance trials returned zero results), indicating this remains a conceptual proposal without any active validation pipeline.\n\nTaken together, the hypothesis is not refuted — the biological rationale (early driver acquisition, decades-long latency) is genuine and well-supported — but its clinical translation claim is substantially weakened by (a) conflation of mutation timing with predictive utility, (b) absence of any prospective validation of candidate biomarkers, (c) analogous evidence from other clonal disorders showing early driver mutations often do not progress, (d) specificity concerns in serology-based case-finding in co-endemic regions, and (e) total absence of clinical trials testing this exact strategy.",
+      "new_conflicting_evidence": [
+        "PMID:41919759",
+        "PMID:41866828",
+        "PMID:41641651",
+        "PMID:42122123",
+        "PMID:41641638",
+        "PMID:23671589",
+        "PMID:42185667",
+        "PMID:39733414",
+        "PMID:38156850"
+      ]
+    },
+    {
+      "system": "baseline",
+      "claim": "A panel of tumor-specific DNA methylation biomarkers, measurable in bile or plasma via droplet digital PCR, can detect cholangiocarcinoma (CCA) in primary sclerosing cholangitis (PSC) patients earlier and more accurately than current CA19-9/imaging-based surveillance.",
+      "citation_checks": [
+        {
+          "citation_id": "PMID:42067191",
+          "supports_claim": "yes",
+          "reasoning": "This is the primary study directly describing discovery (RRBS in tissue) and validation of DNA methylation biomarkers via ddPCR in bile and plasma specifically for detecting CCA in PSC patients, matching the claim closely including sample sizes and methodology described in the reasoning."
+        },
+        {
+          "citation_id": "PMCID:PMC13287865",
+          "supports_claim": "partially",
+          "reasoning": "This appears to be a general/related abstract about developing a blood-based test for CCA diagnosis, prognosis, and monitoring, but the snippet provided gives no specific detail about DNA methylation biomarkers, ddPCR, or PSC surveillance comparison to CA19-9/imaging, so it only partially and tangentially supports the specific claim."
+        }
+      ],
+      "novelty": "non_obvious",
+      "novelty_reasoning": "While it's well known that DNA methylation is a promising biomarker class for cancer detection generally, the specific claim ties together a particular panel of 4 validated methylation markers, ddPCR quantification, dual matrix validation (bile and plasma), and a specific clinical use case (PSC surveillance) with a comparative performance claim against current CA19-9/imaging standard. This is a specific, non-obvious translational proposal grounded in a particular study's findings rather than a generic restatement of an established fact.\"",
+      "falsification_verdict": "weakened",
+      "falsification_reasoning": "The core claim is plausible and has real supporting data, but several independent lines of evidence complicate it:\n\n1. Panel instability across studies (PMID:34435693): An earlier bile-methylation study from what appears to be an overlapping/related research group used a DIFFERENT four-gene panel (CDO1, CNRIP1, SEPT9, VIM) than the 4-marker panel described in the new claim (derived from 12 candidates via RRBS). This suggests the 'optimal' biomarker set is not yet convergent/stable across discovery efforts — a common early warning sign that candidate methylation panels are cohort-specific and may not generalize, rather than reflecting a robust, reproducible tumor-specific signal.\n\n2. Retrospective/case-control design inflation of accuracy (PMID:41719115): A meta-analysis of cfDNA-based multi-cancer early detection assays found that performance estimates from training/enriched cohorts substantially overstate real-world diagnostic accuracy relative to independent validation/testing sets — directly relevant to concerns about whether the reported bile/plasma sensitivity-specificity will hold in a true prospective PSC surveillance population versus the retrospective, already-diagnosed-or-suspected cohorts used for validation.\n\n3. Low sensitivity at early/low-tumor-burden stages (PMID:41866828): Broader literature on liquid-biopsy/cfDNA methylation biomarkers for GI cancers consistently reports that sensitivity drops substantially in stage I / low-tumor-burden disease due to minimal analyte shedding — precisely the pre-symptomatic detection window this hypothesis needs to succeed in, and the one the authors themselves flag as unconfirmed.\n\n4. Practical/invasiveness limitation (PMID:33948111): Bile-based sampling still requires ERCP, an invasive procedure with procedural risk (e.g., pancreatitis) and no proven incremental diagnostic gain from newer brush/sampling devices in this context — undermining the premise that a bile-based ddPCR panel is a low-friction, near-term 'surveillance' tool as opposed to a test used only after invasive workup is already clinically indicated (i.e., it may improve diagnosis in the suspected-CCA setting more than true asymptomatic surveillance).\n\n5. Translational track record in analogous fluke/inflammation-driven cholangiocarcinoma settings (PMID:41919759) shows a repeated pattern in this field: small, single/few-center cohorts identify promising epigenetic markers that lack multi-center prospective validation — a cautionary parallel even though the cited study here does have a 3-hospital, moderate-n design.\n\n6. General liquid-biopsy CCA reviews (PMID:41883993, PMID:40124277) reiterate that despite great promise, ctDNA/methylation-based diagnostics for CCA remain in early validation stages without established clinical implementation, consistent with the reasoning's own caveat about modest cohort sizes relative to CCA rarity in PSC.\n\nNone of this evidence outright refutes the hypothesis — the underlying biological rationale (tumor-specific promoter hypermethylation detectable via ddPCR) is sound and has real supporting data in PMID:42067191. But the panel-instability issue, the known risk of retrospective-cohort performance inflation, and the specific challenge of low-tumor-burden early detection meaningfully lower confidence that this exact 4-marker panel will outperform CA19-9/imaging in genuine prospective, pre-symptomatic PSC surveillance without further confirmatory work.",
+      "new_conflicting_evidence": [
+        "PMID:34435693",
+        "PMID:41866828",
+        "PMID:41719115",
+        "PMID:33948111",
+        "PMID:41919759",
+        "PMID:41883993"
+      ]
+    },
+    {
+      "system": "baseline",
+      "claim": "Extracellular vesicle (exosome) cargo — including specific proteins like clusterin (CLU) and exosomal RNA/protein signatures — released into blood or bile by cholangiocytes can serve as an early, minimally invasive diagnostic biomarker class for CCA, potentially outperforming CA19-9 alone.",
+      "citation_checks": [
+        {
+          "citation_id": "PMID:41939857",
+          "supports_claim": "partially",
+          "reasoning": "This review discusses exosomes in CCA broadly, covering mechanisms, diagnostic, and therapeutic perspectives. It supports the general concept that exosomes are being explored as biomarkers for CCA, but the abstract snippet provided doesn't specifically mention clusterin (CLU) or demonstrate that exosomal signatures outperform CA19-9. It's topically relevant but doesn't directly establish the specific comparative claim."
+        },
+        {
+          "citation_id": "PMID:42123365",
+          "supports_claim": "partially",
+          "reasoning": "This review does mention clusterin (CLU) and extracellular vesicles as liquid biopsy biomarkers for CCA, supporting the general claim that these are being investigated as diagnostic candidates. However, it is a review-level synthesis and the snippet doesn't provide evidence of clusterin/exosomal signatures outperforming CA19-9 in early detection or specific validation data - it merely lists these as emerging approaches alongside other liquid biopsy modalities like CTCs and ctDNA."
+        }
+      ],
+      "novelty": "non_obvious",
+      "novelty_reasoning": "While the general concept that exosomes/EVs are being explored as CCA biomarkers is increasingly recognized in the field (making the broad framing somewhat expected for those following liquid biopsy literature), the specific combination of naming clusterin as a candidate marker and proposing that exosomal signatures could outperform CA19-9 is a more specific, non-trivial claim. It's not as trivial as restating 'FGFR2 fusions are targetable' - it requires synthesizing an emerging, still-unvalidated biomarker class with a specific candidate protein. However, the hypothesis itself is appropriately hedged (moderate confidence, review-level evidence) rather than presenting this as an established fact, which aligns with its true evidentiary status as a promising but unproven avenue rather than settled science.\"",
+      "falsification_verdict": "weakened",
+      "falsification_reasoning": "The literature search surfaced several findings that meaningfully complicate the claim without outright refuting it:\n\n1) Sensitivity limitation for early disease: PMID:41866828 explicitly notes that across GI cancers, liquid biopsy approaches (including EVs/exosomes) still show limited sensitivity in stage I disease due to low tumor burden and minimal analyte scaling, causing false negatives — directly undercutting the 'early detection' component of the hypothesis, which is the most clinically valuable claim.\n\n2) Validation gap acknowledged broadly, not just for CCA exosomes specifically: PMID:41919759 (on Clonorchis-associated CCA biomarkers, including circulating molecular markers) states research 'mainly remains at the laboratory stage' with 'small-scale cohorts, lacking multi-center, large-sample prospective validation' — reinforcing that the supportive citations are review-level syntheses rather than primary validation, consistent with the hypothesis's own caveat but also showing this is a systemic problem across the CCA liquid-biopsy field, not a minor gap.\n\n3) Clusterin specificity concern: This is the most substantive complication. PMID:40089787 shows clusterin is a stress-response/protective glycoprotein upregulated in benign cholestatic liver injury (via ER stress/NLRP3 pathways), and PMID:40575935 discusses clusterin-related biomarker research in biliary atresia — a benign pediatric cholestatic disease. Additionally, PMID:41010375 shows clusterin (urinary) is used as a general marker of nephrotoxic kidney injury, unrelated to cancer. Together these indicate clusterin behaves as a general marker of cellular/tissue stress and cholestatic injury across multiple organs and etiologies (benign and malignant), which raises real concern about specificity when proposed as a CCA diagnostic — patients with benign biliary obstruction, strictures, PSC, or biliary atresia-like cholestatic pathology could show similarly elevated clusterin, confounding its discriminative value against benign biliary disease (a critical differential in CCA diagnosis, since biliary obstruction itself is a common presenting feature of both benign and malignant biliary pathology).\n\n4) Trial-stage confirmation: NCT03102268 (ncRNAs in CCA-derived exosomes) is described as a preclinical/early clinical-phase characterization study, not a large validated diagnostic cohort — consistent with, and reinforcing, the hypothesis's own stated caveat that this remains an active research area without large validated clinical cohorts.\n\nNone of this evidence refutes the biological plausibility of exosomal cargo as a CCA biomarker source, and no study directly showed exosomal signatures failing or underperforming CA19-9 in a head-to-head trial (I found no such negative trial). But the specificity concern for clusterin (a marker seemingly driven by general cholestatic/cellular stress rather than CCA-specific biology) and the field-wide acknowledgment of early-stage sensitivity limits and validation gaps meaningfully weaken confidence that this marker class will offer robust EARLY and SPECIFIC diagnostic performance superior to CA19-9 in real-world benign-vs-malignant biliary disease settings.",
+      "new_conflicting_evidence": [
+        "PMID:41866828",
+        "PMID:41919759",
+        "PMID:40089787",
+        "PMID:40575935",
+        "PMID:41010375",
+        "CT:NCT03102268"
+      ]
+    }
+  ],
+  "comparison_table_markdown": "| Metric | baseline (n=10) | multiagent (n=10) |\n|---|---|---|\n| Hallucinated citation rate (generation-time) | 0/25 (0%) [0%–13%] | 0/92 (0%) [0%–4%] |\n| Citation support rate (independent judge, supporting cites) | 3/22 (14%) [5%–33%] | 8/25 (32%) [17%–52%] |\n| Falsification survival (independent adversarial search) | 0/10 (0%) [0%–28%] | 1/10 (10%) [2%–40%] |\n| Novelty rate (non-obvious vs. restatement) | 9/10 (90%) [60%–98%] | 8/10 (80%) [49%–94%] |\n| Grounding depth (avg valid supporting sources/hypothesis) | 2.20 | 2.50 |\n\nn=10 hypotheses per system in this run. Intervals are 95% Wilson score intervals — wide at this sample size. Treat this as a small pilot comparison, not a definitive result; do not over-interpret gaps that fall within each other's interval."
+}

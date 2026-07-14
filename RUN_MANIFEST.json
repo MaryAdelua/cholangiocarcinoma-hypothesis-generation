@@ -1,0 +1,1202 @@
+{
+  "manifest_version": 2,
+  "generated_at_utc": "2026-07-14T18:44:42Z",
+  "generated_by": "Claude Code, at explicit user request, reconstructing provenance retrospectively for runs that were not originally self-describing",
+  "purpose": "Records what is actually known -- and what is not -- about every run's model/config settings and the exact code state used to produce it, per CLAUDE.md's requirement to log everything as research data.",
+  "reconstruction_methodology": {
+    "principle": "No single source is treated as sufficient on its own. Every RECONSTRUCTED_MULTI_SOURCE field below is corroborated across at least: (a) the current configuration file content, (b) file-modification-timestamp evidence establishing when that content came into effect relative to each run, (c) the completed run's own log content where it bears on the question (e.g. successful completion, observed turn counts), and (d) verification of whether the relevant source files were modified after the run in question. Fields not supportable by this combined evidence are marked unknown rather than inferred.",
+    "provenance_tags": {
+      "VERIFIED_FROM_LOG": "Read directly out of that run's own .jsonl log or .json output.",
+      "VERIFIED_FROM_SOURCE_FILE": "The relevant source file (src/config.py and, where applicable, src/llm_client.py) is confirmed via file-modification-timestamp comparison to be unchanged since before this run started. Based on the available evidence, its current content is consistent with the configuration in effect for this run, rather than a reconstruction.",
+      "RECONSTRUCTED_MULTI_SOURCE": "The relevant source file WAS modified after this run started, so its exact historical content cannot be hash-verified (no git, no backups). The stated value is reconstructed from the multiple corroborating sources described above and explicitly labeled as a reconstruction, not a verified fact.",
+      "VERBATIM_SESSION_TRANSCRIPT": "For incomplete/failed runs only -- a Python traceback printed to this session's terminal and preserved verbatim in the conversation, not present in the log file itself.",
+      "NOT_VERIFIED": "Could not be established from any available source; marked unknown rather than guessed."
+    }
+  },
+  "version_control": {
+    "git_repository_present": false,
+    "evidence": "`git status` in the project root returns: fatal: not a git repository (or any of the parent directories): .git",
+    "commit_hash": "unknown -- not applicable, no git repository exists for this project at any point during its build"
+  },
+  "logging_change_explanation": {
+    "change": "On 2026-07-14, src/logging_utils.py's RunLogger.__init__ was modified to automatically write one new 'run_config' event (model_name, temperature, run_size, candidates_per_generator, max_agent_turns, disease_context) as the first line of every run's .jsonl log.",
+    "scope_of_change": "This is the ONLY code change made for this purpose. It was verified immediately before this manifest was built (by comparing every pipeline file's last-modified timestamp against the timestamp of the last completed run) that no other file was touched afterward.",
+    "what_did_not_change": "Prompts (system/user prompt text in src/baseline/run_baseline.py, src/multiagent/literature_agent.py, molecular_agent.py, signal_agent.py, adversarial_agent.py, ranking_agent.py, src/evaluation/judge.py), model call parameters (src/llm_client.py), retrieval logic (src/retrieval/*.py, src/tools.py), generation orchestration (src/multiagent/orchestrator.py, generator_agent.py), ranking logic (src/multiagent/ranking_agent.py), citation validation (src/validation.py), the shared hypothesis schema (src/schemas.py), and the evaluation pipeline (src/evaluation/*.py) were all untouched by this change.",
+    "mechanism": "The added code is a single extra self.log(...) call inside RunLogger.__init__, executed once per run at construction time, before any generation/ranking/evaluation logic runs. It writes one additional JSONL line; it does not alter control flow, return values, or any data any caller depends on.",
+    "verification_performed": "Confirmed via file modification timestamps: src/logging_utils.py was last modified 2026-07-14T18:04:26Z; every other pipeline file's last modification is strictly earlier than the start time of the last completed run (multiagent_20260713T232713Z / evaluation_20260714T022723Z) that current results (RESULTS.md) are based on."
+  },
+  "completed_runs": [
+    {
+      "run_id": "baseline_20260713T193206Z",
+      "system": "baseline",
+      "timestamp_utc": "20260713T193206Z",
+      "status": "completed",
+      "output_paths": [
+        "outputs/baseline_20260713T193206Z.json"
+      ],
+      "log_path": "logs/baseline_20260713T193206Z.jsonl",
+      "log_event_counts": {
+        "agent_start": 1,
+        "model_response": 5,
+        "tool_call": 15,
+        "agent_submit": 1,
+        "validation_summary": 1
+      },
+      "hypothesis_generation_metadata": {
+        "run_size_or_candidates_per_generator_requested": {
+          "value": [
+            10
+          ],
+          "provenance": "VERIFIED_FROM_LOG",
+          "basis": "Parsed directly from the logged 'user_prompt' text of each agent_start event in this run's own .jsonl log (e.g. 'Generate N ... hypotheses'). For baseline this is a single value [N]; for multiagent it is [literature_N, molecular_N, signal_N]."
+        },
+        "disease_context": {
+          "value": "cholangiocarcinoma",
+          "provenance": "VERIFIED_FROM_LOG",
+          "basis": "Parsed directly from the logged user_prompt text in this run's own .jsonl log."
+        }
+      },
+      "actual_hypothesis_count": 10,
+      "retrieved_source_count_in_output": 0,
+      "dropped_hypotheses_count": 0,
+      "dropped_citations_count": 0,
+      "model_name": {
+        "value": "claude-sonnet-5",
+        "provenance": "RECONSTRUCTED_MULTI_SOURCE",
+        "basis": "Not present in this run's own log content (predates the run_config logging change added 2026-07-14). Reconstructed from multiple corroborating sources rather than config.py alone: (1) src/config.py's current field value; (2) file-modification-timestamp evidence showing config.py was edited AFTER this run started (last modified 2026-07-13T21:55:06Z), meaning the exact byte-for-byte config.py version in effect for this specific run cannot be hash-verified (no git history or backups exist to recover it); (3) this run's own completed log, which confirms the run finished successfully end-to-end (consistent with, though not proof of, a valid model_name being in effect throughout); and (4) verification that src/llm_client.py's *invocation mechanism* (passing CONFIG.model_name / CONFIG.temperature to every API call) was itself in place for this run, so whatever value config.py held was faithfully what got sent -- the mechanism is verified even though the specific historical value is not hash-verified. Combined, this supports the stated value as the most likely one in effect, but it is a reconstruction, not a verification, and is labeled as such."
+      },
+      "temperature": {
+        "value": 1.0,
+        "provenance": "RECONSTRUCTED_MULTI_SOURCE",
+        "basis": "Not present in this run's own log content (predates the run_config logging change added 2026-07-14). Reconstructed from multiple corroborating sources rather than config.py alone: (1) src/config.py's current field value; (2) file-modification-timestamp evidence showing config.py was edited AFTER this run started (last modified 2026-07-13T21:55:06Z), meaning the exact byte-for-byte config.py version in effect for this specific run cannot be hash-verified (no git history or backups exist to recover it); (3) this run's own completed log, which confirms the run finished successfully end-to-end (consistent with, though not proof of, a valid model_name being in effect throughout); and (4) verification that src/llm_client.py's *invocation mechanism* (passing CONFIG.model_name / CONFIG.temperature to every API call) was itself in place for this run, so whatever value config.py held was faithfully what got sent -- the mechanism is verified even though the specific historical value is not hash-verified. Combined, this supports the stated value as the most likely one in effect, but it is a reconstruction, not a verification, and is labeled as such."
+      },
+      "max_agent_turns_configured": {
+        "value": 15,
+        "provenance": "RECONSTRUCTED_MULTI_SOURCE",
+        "basis": "Not present in this run's own log content (predates the run_config logging change added 2026-07-14). Reconstructed from multiple corroborating sources rather than config.py alone: (1) src/config.py's current field value; (2) file-modification-timestamp evidence showing config.py was edited AFTER this run started (last modified 2026-07-13T21:55:06Z), meaning the exact byte-for-byte config.py version in effect for this specific run cannot be hash-verified (no git history or backups exist to recover it); (3) this run's own completed log, which confirms the run finished successfully end-to-end (consistent with, though not proof of, a valid model_name being in effect throughout); and (4) verification that src/llm_client.py's *invocation mechanism* (passing CONFIG.model_name / CONFIG.temperature to every API call) was itself in place for this run, so whatever value config.py held was faithfully what got sent -- the mechanism is verified even though the specific historical value is not hash-verified. Combined, this supports the stated value as the most likely one in effect, but it is a reconstruction, not a verification, and is labeled as such. Additionally, a LOWER BOUND on turns actually used is directly log-verifiable for this run (see verified_lower_bound_from_log): the run completed without exhausting any turn cap, which is consistent with a configured ceiling of 15 but does not independently prove that exact number.",
+        "verified_lower_bound_from_log": 5
+      },
+      "source_file_verification": {
+        "note": "A pipeline file's CURRENT sha256 is trustworthy as 'the version used for this run' only if the file's last-modified time is BEFORE this run's start time (i.e. it was not edited afterward). No git history or backups exist, so if a file WAS edited after this run started, the exact version actually used is not recoverable.",
+        "verified_unchanged_since_this_run": {
+          "src/validation.py": "3672c907ecb28322326af74dad2565ab10e53c4349e724eb10fd26d35afdff19",
+          "src/retrieval/europepmc.py": "6728cd338169426097a7fa9d2664ffa0eb3c613d092dc58553c8f745a3bad446",
+          "src/retrieval/open_targets.py": "91a722c634f586a2d237e33656fac473909220b5186fdeba2df409348a22403a",
+          "src/retrieval/civic.py": "b1f46d18326bf294eb6adc238b6c9e5c152a79c1858bd6aa7bfe137e8720cc43",
+          "src/retrieval/clinical_trials.py": "cfca289b5aface6516c578f21a75cd7aacae227bc041f4b8d1fac73c29e3754e",
+          "src/retrieval/__init__.py": "8526f395389ab3a3a2eebb95bd1a4ef1953abd8a99af9b9de094436736a69e26",
+          "run_baseline.py": "e20b1afc0c05e4a24835ca89065647569df762f5d658db878d541fc4516906e1"
+        },
+        "modified_after_this_run_version_not_recoverable": [
+          "src/config.py",
+          "src/llm_client.py",
+          "src/schemas.py",
+          "src/tools.py",
+          "src/logging_utils.py",
+          "src/baseline/run_baseline.py",
+          "src/multiagent/orchestrator.py",
+          "src/multiagent/generator_agent.py",
+          "src/multiagent/literature_agent.py",
+          "src/multiagent/molecular_agent.py",
+          "src/multiagent/signal_agent.py",
+          "src/multiagent/adversarial_agent.py",
+          "src/multiagent/ranking_agent.py",
+          "src/evaluation/judge.py",
+          "src/evaluation/falsification.py",
+          "src/evaluation/metrics.py",
+          "src/evaluation/run_evaluation.py",
+          "run_multiagent.py",
+          "run_evaluation.py"
+        ]
+      }
+    },
+    {
+      "run_id": "baseline_20260713T200812Z",
+      "system": "baseline",
+      "timestamp_utc": "20260713T200812Z",
+      "status": "completed",
+      "output_paths": [
+        "outputs/baseline_20260713T200812Z.json"
+      ],
+      "log_path": "logs/baseline_20260713T200812Z.jsonl",
+      "log_event_counts": {
+        "agent_start": 1,
+        "model_response": 6,
+        "tool_call": 18,
+        "agent_submit": 1,
+        "validation_summary": 1
+      },
+      "hypothesis_generation_metadata": {
+        "run_size_or_candidates_per_generator_requested": {
+          "value": [
+            10
+          ],
+          "provenance": "VERIFIED_FROM_LOG",
+          "basis": "Parsed directly from the logged 'user_prompt' text of each agent_start event in this run's own .jsonl log (e.g. 'Generate N ... hypotheses'). For baseline this is a single value [N]; for multiagent it is [literature_N, molecular_N, signal_N]."
+        },
+        "disease_context": {
+          "value": "cholangiocarcinoma",
+          "provenance": "VERIFIED_FROM_LOG",
+          "basis": "Parsed directly from the logged user_prompt text in this run's own .jsonl log."
+        }
+      },
+      "actual_hypothesis_count": 10,
+      "retrieved_source_count_in_output": 70,
+      "dropped_hypotheses_count": 0,
+      "dropped_citations_count": 0,
+      "model_name": {
+        "value": "claude-sonnet-5",
+        "provenance": "RECONSTRUCTED_MULTI_SOURCE",
+        "basis": "Not present in this run's own log content (predates the run_config logging change added 2026-07-14). Reconstructed from multiple corroborating sources rather than config.py alone: (1) src/config.py's current field value; (2) file-modification-timestamp evidence showing config.py was edited AFTER this run started (last modified 2026-07-13T21:55:06Z), meaning the exact byte-for-byte config.py version in effect for this specific run cannot be hash-verified (no git history or backups exist to recover it); (3) this run's own completed log, which confirms the run finished successfully end-to-end (consistent with, though not proof of, a valid model_name being in effect throughout); and (4) verification that src/llm_client.py's *invocation mechanism* (passing CONFIG.model_name / CONFIG.temperature to every API call) was itself in place for this run, so whatever value config.py held was faithfully what got sent -- the mechanism is verified even though the specific historical value is not hash-verified. Combined, this supports the stated value as the most likely one in effect, but it is a reconstruction, not a verification, and is labeled as such."
+      },
+      "temperature": {
+        "value": 1.0,
+        "provenance": "RECONSTRUCTED_MULTI_SOURCE",
+        "basis": "Not present in this run's own log content (predates the run_config logging change added 2026-07-14). Reconstructed from multiple corroborating sources rather than config.py alone: (1) src/config.py's current field value; (2) file-modification-timestamp evidence showing config.py was edited AFTER this run started (last modified 2026-07-13T21:55:06Z), meaning the exact byte-for-byte config.py version in effect for this specific run cannot be hash-verified (no git history or backups exist to recover it); (3) this run's own completed log, which confirms the run finished successfully end-to-end (consistent with, though not proof of, a valid model_name being in effect throughout); and (4) verification that src/llm_client.py's *invocation mechanism* (passing CONFIG.model_name / CONFIG.temperature to every API call) was itself in place for this run, so whatever value config.py held was faithfully what got sent -- the mechanism is verified even though the specific historical value is not hash-verified. Combined, this supports the stated value as the most likely one in effect, but it is a reconstruction, not a verification, and is labeled as such."
+      },
+      "max_agent_turns_configured": {
+        "value": 15,
+        "provenance": "RECONSTRUCTED_MULTI_SOURCE",
+        "basis": "Not present in this run's own log content (predates the run_config logging change added 2026-07-14). Reconstructed from multiple corroborating sources rather than config.py alone: (1) src/config.py's current field value; (2) file-modification-timestamp evidence showing config.py was edited AFTER this run started (last modified 2026-07-13T21:55:06Z), meaning the exact byte-for-byte config.py version in effect for this specific run cannot be hash-verified (no git history or backups exist to recover it); (3) this run's own completed log, which confirms the run finished successfully end-to-end (consistent with, though not proof of, a valid model_name being in effect throughout); and (4) verification that src/llm_client.py's *invocation mechanism* (passing CONFIG.model_name / CONFIG.temperature to every API call) was itself in place for this run, so whatever value config.py held was faithfully what got sent -- the mechanism is verified even though the specific historical value is not hash-verified. Combined, this supports the stated value as the most likely one in effect, but it is a reconstruction, not a verification, and is labeled as such. Additionally, a LOWER BOUND on turns actually used is directly log-verifiable for this run (see verified_lower_bound_from_log): the run completed without exhausting any turn cap, which is consistent with a configured ceiling of 15 but does not independently prove that exact number.",
+        "verified_lower_bound_from_log": 6
+      },
+      "source_file_verification": {
+        "note": "A pipeline file's CURRENT sha256 is trustworthy as 'the version used for this run' only if the file's last-modified time is BEFORE this run's start time (i.e. it was not edited afterward). No git history or backups exist, so if a file WAS edited after this run started, the exact version actually used is not recoverable.",
+        "verified_unchanged_since_this_run": {
+          "src/schemas.py": "196b9ee684f43213e4eb331a8591deb5821cec5782567a3d341c758654e62b9d",
+          "src/tools.py": "bd28f082051afa9e63f52bebdaf8c9767bd40bada2e4507c35fd5b52a7f02d03",
+          "src/validation.py": "3672c907ecb28322326af74dad2565ab10e53c4349e724eb10fd26d35afdff19",
+          "src/retrieval/europepmc.py": "6728cd338169426097a7fa9d2664ffa0eb3c613d092dc58553c8f745a3bad446",
+          "src/retrieval/open_targets.py": "91a722c634f586a2d237e33656fac473909220b5186fdeba2df409348a22403a",
+          "src/retrieval/civic.py": "b1f46d18326bf294eb6adc238b6c9e5c152a79c1858bd6aa7bfe137e8720cc43",
+          "src/retrieval/clinical_trials.py": "cfca289b5aface6516c578f21a75cd7aacae227bc041f4b8d1fac73c29e3754e",
+          "src/retrieval/__init__.py": "8526f395389ab3a3a2eebb95bd1a4ef1953abd8a99af9b9de094436736a69e26",
+          "src/multiagent/orchestrator.py": "ec6fae66f4c87763efe5f319bbb09a3b738dcc0e879616ffdad0a4df78ad0af8",
+          "src/multiagent/literature_agent.py": "64aaa6f1ea2d558ac531ea4b4715cbdcaf04e6efe4974bb8cb9f1aa343046e71",
+          "src/multiagent/molecular_agent.py": "3aab26aa4fe6e01352f7404df019392d384968c68d3460cc3c97c078569ddbfb",
+          "src/multiagent/signal_agent.py": "833d896e464939f4f8072327935b8151c53d9d5e35af48456ee163ebf14f14d7",
+          "run_baseline.py": "e20b1afc0c05e4a24835ca89065647569df762f5d658db878d541fc4516906e1",
+          "run_multiagent.py": "95a017ab3b990c25dd293bf439a1a00d5164b897c991b4f7a17be8274e3742c8"
+        },
+        "modified_after_this_run_version_not_recoverable": [
+          "src/config.py",
+          "src/llm_client.py",
+          "src/logging_utils.py",
+          "src/baseline/run_baseline.py",
+          "src/multiagent/generator_agent.py",
+          "src/multiagent/adversarial_agent.py",
+          "src/multiagent/ranking_agent.py",
+          "src/evaluation/judge.py",
+          "src/evaluation/falsification.py",
+          "src/evaluation/metrics.py",
+          "src/evaluation/run_evaluation.py",
+          "run_evaluation.py"
+        ]
+      }
+    },
+    {
+      "run_id": "baseline_20260713T215554Z",
+      "system": "baseline",
+      "timestamp_utc": "20260713T215554Z",
+      "status": "completed",
+      "output_paths": [
+        "outputs/baseline_20260713T215554Z.json"
+      ],
+      "log_path": "logs/baseline_20260713T215554Z.jsonl",
+      "log_event_counts": {
+        "agent_start": 1,
+        "model_response": 11,
+        "tool_call": 49,
+        "agent_submit": 1,
+        "validation_summary": 1
+      },
+      "hypothesis_generation_metadata": {
+        "run_size_or_candidates_per_generator_requested": {
+          "value": [
+            50
+          ],
+          "provenance": "VERIFIED_FROM_LOG",
+          "basis": "Parsed directly from the logged 'user_prompt' text of each agent_start event in this run's own .jsonl log (e.g. 'Generate N ... hypotheses'). For baseline this is a single value [N]; for multiagent it is [literature_N, molecular_N, signal_N]."
+        },
+        "disease_context": {
+          "value": "cholangiocarcinoma",
+          "provenance": "VERIFIED_FROM_LOG",
+          "basis": "Parsed directly from the logged user_prompt text in this run's own .jsonl log."
+        }
+      },
+      "actual_hypothesis_count": 52,
+      "retrieved_source_count_in_output": 194,
+      "dropped_hypotheses_count": 0,
+      "dropped_citations_count": 0,
+      "model_name": {
+        "value": "claude-sonnet-5",
+        "provenance": "VERIFIED_FROM_SOURCE_FILE",
+        "basis": "src/config.py's last-modified timestamp (2026-07-13T21:55:06Z) is strictly BEFORE this run's start time, and src/llm_client.py (which reads CONFIG.model_name / CONFIG.temperature and passes them to the Anthropic API call) is likewise unmodified since before this run. Both are confirmed via direct file modification-timestamp comparison against this run's start time, cross-checked against this run's own log (successful completion, i.e. the API accepted whatever model string was in effect, and this run's log timestamps fall entirely within the window during which config.py held its current content). Based on the available evidence, the current config.py value is consistent with the configuration used for this run."
+      },
+      "temperature": {
+        "value": 1.0,
+        "provenance": "VERIFIED_FROM_SOURCE_FILE",
+        "basis": "src/config.py's last-modified timestamp (2026-07-13T21:55:06Z) is strictly BEFORE this run's start time, and src/llm_client.py (which reads CONFIG.model_name / CONFIG.temperature and passes them to the Anthropic API call) is likewise unmodified since before this run. Both are confirmed via direct file modification-timestamp comparison against this run's start time, cross-checked against this run's own log (successful completion, i.e. the API accepted whatever model string was in effect, and this run's log timestamps fall entirely within the window during which config.py held its current content). Based on the available evidence, the current config.py value is consistent with the configuration used for this run."
+      },
+      "max_agent_turns_configured": {
+        "value": 15,
+        "provenance": "VERIFIED_FROM_SOURCE_FILE",
+        "basis": "src/config.py's last-modified timestamp (2026-07-13T21:55:06Z) is strictly BEFORE this run's start time, and src/llm_client.py (which reads CONFIG.model_name / CONFIG.temperature and passes them to the Anthropic API call) is likewise unmodified since before this run. Both are confirmed via direct file modification-timestamp comparison against this run's start time, cross-checked against this run's own log (successful completion, i.e. the API accepted whatever model string was in effect, and this run's log timestamps fall entirely within the window during which config.py held its current content). Based on the available evidence, the current config.py value is consistent with the configuration used for this run. Additionally, a LOWER BOUND on turns actually used is directly log-verifiable for this run (see verified_lower_bound_from_log): the run completed without exhausting any turn cap, which is consistent with a configured ceiling of 15 but does not independently prove that exact number.",
+        "verified_lower_bound_from_log": 11
+      },
+      "source_file_verification": {
+        "note": "A pipeline file's CURRENT sha256 is trustworthy as 'the version used for this run' only if the file's last-modified time is BEFORE this run's start time (i.e. it was not edited afterward). No git history or backups exist, so if a file WAS edited after this run started, the exact version actually used is not recoverable.",
+        "verified_unchanged_since_this_run": {
+          "src/config.py": "03158cc93f01fa04633594696ecf147adb84e06ecc1e85f76c3281db0d26f1ae",
+          "src/llm_client.py": "414be97cc3a87fb201dbba5f601adb3554c38f0032816a7598493da4579749d8",
+          "src/schemas.py": "196b9ee684f43213e4eb331a8591deb5821cec5782567a3d341c758654e62b9d",
+          "src/tools.py": "bd28f082051afa9e63f52bebdaf8c9767bd40bada2e4507c35fd5b52a7f02d03",
+          "src/validation.py": "3672c907ecb28322326af74dad2565ab10e53c4349e724eb10fd26d35afdff19",
+          "src/retrieval/europepmc.py": "6728cd338169426097a7fa9d2664ffa0eb3c613d092dc58553c8f745a3bad446",
+          "src/retrieval/open_targets.py": "91a722c634f586a2d237e33656fac473909220b5186fdeba2df409348a22403a",
+          "src/retrieval/civic.py": "b1f46d18326bf294eb6adc238b6c9e5c152a79c1858bd6aa7bfe137e8720cc43",
+          "src/retrieval/clinical_trials.py": "cfca289b5aface6516c578f21a75cd7aacae227bc041f4b8d1fac73c29e3754e",
+          "src/retrieval/__init__.py": "8526f395389ab3a3a2eebb95bd1a4ef1953abd8a99af9b9de094436736a69e26",
+          "src/multiagent/orchestrator.py": "ec6fae66f4c87763efe5f319bbb09a3b738dcc0e879616ffdad0a4df78ad0af8",
+          "src/multiagent/literature_agent.py": "64aaa6f1ea2d558ac531ea4b4715cbdcaf04e6efe4974bb8cb9f1aa343046e71",
+          "src/multiagent/molecular_agent.py": "3aab26aa4fe6e01352f7404df019392d384968c68d3460cc3c97c078569ddbfb",
+          "src/multiagent/signal_agent.py": "833d896e464939f4f8072327935b8151c53d9d5e35af48456ee163ebf14f14d7",
+          "src/evaluation/judge.py": "07a6eed5196f35e9d17794113a2d00a442c807edc4cbf029964b7b9cf4d0057c",
+          "src/evaluation/falsification.py": "cf31ce1b7929f1b51c83152ca78b6823b86aa618708fe4524f384702d3b9319e",
+          "src/evaluation/metrics.py": "5b90eef7bf5943ceae0448ce855261988ec093e4038cd042a0651f36868819a5",
+          "src/evaluation/run_evaluation.py": "89d8bda38e8da18edd101aeafe376737d6226bb059cc825e1d8a2761d45cc861",
+          "run_baseline.py": "e20b1afc0c05e4a24835ca89065647569df762f5d658db878d541fc4516906e1",
+          "run_multiagent.py": "95a017ab3b990c25dd293bf439a1a00d5164b897c991b4f7a17be8274e3742c8",
+          "run_evaluation.py": "f9315b777a93951a5a93ef295ae874c8ac220bec7279bb5cb4a4277923400175"
+        },
+        "modified_after_this_run_version_not_recoverable": [
+          "src/logging_utils.py",
+          "src/baseline/run_baseline.py",
+          "src/multiagent/generator_agent.py",
+          "src/multiagent/adversarial_agent.py",
+          "src/multiagent/ranking_agent.py"
+        ]
+      }
+    },
+    {
+      "run_id": "multiagent_20260713T194031Z",
+      "system": "multiagent",
+      "timestamp_utc": "20260713T194031Z",
+      "status": "completed",
+      "output_paths": [
+        "outputs/multiagent_20260713T194031Z.json"
+      ],
+      "log_path": "logs/multiagent_20260713T194031Z.jsonl",
+      "log_event_counts": {
+        "orchestrator_start": 1,
+        "agent_start": 18,
+        "model_response": 87,
+        "tool_call": 172,
+        "agent_submit": 18,
+        "generator_candidates": 3,
+        "orchestrator_generation_complete": 1,
+        "adversarial_review": 15,
+        "tool_call_error": 2,
+        "orchestrator_adversarial_complete": 1,
+        "ranking_start": 1,
+        "ranking_response": 1,
+        "ranking_selection": 1,
+        "orchestrator_ranking_complete": 1,
+        "validation_summary": 1
+      },
+      "hypothesis_generation_metadata": {
+        "run_size_or_candidates_per_generator_requested": {
+          "value": [
+            5,
+            5,
+            5
+          ],
+          "provenance": "VERIFIED_FROM_LOG",
+          "basis": "Parsed directly from the logged 'user_prompt' text of each agent_start event in this run's own .jsonl log (e.g. 'Generate N ... hypotheses'). For baseline this is a single value [N]; for multiagent it is [literature_N, molecular_N, signal_N]."
+        },
+        "disease_context": {
+          "value": "cholangiocarcinoma",
+          "provenance": "VERIFIED_FROM_LOG",
+          "basis": "Parsed directly from the logged user_prompt text in this run's own .jsonl log."
+        }
+      },
+      "actual_hypothesis_count": 10,
+      "retrieved_source_count_in_output": 0,
+      "dropped_hypotheses_count": 0,
+      "dropped_citations_count": 1,
+      "model_name": {
+        "value": "claude-sonnet-5",
+        "provenance": "RECONSTRUCTED_MULTI_SOURCE",
+        "basis": "Not present in this run's own log content (predates the run_config logging change added 2026-07-14). Reconstructed from multiple corroborating sources rather than config.py alone: (1) src/config.py's current field value; (2) file-modification-timestamp evidence showing config.py was edited AFTER this run started (last modified 2026-07-13T21:55:06Z), meaning the exact byte-for-byte config.py version in effect for this specific run cannot be hash-verified (no git history or backups exist to recover it); (3) this run's own completed log, which confirms the run finished successfully end-to-end (consistent with, though not proof of, a valid model_name being in effect throughout); and (4) verification that src/llm_client.py's *invocation mechanism* (passing CONFIG.model_name / CONFIG.temperature to every API call) was itself in place for this run, so whatever value config.py held was faithfully what got sent -- the mechanism is verified even though the specific historical value is not hash-verified. Combined, this supports the stated value as the most likely one in effect, but it is a reconstruction, not a verification, and is labeled as such."
+      },
+      "temperature": {
+        "value": 1.0,
+        "provenance": "RECONSTRUCTED_MULTI_SOURCE",
+        "basis": "Not present in this run's own log content (predates the run_config logging change added 2026-07-14). Reconstructed from multiple corroborating sources rather than config.py alone: (1) src/config.py's current field value; (2) file-modification-timestamp evidence showing config.py was edited AFTER this run started (last modified 2026-07-13T21:55:06Z), meaning the exact byte-for-byte config.py version in effect for this specific run cannot be hash-verified (no git history or backups exist to recover it); (3) this run's own completed log, which confirms the run finished successfully end-to-end (consistent with, though not proof of, a valid model_name being in effect throughout); and (4) verification that src/llm_client.py's *invocation mechanism* (passing CONFIG.model_name / CONFIG.temperature to every API call) was itself in place for this run, so whatever value config.py held was faithfully what got sent -- the mechanism is verified even though the specific historical value is not hash-verified. Combined, this supports the stated value as the most likely one in effect, but it is a reconstruction, not a verification, and is labeled as such."
+      },
+      "max_agent_turns_configured": {
+        "value": 15,
+        "provenance": "RECONSTRUCTED_MULTI_SOURCE",
+        "basis": "Not present in this run's own log content (predates the run_config logging change added 2026-07-14). Reconstructed from multiple corroborating sources rather than config.py alone: (1) src/config.py's current field value; (2) file-modification-timestamp evidence showing config.py was edited AFTER this run started (last modified 2026-07-13T21:55:06Z), meaning the exact byte-for-byte config.py version in effect for this specific run cannot be hash-verified (no git history or backups exist to recover it); (3) this run's own completed log, which confirms the run finished successfully end-to-end (consistent with, though not proof of, a valid model_name being in effect throughout); and (4) verification that src/llm_client.py's *invocation mechanism* (passing CONFIG.model_name / CONFIG.temperature to every API call) was itself in place for this run, so whatever value config.py held was faithfully what got sent -- the mechanism is verified even though the specific historical value is not hash-verified. Combined, this supports the stated value as the most likely one in effect, but it is a reconstruction, not a verification, and is labeled as such. Additionally, a LOWER BOUND on turns actually used is directly log-verifiable for this run (see verified_lower_bound_from_log): the run completed without exhausting any turn cap, which is consistent with a configured ceiling of 15 but does not independently prove that exact number.",
+        "verified_lower_bound_from_log": 7
+      },
+      "source_file_verification": {
+        "note": "A pipeline file's CURRENT sha256 is trustworthy as 'the version used for this run' only if the file's last-modified time is BEFORE this run's start time (i.e. it was not edited afterward). No git history or backups exist, so if a file WAS edited after this run started, the exact version actually used is not recoverable.",
+        "verified_unchanged_since_this_run": {
+          "src/tools.py": "bd28f082051afa9e63f52bebdaf8c9767bd40bada2e4507c35fd5b52a7f02d03",
+          "src/validation.py": "3672c907ecb28322326af74dad2565ab10e53c4349e724eb10fd26d35afdff19",
+          "src/retrieval/europepmc.py": "6728cd338169426097a7fa9d2664ffa0eb3c613d092dc58553c8f745a3bad446",
+          "src/retrieval/open_targets.py": "91a722c634f586a2d237e33656fac473909220b5186fdeba2df409348a22403a",
+          "src/retrieval/civic.py": "b1f46d18326bf294eb6adc238b6c9e5c152a79c1858bd6aa7bfe137e8720cc43",
+          "src/retrieval/clinical_trials.py": "cfca289b5aface6516c578f21a75cd7aacae227bc041f4b8d1fac73c29e3754e",
+          "src/retrieval/__init__.py": "8526f395389ab3a3a2eebb95bd1a4ef1953abd8a99af9b9de094436736a69e26",
+          "src/multiagent/literature_agent.py": "64aaa6f1ea2d558ac531ea4b4715cbdcaf04e6efe4974bb8cb9f1aa343046e71",
+          "src/multiagent/molecular_agent.py": "3aab26aa4fe6e01352f7404df019392d384968c68d3460cc3c97c078569ddbfb",
+          "src/multiagent/signal_agent.py": "833d896e464939f4f8072327935b8151c53d9d5e35af48456ee163ebf14f14d7",
+          "run_baseline.py": "e20b1afc0c05e4a24835ca89065647569df762f5d658db878d541fc4516906e1",
+          "run_multiagent.py": "95a017ab3b990c25dd293bf439a1a00d5164b897c991b4f7a17be8274e3742c8"
+        },
+        "modified_after_this_run_version_not_recoverable": [
+          "src/config.py",
+          "src/llm_client.py",
+          "src/schemas.py",
+          "src/logging_utils.py",
+          "src/baseline/run_baseline.py",
+          "src/multiagent/orchestrator.py",
+          "src/multiagent/generator_agent.py",
+          "src/multiagent/adversarial_agent.py",
+          "src/multiagent/ranking_agent.py",
+          "src/evaluation/judge.py",
+          "src/evaluation/falsification.py",
+          "src/evaluation/metrics.py",
+          "src/evaluation/run_evaluation.py",
+          "run_evaluation.py"
+        ]
+      }
+    },
+    {
+      "run_id": "multiagent_20260713T201524Z",
+      "system": "multiagent",
+      "timestamp_utc": "20260713T201524Z",
+      "status": "completed",
+      "output_paths": [
+        "outputs/multiagent_20260713T201524Z.json"
+      ],
+      "log_path": "logs/multiagent_20260713T201524Z.jsonl",
+      "log_event_counts": {
+        "orchestrator_start": 1,
+        "agent_start": 8,
+        "model_response": 38,
+        "tool_call": 76,
+        "agent_submit": 8,
+        "generator_candidates": 3,
+        "orchestrator_generation_complete": 1,
+        "adversarial_review": 5,
+        "orchestrator_adversarial_complete": 1,
+        "ranking_start": 1,
+        "ranking_response": 1,
+        "ranking_selection": 1,
+        "orchestrator_ranking_complete": 1,
+        "validation_summary": 1
+      },
+      "hypothesis_generation_metadata": {
+        "run_size_or_candidates_per_generator_requested": {
+          "value": [
+            5,
+            5,
+            5
+          ],
+          "provenance": "VERIFIED_FROM_LOG",
+          "basis": "Parsed directly from the logged 'user_prompt' text of each agent_start event in this run's own .jsonl log (e.g. 'Generate N ... hypotheses'). For baseline this is a single value [N]; for multiagent it is [literature_N, molecular_N, signal_N]."
+        },
+        "disease_context": {
+          "value": "cholangiocarcinoma",
+          "provenance": "VERIFIED_FROM_LOG",
+          "basis": "Parsed directly from the logged user_prompt text in this run's own .jsonl log."
+        }
+      },
+      "actual_hypothesis_count": 5,
+      "retrieved_source_count_in_output": 193,
+      "dropped_hypotheses_count": 0,
+      "dropped_citations_count": 0,
+      "model_name": {
+        "value": "claude-sonnet-5",
+        "provenance": "RECONSTRUCTED_MULTI_SOURCE",
+        "basis": "Not present in this run's own log content (predates the run_config logging change added 2026-07-14). Reconstructed from multiple corroborating sources rather than config.py alone: (1) src/config.py's current field value; (2) file-modification-timestamp evidence showing config.py was edited AFTER this run started (last modified 2026-07-13T21:55:06Z), meaning the exact byte-for-byte config.py version in effect for this specific run cannot be hash-verified (no git history or backups exist to recover it); (3) this run's own completed log, which confirms the run finished successfully end-to-end (consistent with, though not proof of, a valid model_name being in effect throughout); and (4) verification that src/llm_client.py's *invocation mechanism* (passing CONFIG.model_name / CONFIG.temperature to every API call) was itself in place for this run, so whatever value config.py held was faithfully what got sent -- the mechanism is verified even though the specific historical value is not hash-verified. Combined, this supports the stated value as the most likely one in effect, but it is a reconstruction, not a verification, and is labeled as such."
+      },
+      "temperature": {
+        "value": 1.0,
+        "provenance": "RECONSTRUCTED_MULTI_SOURCE",
+        "basis": "Not present in this run's own log content (predates the run_config logging change added 2026-07-14). Reconstructed from multiple corroborating sources rather than config.py alone: (1) src/config.py's current field value; (2) file-modification-timestamp evidence showing config.py was edited AFTER this run started (last modified 2026-07-13T21:55:06Z), meaning the exact byte-for-byte config.py version in effect for this specific run cannot be hash-verified (no git history or backups exist to recover it); (3) this run's own completed log, which confirms the run finished successfully end-to-end (consistent with, though not proof of, a valid model_name being in effect throughout); and (4) verification that src/llm_client.py's *invocation mechanism* (passing CONFIG.model_name / CONFIG.temperature to every API call) was itself in place for this run, so whatever value config.py held was faithfully what got sent -- the mechanism is verified even though the specific historical value is not hash-verified. Combined, this supports the stated value as the most likely one in effect, but it is a reconstruction, not a verification, and is labeled as such."
+      },
+      "max_agent_turns_configured": {
+        "value": 15,
+        "provenance": "RECONSTRUCTED_MULTI_SOURCE",
+        "basis": "Not present in this run's own log content (predates the run_config logging change added 2026-07-14). Reconstructed from multiple corroborating sources rather than config.py alone: (1) src/config.py's current field value; (2) file-modification-timestamp evidence showing config.py was edited AFTER this run started (last modified 2026-07-13T21:55:06Z), meaning the exact byte-for-byte config.py version in effect for this specific run cannot be hash-verified (no git history or backups exist to recover it); (3) this run's own completed log, which confirms the run finished successfully end-to-end (consistent with, though not proof of, a valid model_name being in effect throughout); and (4) verification that src/llm_client.py's *invocation mechanism* (passing CONFIG.model_name / CONFIG.temperature to every API call) was itself in place for this run, so whatever value config.py held was faithfully what got sent -- the mechanism is verified even though the specific historical value is not hash-verified. Combined, this supports the stated value as the most likely one in effect, but it is a reconstruction, not a verification, and is labeled as such. Additionally, a LOWER BOUND on turns actually used is directly log-verifiable for this run (see verified_lower_bound_from_log): the run completed without exhausting any turn cap, which is consistent with a configured ceiling of 15 but does not independently prove that exact number.",
+        "verified_lower_bound_from_log": 7
+      },
+      "source_file_verification": {
+        "note": "A pipeline file's CURRENT sha256 is trustworthy as 'the version used for this run' only if the file's last-modified time is BEFORE this run's start time (i.e. it was not edited afterward). No git history or backups exist, so if a file WAS edited after this run started, the exact version actually used is not recoverable.",
+        "verified_unchanged_since_this_run": {
+          "src/schemas.py": "196b9ee684f43213e4eb331a8591deb5821cec5782567a3d341c758654e62b9d",
+          "src/tools.py": "bd28f082051afa9e63f52bebdaf8c9767bd40bada2e4507c35fd5b52a7f02d03",
+          "src/validation.py": "3672c907ecb28322326af74dad2565ab10e53c4349e724eb10fd26d35afdff19",
+          "src/retrieval/europepmc.py": "6728cd338169426097a7fa9d2664ffa0eb3c613d092dc58553c8f745a3bad446",
+          "src/retrieval/open_targets.py": "91a722c634f586a2d237e33656fac473909220b5186fdeba2df409348a22403a",
+          "src/retrieval/civic.py": "b1f46d18326bf294eb6adc238b6c9e5c152a79c1858bd6aa7bfe137e8720cc43",
+          "src/retrieval/clinical_trials.py": "cfca289b5aface6516c578f21a75cd7aacae227bc041f4b8d1fac73c29e3754e",
+          "src/retrieval/__init__.py": "8526f395389ab3a3a2eebb95bd1a4ef1953abd8a99af9b9de094436736a69e26",
+          "src/multiagent/orchestrator.py": "ec6fae66f4c87763efe5f319bbb09a3b738dcc0e879616ffdad0a4df78ad0af8",
+          "src/multiagent/literature_agent.py": "64aaa6f1ea2d558ac531ea4b4715cbdcaf04e6efe4974bb8cb9f1aa343046e71",
+          "src/multiagent/molecular_agent.py": "3aab26aa4fe6e01352f7404df019392d384968c68d3460cc3c97c078569ddbfb",
+          "src/multiagent/signal_agent.py": "833d896e464939f4f8072327935b8151c53d9d5e35af48456ee163ebf14f14d7",
+          "src/evaluation/judge.py": "07a6eed5196f35e9d17794113a2d00a442c807edc4cbf029964b7b9cf4d0057c",
+          "src/evaluation/falsification.py": "cf31ce1b7929f1b51c83152ca78b6823b86aa618708fe4524f384702d3b9319e",
+          "src/evaluation/run_evaluation.py": "89d8bda38e8da18edd101aeafe376737d6226bb059cc825e1d8a2761d45cc861",
+          "run_baseline.py": "e20b1afc0c05e4a24835ca89065647569df762f5d658db878d541fc4516906e1",
+          "run_multiagent.py": "95a017ab3b990c25dd293bf439a1a00d5164b897c991b4f7a17be8274e3742c8",
+          "run_evaluation.py": "f9315b777a93951a5a93ef295ae874c8ac220bec7279bb5cb4a4277923400175"
+        },
+        "modified_after_this_run_version_not_recoverable": [
+          "src/config.py",
+          "src/llm_client.py",
+          "src/logging_utils.py",
+          "src/baseline/run_baseline.py",
+          "src/multiagent/generator_agent.py",
+          "src/multiagent/adversarial_agent.py",
+          "src/multiagent/ranking_agent.py",
+          "src/evaluation/metrics.py"
+        ]
+      }
+    },
+    {
+      "run_id": "multiagent_20260713T202858Z",
+      "system": "multiagent",
+      "timestamp_utc": "20260713T202858Z",
+      "status": "completed",
+      "output_paths": [
+        "outputs/multiagent_20260713T202858Z.json"
+      ],
+      "log_path": "logs/multiagent_20260713T202858Z.jsonl",
+      "log_event_counts": {
+        "orchestrator_start": 1,
+        "agent_start": 18,
+        "model_response": 94,
+        "tool_call": 178,
+        "agent_submit": 18,
+        "generator_candidates": 3,
+        "orchestrator_generation_complete": 1,
+        "adversarial_review": 15,
+        "orchestrator_adversarial_complete": 1,
+        "ranking_start": 1,
+        "ranking_response": 1,
+        "ranking_selection": 1,
+        "orchestrator_ranking_complete": 1,
+        "validation_summary": 1
+      },
+      "hypothesis_generation_metadata": {
+        "run_size_or_candidates_per_generator_requested": {
+          "value": [
+            5,
+            5,
+            5
+          ],
+          "provenance": "VERIFIED_FROM_LOG",
+          "basis": "Parsed directly from the logged 'user_prompt' text of each agent_start event in this run's own .jsonl log (e.g. 'Generate N ... hypotheses'). For baseline this is a single value [N]; for multiagent it is [literature_N, molecular_N, signal_N]."
+        },
+        "disease_context": {
+          "value": "cholangiocarcinoma",
+          "provenance": "VERIFIED_FROM_LOG",
+          "basis": "Parsed directly from the logged user_prompt text in this run's own .jsonl log."
+        }
+      },
+      "actual_hypothesis_count": 10,
+      "retrieved_source_count_in_output": 436,
+      "dropped_hypotheses_count": 0,
+      "dropped_citations_count": 0,
+      "model_name": {
+        "value": "claude-sonnet-5",
+        "provenance": "RECONSTRUCTED_MULTI_SOURCE",
+        "basis": "Not present in this run's own log content (predates the run_config logging change added 2026-07-14). Reconstructed from multiple corroborating sources rather than config.py alone: (1) src/config.py's current field value; (2) file-modification-timestamp evidence showing config.py was edited AFTER this run started (last modified 2026-07-13T21:55:06Z), meaning the exact byte-for-byte config.py version in effect for this specific run cannot be hash-verified (no git history or backups exist to recover it); (3) this run's own completed log, which confirms the run finished successfully end-to-end (consistent with, though not proof of, a valid model_name being in effect throughout); and (4) verification that src/llm_client.py's *invocation mechanism* (passing CONFIG.model_name / CONFIG.temperature to every API call) was itself in place for this run, so whatever value config.py held was faithfully what got sent -- the mechanism is verified even though the specific historical value is not hash-verified. Combined, this supports the stated value as the most likely one in effect, but it is a reconstruction, not a verification, and is labeled as such."
+      },
+      "temperature": {
+        "value": 1.0,
+        "provenance": "RECONSTRUCTED_MULTI_SOURCE",
+        "basis": "Not present in this run's own log content (predates the run_config logging change added 2026-07-14). Reconstructed from multiple corroborating sources rather than config.py alone: (1) src/config.py's current field value; (2) file-modification-timestamp evidence showing config.py was edited AFTER this run started (last modified 2026-07-13T21:55:06Z), meaning the exact byte-for-byte config.py version in effect for this specific run cannot be hash-verified (no git history or backups exist to recover it); (3) this run's own completed log, which confirms the run finished successfully end-to-end (consistent with, though not proof of, a valid model_name being in effect throughout); and (4) verification that src/llm_client.py's *invocation mechanism* (passing CONFIG.model_name / CONFIG.temperature to every API call) was itself in place for this run, so whatever value config.py held was faithfully what got sent -- the mechanism is verified even though the specific historical value is not hash-verified. Combined, this supports the stated value as the most likely one in effect, but it is a reconstruction, not a verification, and is labeled as such."
+      },
+      "max_agent_turns_configured": {
+        "value": 15,
+        "provenance": "RECONSTRUCTED_MULTI_SOURCE",
+        "basis": "Not present in this run's own log content (predates the run_config logging change added 2026-07-14). Reconstructed from multiple corroborating sources rather than config.py alone: (1) src/config.py's current field value; (2) file-modification-timestamp evidence showing config.py was edited AFTER this run started (last modified 2026-07-13T21:55:06Z), meaning the exact byte-for-byte config.py version in effect for this specific run cannot be hash-verified (no git history or backups exist to recover it); (3) this run's own completed log, which confirms the run finished successfully end-to-end (consistent with, though not proof of, a valid model_name being in effect throughout); and (4) verification that src/llm_client.py's *invocation mechanism* (passing CONFIG.model_name / CONFIG.temperature to every API call) was itself in place for this run, so whatever value config.py held was faithfully what got sent -- the mechanism is verified even though the specific historical value is not hash-verified. Combined, this supports the stated value as the most likely one in effect, but it is a reconstruction, not a verification, and is labeled as such. Additionally, a LOWER BOUND on turns actually used is directly log-verifiable for this run (see verified_lower_bound_from_log): the run completed without exhausting any turn cap, which is consistent with a configured ceiling of 15 but does not independently prove that exact number.",
+        "verified_lower_bound_from_log": 7
+      },
+      "source_file_verification": {
+        "note": "A pipeline file's CURRENT sha256 is trustworthy as 'the version used for this run' only if the file's last-modified time is BEFORE this run's start time (i.e. it was not edited afterward). No git history or backups exist, so if a file WAS edited after this run started, the exact version actually used is not recoverable.",
+        "verified_unchanged_since_this_run": {
+          "src/schemas.py": "196b9ee684f43213e4eb331a8591deb5821cec5782567a3d341c758654e62b9d",
+          "src/tools.py": "bd28f082051afa9e63f52bebdaf8c9767bd40bada2e4507c35fd5b52a7f02d03",
+          "src/validation.py": "3672c907ecb28322326af74dad2565ab10e53c4349e724eb10fd26d35afdff19",
+          "src/retrieval/europepmc.py": "6728cd338169426097a7fa9d2664ffa0eb3c613d092dc58553c8f745a3bad446",
+          "src/retrieval/open_targets.py": "91a722c634f586a2d237e33656fac473909220b5186fdeba2df409348a22403a",
+          "src/retrieval/civic.py": "b1f46d18326bf294eb6adc238b6c9e5c152a79c1858bd6aa7bfe137e8720cc43",
+          "src/retrieval/clinical_trials.py": "cfca289b5aface6516c578f21a75cd7aacae227bc041f4b8d1fac73c29e3754e",
+          "src/retrieval/__init__.py": "8526f395389ab3a3a2eebb95bd1a4ef1953abd8a99af9b9de094436736a69e26",
+          "src/multiagent/orchestrator.py": "ec6fae66f4c87763efe5f319bbb09a3b738dcc0e879616ffdad0a4df78ad0af8",
+          "src/multiagent/literature_agent.py": "64aaa6f1ea2d558ac531ea4b4715cbdcaf04e6efe4974bb8cb9f1aa343046e71",
+          "src/multiagent/molecular_agent.py": "3aab26aa4fe6e01352f7404df019392d384968c68d3460cc3c97c078569ddbfb",
+          "src/multiagent/signal_agent.py": "833d896e464939f4f8072327935b8151c53d9d5e35af48456ee163ebf14f14d7",
+          "src/evaluation/judge.py": "07a6eed5196f35e9d17794113a2d00a442c807edc4cbf029964b7b9cf4d0057c",
+          "src/evaluation/falsification.py": "cf31ce1b7929f1b51c83152ca78b6823b86aa618708fe4524f384702d3b9319e",
+          "src/evaluation/run_evaluation.py": "89d8bda38e8da18edd101aeafe376737d6226bb059cc825e1d8a2761d45cc861",
+          "run_baseline.py": "e20b1afc0c05e4a24835ca89065647569df762f5d658db878d541fc4516906e1",
+          "run_multiagent.py": "95a017ab3b990c25dd293bf439a1a00d5164b897c991b4f7a17be8274e3742c8",
+          "run_evaluation.py": "f9315b777a93951a5a93ef295ae874c8ac220bec7279bb5cb4a4277923400175"
+        },
+        "modified_after_this_run_version_not_recoverable": [
+          "src/config.py",
+          "src/llm_client.py",
+          "src/logging_utils.py",
+          "src/baseline/run_baseline.py",
+          "src/multiagent/generator_agent.py",
+          "src/multiagent/adversarial_agent.py",
+          "src/multiagent/ranking_agent.py",
+          "src/evaluation/metrics.py"
+        ]
+      }
+    },
+    {
+      "run_id": "multiagent_20260713T220106Z",
+      "system": "multiagent",
+      "timestamp_utc": "20260713T220106Z",
+      "status": "completed",
+      "output_paths": [
+        "outputs/multiagent_20260713T220106Z.json"
+      ],
+      "log_path": "logs/multiagent_20260713T220106Z.jsonl",
+      "log_event_counts": {
+        "orchestrator_start": 1,
+        "agent_start": 79,
+        "model_response": 402,
+        "tool_call": 789,
+        "agent_submit": 79,
+        "generator_candidates": 3,
+        "orchestrator_generation_complete": 1,
+        "adversarial_review": 76,
+        "orchestrator_adversarial_complete": 1,
+        "ranking_start": 1,
+        "ranking_response": 1,
+        "ranking_malformed_score": 16954,
+        "ranking_missing_score": 76,
+        "ranking_selection": 1,
+        "orchestrator_ranking_complete": 1,
+        "validation_summary": 1
+      },
+      "hypothesis_generation_metadata": {
+        "run_size_or_candidates_per_generator_requested": {
+          "value": [
+            25,
+            25,
+            25
+          ],
+          "provenance": "VERIFIED_FROM_LOG",
+          "basis": "Parsed directly from the logged 'user_prompt' text of each agent_start event in this run's own .jsonl log (e.g. 'Generate N ... hypotheses'). For baseline this is a single value [N]; for multiagent it is [literature_N, molecular_N, signal_N]."
+        },
+        "disease_context": {
+          "value": "cholangiocarcinoma",
+          "provenance": "VERIFIED_FROM_LOG",
+          "basis": "Parsed directly from the logged user_prompt text in this run's own .jsonl log."
+        }
+      },
+      "actual_hypothesis_count": 50,
+      "retrieved_source_count_in_output": 1610,
+      "dropped_hypotheses_count": 0,
+      "dropped_citations_count": 2,
+      "model_name": {
+        "value": "claude-sonnet-5",
+        "provenance": "VERIFIED_FROM_SOURCE_FILE",
+        "basis": "src/config.py's last-modified timestamp (2026-07-13T21:55:06Z) is strictly BEFORE this run's start time, and src/llm_client.py (which reads CONFIG.model_name / CONFIG.temperature and passes them to the Anthropic API call) is likewise unmodified since before this run. Both are confirmed via direct file modification-timestamp comparison against this run's start time, cross-checked against this run's own log (successful completion, i.e. the API accepted whatever model string was in effect, and this run's log timestamps fall entirely within the window during which config.py held its current content). Based on the available evidence, the current config.py value is consistent with the configuration used for this run."
+      },
+      "temperature": {
+        "value": 1.0,
+        "provenance": "VERIFIED_FROM_SOURCE_FILE",
+        "basis": "src/config.py's last-modified timestamp (2026-07-13T21:55:06Z) is strictly BEFORE this run's start time, and src/llm_client.py (which reads CONFIG.model_name / CONFIG.temperature and passes them to the Anthropic API call) is likewise unmodified since before this run. Both are confirmed via direct file modification-timestamp comparison against this run's start time, cross-checked against this run's own log (successful completion, i.e. the API accepted whatever model string was in effect, and this run's log timestamps fall entirely within the window during which config.py held its current content). Based on the available evidence, the current config.py value is consistent with the configuration used for this run."
+      },
+      "max_agent_turns_configured": {
+        "value": 15,
+        "provenance": "VERIFIED_FROM_SOURCE_FILE",
+        "basis": "src/config.py's last-modified timestamp (2026-07-13T21:55:06Z) is strictly BEFORE this run's start time, and src/llm_client.py (which reads CONFIG.model_name / CONFIG.temperature and passes them to the Anthropic API call) is likewise unmodified since before this run. Both are confirmed via direct file modification-timestamp comparison against this run's start time, cross-checked against this run's own log (successful completion, i.e. the API accepted whatever model string was in effect, and this run's log timestamps fall entirely within the window during which config.py held its current content). Based on the available evidence, the current config.py value is consistent with the configuration used for this run. Additionally, a LOWER BOUND on turns actually used is directly log-verifiable for this run (see verified_lower_bound_from_log): the run completed without exhausting any turn cap, which is consistent with a configured ceiling of 15 but does not independently prove that exact number.",
+        "verified_lower_bound_from_log": 9
+      },
+      "source_file_verification": {
+        "note": "A pipeline file's CURRENT sha256 is trustworthy as 'the version used for this run' only if the file's last-modified time is BEFORE this run's start time (i.e. it was not edited afterward). No git history or backups exist, so if a file WAS edited after this run started, the exact version actually used is not recoverable.",
+        "verified_unchanged_since_this_run": {
+          "src/config.py": "03158cc93f01fa04633594696ecf147adb84e06ecc1e85f76c3281db0d26f1ae",
+          "src/llm_client.py": "414be97cc3a87fb201dbba5f601adb3554c38f0032816a7598493da4579749d8",
+          "src/schemas.py": "196b9ee684f43213e4eb331a8591deb5821cec5782567a3d341c758654e62b9d",
+          "src/tools.py": "bd28f082051afa9e63f52bebdaf8c9767bd40bada2e4507c35fd5b52a7f02d03",
+          "src/validation.py": "3672c907ecb28322326af74dad2565ab10e53c4349e724eb10fd26d35afdff19",
+          "src/retrieval/europepmc.py": "6728cd338169426097a7fa9d2664ffa0eb3c613d092dc58553c8f745a3bad446",
+          "src/retrieval/open_targets.py": "91a722c634f586a2d237e33656fac473909220b5186fdeba2df409348a22403a",
+          "src/retrieval/civic.py": "b1f46d18326bf294eb6adc238b6c9e5c152a79c1858bd6aa7bfe137e8720cc43",
+          "src/retrieval/clinical_trials.py": "cfca289b5aface6516c578f21a75cd7aacae227bc041f4b8d1fac73c29e3754e",
+          "src/retrieval/__init__.py": "8526f395389ab3a3a2eebb95bd1a4ef1953abd8a99af9b9de094436736a69e26",
+          "src/multiagent/orchestrator.py": "ec6fae66f4c87763efe5f319bbb09a3b738dcc0e879616ffdad0a4df78ad0af8",
+          "src/multiagent/literature_agent.py": "64aaa6f1ea2d558ac531ea4b4715cbdcaf04e6efe4974bb8cb9f1aa343046e71",
+          "src/multiagent/molecular_agent.py": "3aab26aa4fe6e01352f7404df019392d384968c68d3460cc3c97c078569ddbfb",
+          "src/multiagent/signal_agent.py": "833d896e464939f4f8072327935b8151c53d9d5e35af48456ee163ebf14f14d7",
+          "src/evaluation/judge.py": "07a6eed5196f35e9d17794113a2d00a442c807edc4cbf029964b7b9cf4d0057c",
+          "src/evaluation/falsification.py": "cf31ce1b7929f1b51c83152ca78b6823b86aa618708fe4524f384702d3b9319e",
+          "src/evaluation/metrics.py": "5b90eef7bf5943ceae0448ce855261988ec093e4038cd042a0651f36868819a5",
+          "src/evaluation/run_evaluation.py": "89d8bda38e8da18edd101aeafe376737d6226bb059cc825e1d8a2761d45cc861",
+          "run_baseline.py": "e20b1afc0c05e4a24835ca89065647569df762f5d658db878d541fc4516906e1",
+          "run_multiagent.py": "95a017ab3b990c25dd293bf439a1a00d5164b897c991b4f7a17be8274e3742c8",
+          "run_evaluation.py": "f9315b777a93951a5a93ef295ae874c8ac220bec7279bb5cb4a4277923400175"
+        },
+        "modified_after_this_run_version_not_recoverable": [
+          "src/logging_utils.py",
+          "src/baseline/run_baseline.py",
+          "src/multiagent/generator_agent.py",
+          "src/multiagent/adversarial_agent.py",
+          "src/multiagent/ranking_agent.py"
+        ]
+      }
+    },
+    {
+      "run_id": "multiagent_20260713T232713Z",
+      "system": "multiagent",
+      "timestamp_utc": "20260713T232713Z",
+      "status": "completed",
+      "output_paths": [
+        "outputs/multiagent_20260713T232713Z.json"
+      ],
+      "log_path": "logs/multiagent_20260713T232713Z.jsonl",
+      "log_event_counts": {
+        "orchestrator_start": 1,
+        "agent_start": 82,
+        "model_response": 429,
+        "tool_call": 777,
+        "agent_submit": 82,
+        "generator_candidates": 3,
+        "orchestrator_generation_complete": 1,
+        "adversarial_review": 79,
+        "orchestrator_adversarial_complete": 1,
+        "ranking_start": 1,
+        "ranking_response": 1,
+        "ranking_selection": 1,
+        "orchestrator_ranking_complete": 1,
+        "validation_summary": 1
+      },
+      "hypothesis_generation_metadata": {
+        "run_size_or_candidates_per_generator_requested": {
+          "value": [
+            25,
+            25,
+            25
+          ],
+          "provenance": "VERIFIED_FROM_LOG",
+          "basis": "Parsed directly from the logged 'user_prompt' text of each agent_start event in this run's own .jsonl log (e.g. 'Generate N ... hypotheses'). For baseline this is a single value [N]; for multiagent it is [literature_N, molecular_N, signal_N]."
+        },
+        "disease_context": {
+          "value": "cholangiocarcinoma",
+          "provenance": "VERIFIED_FROM_LOG",
+          "basis": "Parsed directly from the logged user_prompt text in this run's own .jsonl log."
+        }
+      },
+      "actual_hypothesis_count": 50,
+      "retrieved_source_count_in_output": 1596,
+      "dropped_hypotheses_count": 0,
+      "dropped_citations_count": 1,
+      "model_name": {
+        "value": "claude-sonnet-5",
+        "provenance": "VERIFIED_FROM_SOURCE_FILE",
+        "basis": "src/config.py's last-modified timestamp (2026-07-13T21:55:06Z) is strictly BEFORE this run's start time, and src/llm_client.py (which reads CONFIG.model_name / CONFIG.temperature and passes them to the Anthropic API call) is likewise unmodified since before this run. Both are confirmed via direct file modification-timestamp comparison against this run's start time, cross-checked against this run's own log (successful completion, i.e. the API accepted whatever model string was in effect, and this run's log timestamps fall entirely within the window during which config.py held its current content). Based on the available evidence, the current config.py value is consistent with the configuration used for this run."
+      },
+      "temperature": {
+        "value": 1.0,
+        "provenance": "VERIFIED_FROM_SOURCE_FILE",
+        "basis": "src/config.py's last-modified timestamp (2026-07-13T21:55:06Z) is strictly BEFORE this run's start time, and src/llm_client.py (which reads CONFIG.model_name / CONFIG.temperature and passes them to the Anthropic API call) is likewise unmodified since before this run. Both are confirmed via direct file modification-timestamp comparison against this run's start time, cross-checked against this run's own log (successful completion, i.e. the API accepted whatever model string was in effect, and this run's log timestamps fall entirely within the window during which config.py held its current content). Based on the available evidence, the current config.py value is consistent with the configuration used for this run."
+      },
+      "max_agent_turns_configured": {
+        "value": 15,
+        "provenance": "VERIFIED_FROM_SOURCE_FILE",
+        "basis": "src/config.py's last-modified timestamp (2026-07-13T21:55:06Z) is strictly BEFORE this run's start time, and src/llm_client.py (which reads CONFIG.model_name / CONFIG.temperature and passes them to the Anthropic API call) is likewise unmodified since before this run. Both are confirmed via direct file modification-timestamp comparison against this run's start time, cross-checked against this run's own log (successful completion, i.e. the API accepted whatever model string was in effect, and this run's log timestamps fall entirely within the window during which config.py held its current content). Based on the available evidence, the current config.py value is consistent with the configuration used for this run. Additionally, a LOWER BOUND on turns actually used is directly log-verifiable for this run (see verified_lower_bound_from_log): the run completed without exhausting any turn cap, which is consistent with a configured ceiling of 15 but does not independently prove that exact number.",
+        "verified_lower_bound_from_log": 9
+      },
+      "source_file_verification": {
+        "note": "A pipeline file's CURRENT sha256 is trustworthy as 'the version used for this run' only if the file's last-modified time is BEFORE this run's start time (i.e. it was not edited afterward). No git history or backups exist, so if a file WAS edited after this run started, the exact version actually used is not recoverable.",
+        "verified_unchanged_since_this_run": {
+          "src/config.py": "03158cc93f01fa04633594696ecf147adb84e06ecc1e85f76c3281db0d26f1ae",
+          "src/llm_client.py": "414be97cc3a87fb201dbba5f601adb3554c38f0032816a7598493da4579749d8",
+          "src/schemas.py": "196b9ee684f43213e4eb331a8591deb5821cec5782567a3d341c758654e62b9d",
+          "src/tools.py": "bd28f082051afa9e63f52bebdaf8c9767bd40bada2e4507c35fd5b52a7f02d03",
+          "src/validation.py": "3672c907ecb28322326af74dad2565ab10e53c4349e724eb10fd26d35afdff19",
+          "src/retrieval/europepmc.py": "6728cd338169426097a7fa9d2664ffa0eb3c613d092dc58553c8f745a3bad446",
+          "src/retrieval/open_targets.py": "91a722c634f586a2d237e33656fac473909220b5186fdeba2df409348a22403a",
+          "src/retrieval/civic.py": "b1f46d18326bf294eb6adc238b6c9e5c152a79c1858bd6aa7bfe137e8720cc43",
+          "src/retrieval/clinical_trials.py": "cfca289b5aface6516c578f21a75cd7aacae227bc041f4b8d1fac73c29e3754e",
+          "src/retrieval/__init__.py": "8526f395389ab3a3a2eebb95bd1a4ef1953abd8a99af9b9de094436736a69e26",
+          "src/baseline/run_baseline.py": "3fbf34772d2b1118ae925cd3c5d93d32fd02b6361605d9fd0a8943d35deacc62",
+          "src/multiagent/orchestrator.py": "ec6fae66f4c87763efe5f319bbb09a3b738dcc0e879616ffdad0a4df78ad0af8",
+          "src/multiagent/generator_agent.py": "6e5cc8413b122bf6048c65489f242004fca1ee31a84e6c49b084ad6fd6281dd7",
+          "src/multiagent/literature_agent.py": "64aaa6f1ea2d558ac531ea4b4715cbdcaf04e6efe4974bb8cb9f1aa343046e71",
+          "src/multiagent/molecular_agent.py": "3aab26aa4fe6e01352f7404df019392d384968c68d3460cc3c97c078569ddbfb",
+          "src/multiagent/signal_agent.py": "833d896e464939f4f8072327935b8151c53d9d5e35af48456ee163ebf14f14d7",
+          "src/multiagent/adversarial_agent.py": "9bec8d4a6e57462e8862a6449524ef33e0233e6d7f648065f50d2676b3136fb0",
+          "src/multiagent/ranking_agent.py": "989ce768d1980c92926fa1a996e594b48966f52f233369401d6ca95ee0cb7c16",
+          "src/evaluation/judge.py": "07a6eed5196f35e9d17794113a2d00a442c807edc4cbf029964b7b9cf4d0057c",
+          "src/evaluation/falsification.py": "cf31ce1b7929f1b51c83152ca78b6823b86aa618708fe4524f384702d3b9319e",
+          "src/evaluation/metrics.py": "5b90eef7bf5943ceae0448ce855261988ec093e4038cd042a0651f36868819a5",
+          "src/evaluation/run_evaluation.py": "89d8bda38e8da18edd101aeafe376737d6226bb059cc825e1d8a2761d45cc861",
+          "run_baseline.py": "e20b1afc0c05e4a24835ca89065647569df762f5d658db878d541fc4516906e1",
+          "run_multiagent.py": "95a017ab3b990c25dd293bf439a1a00d5164b897c991b4f7a17be8274e3742c8",
+          "run_evaluation.py": "f9315b777a93951a5a93ef295ae874c8ac220bec7279bb5cb4a4277923400175"
+        },
+        "modified_after_this_run_version_not_recoverable": [
+          "src/logging_utils.py"
+        ]
+      }
+    },
+    {
+      "run_id": "evaluation_20260713T210801Z",
+      "system": "evaluation",
+      "timestamp_utc": "20260713T210801Z",
+      "status": "completed",
+      "output_paths": [
+        "outputs/evaluation_20260713T210801Z.json",
+        "outputs/evaluation_20260713T210801Z.md"
+      ],
+      "log_path": "logs/evaluation_20260713T210801Z.jsonl",
+      "log_event_counts": {
+        "evaluation_start": 1,
+        "evaluation_progress": 20,
+        "judge_start": 20,
+        "judge_response": 20,
+        "judge_result": 20,
+        "agent_start": 20,
+        "model_response": 98,
+        "tool_call": 186,
+        "agent_submit": 20,
+        "adversarial_review": 20,
+        "evaluation_complete": 1
+      },
+      "model_name": {
+        "value": "claude-sonnet-5",
+        "provenance": "RECONSTRUCTED_MULTI_SOURCE",
+        "basis": "Not present in this run's own log content (predates the run_config logging change added 2026-07-14). Reconstructed from multiple corroborating sources rather than config.py alone: (1) src/config.py's current field value; (2) file-modification-timestamp evidence showing config.py was edited AFTER this run started (last modified 2026-07-13T21:55:06Z), meaning the exact byte-for-byte config.py version in effect for this specific run cannot be hash-verified (no git history or backups exist to recover it); (3) this run's own completed log, which confirms the run finished successfully end-to-end (consistent with, though not proof of, a valid model_name being in effect throughout); and (4) verification that src/llm_client.py's *invocation mechanism* (passing CONFIG.model_name / CONFIG.temperature to every API call) was itself in place for this run, so whatever value config.py held was faithfully what got sent -- the mechanism is verified even though the specific historical value is not hash-verified. Combined, this supports the stated value as the most likely one in effect, but it is a reconstruction, not a verification, and is labeled as such."
+      },
+      "temperature": {
+        "value": 1.0,
+        "provenance": "RECONSTRUCTED_MULTI_SOURCE",
+        "basis": "Not present in this run's own log content (predates the run_config logging change added 2026-07-14). Reconstructed from multiple corroborating sources rather than config.py alone: (1) src/config.py's current field value; (2) file-modification-timestamp evidence showing config.py was edited AFTER this run started (last modified 2026-07-13T21:55:06Z), meaning the exact byte-for-byte config.py version in effect for this specific run cannot be hash-verified (no git history or backups exist to recover it); (3) this run's own completed log, which confirms the run finished successfully end-to-end (consistent with, though not proof of, a valid model_name being in effect throughout); and (4) verification that src/llm_client.py's *invocation mechanism* (passing CONFIG.model_name / CONFIG.temperature to every API call) was itself in place for this run, so whatever value config.py held was faithfully what got sent -- the mechanism is verified even though the specific historical value is not hash-verified. Combined, this supports the stated value as the most likely one in effect, but it is a reconstruction, not a verification, and is labeled as such."
+      },
+      "max_agent_turns_configured": {
+        "value": 15,
+        "provenance": "RECONSTRUCTED_MULTI_SOURCE",
+        "basis": "Not present in this run's own log content (predates the run_config logging change added 2026-07-14). Reconstructed from multiple corroborating sources rather than config.py alone: (1) src/config.py's current field value; (2) file-modification-timestamp evidence showing config.py was edited AFTER this run started (last modified 2026-07-13T21:55:06Z), meaning the exact byte-for-byte config.py version in effect for this specific run cannot be hash-verified (no git history or backups exist to recover it); (3) this run's own completed log, which confirms the run finished successfully end-to-end (consistent with, though not proof of, a valid model_name being in effect throughout); and (4) verification that src/llm_client.py's *invocation mechanism* (passing CONFIG.model_name / CONFIG.temperature to every API call) was itself in place for this run, so whatever value config.py held was faithfully what got sent -- the mechanism is verified even though the specific historical value is not hash-verified. Combined, this supports the stated value as the most likely one in effect, but it is a reconstruction, not a verification, and is labeled as such. Additionally, a LOWER BOUND on turns actually used is directly log-verifiable for this run (see verified_lower_bound_from_log): the run completed without exhausting any turn cap, which is consistent with a configured ceiling of 15 but does not independently prove that exact number.",
+        "verified_lower_bound_from_log": 7
+      },
+      "source_file_verification": {
+        "note": "A pipeline file's CURRENT sha256 is trustworthy as 'the version used for this run' only if the file's last-modified time is BEFORE this run's start time (i.e. it was not edited afterward). No git history or backups exist, so if a file WAS edited after this run started, the exact version actually used is not recoverable.",
+        "verified_unchanged_since_this_run": {
+          "src/schemas.py": "196b9ee684f43213e4eb331a8591deb5821cec5782567a3d341c758654e62b9d",
+          "src/tools.py": "bd28f082051afa9e63f52bebdaf8c9767bd40bada2e4507c35fd5b52a7f02d03",
+          "src/validation.py": "3672c907ecb28322326af74dad2565ab10e53c4349e724eb10fd26d35afdff19",
+          "src/retrieval/europepmc.py": "6728cd338169426097a7fa9d2664ffa0eb3c613d092dc58553c8f745a3bad446",
+          "src/retrieval/open_targets.py": "91a722c634f586a2d237e33656fac473909220b5186fdeba2df409348a22403a",
+          "src/retrieval/civic.py": "b1f46d18326bf294eb6adc238b6c9e5c152a79c1858bd6aa7bfe137e8720cc43",
+          "src/retrieval/clinical_trials.py": "cfca289b5aface6516c578f21a75cd7aacae227bc041f4b8d1fac73c29e3754e",
+          "src/retrieval/__init__.py": "8526f395389ab3a3a2eebb95bd1a4ef1953abd8a99af9b9de094436736a69e26",
+          "src/multiagent/orchestrator.py": "ec6fae66f4c87763efe5f319bbb09a3b738dcc0e879616ffdad0a4df78ad0af8",
+          "src/multiagent/literature_agent.py": "64aaa6f1ea2d558ac531ea4b4715cbdcaf04e6efe4974bb8cb9f1aa343046e71",
+          "src/multiagent/molecular_agent.py": "3aab26aa4fe6e01352f7404df019392d384968c68d3460cc3c97c078569ddbfb",
+          "src/multiagent/signal_agent.py": "833d896e464939f4f8072327935b8151c53d9d5e35af48456ee163ebf14f14d7",
+          "src/evaluation/judge.py": "07a6eed5196f35e9d17794113a2d00a442c807edc4cbf029964b7b9cf4d0057c",
+          "src/evaluation/falsification.py": "cf31ce1b7929f1b51c83152ca78b6823b86aa618708fe4524f384702d3b9319e",
+          "src/evaluation/metrics.py": "5b90eef7bf5943ceae0448ce855261988ec093e4038cd042a0651f36868819a5",
+          "src/evaluation/run_evaluation.py": "89d8bda38e8da18edd101aeafe376737d6226bb059cc825e1d8a2761d45cc861",
+          "run_baseline.py": "e20b1afc0c05e4a24835ca89065647569df762f5d658db878d541fc4516906e1",
+          "run_multiagent.py": "95a017ab3b990c25dd293bf439a1a00d5164b897c991b4f7a17be8274e3742c8",
+          "run_evaluation.py": "f9315b777a93951a5a93ef295ae874c8ac220bec7279bb5cb4a4277923400175"
+        },
+        "modified_after_this_run_version_not_recoverable": [
+          "src/config.py",
+          "src/llm_client.py",
+          "src/logging_utils.py",
+          "src/baseline/run_baseline.py",
+          "src/multiagent/generator_agent.py",
+          "src/multiagent/adversarial_agent.py",
+          "src/multiagent/ranking_agent.py"
+        ]
+      }
+    },
+    {
+      "run_id": "evaluation_20260714T022723Z",
+      "system": "evaluation",
+      "timestamp_utc": "20260714T022723Z",
+      "status": "completed",
+      "output_paths": [
+        "outputs/evaluation_20260714T022723Z.json",
+        "outputs/evaluation_20260714T022723Z.md"
+      ],
+      "log_path": "logs/evaluation_20260714T022723Z.jsonl",
+      "log_event_counts": {
+        "evaluation_start": 1,
+        "evaluation_progress": 102,
+        "judge_start": 102,
+        "judge_response": 102,
+        "judge_result": 102,
+        "agent_start": 102,
+        "model_response": 540,
+        "tool_call": 908,
+        "agent_submit": 102,
+        "adversarial_review": 102,
+        "tool_call_error": 1,
+        "evaluation_complete": 1
+      },
+      "model_name": {
+        "value": "claude-sonnet-5",
+        "provenance": "VERIFIED_FROM_SOURCE_FILE",
+        "basis": "src/config.py's last-modified timestamp (2026-07-13T21:55:06Z) is strictly BEFORE this run's start time, and src/llm_client.py (which reads CONFIG.model_name / CONFIG.temperature and passes them to the Anthropic API call) is likewise unmodified since before this run. Both are confirmed via direct file modification-timestamp comparison against this run's start time, cross-checked against this run's own log (successful completion, i.e. the API accepted whatever model string was in effect, and this run's log timestamps fall entirely within the window during which config.py held its current content). Based on the available evidence, the current config.py value is consistent with the configuration used for this run."
+      },
+      "temperature": {
+        "value": 1.0,
+        "provenance": "VERIFIED_FROM_SOURCE_FILE",
+        "basis": "src/config.py's last-modified timestamp (2026-07-13T21:55:06Z) is strictly BEFORE this run's start time, and src/llm_client.py (which reads CONFIG.model_name / CONFIG.temperature and passes them to the Anthropic API call) is likewise unmodified since before this run. Both are confirmed via direct file modification-timestamp comparison against this run's start time, cross-checked against this run's own log (successful completion, i.e. the API accepted whatever model string was in effect, and this run's log timestamps fall entirely within the window during which config.py held its current content). Based on the available evidence, the current config.py value is consistent with the configuration used for this run."
+      },
+      "max_agent_turns_configured": {
+        "value": 15,
+        "provenance": "VERIFIED_FROM_SOURCE_FILE",
+        "basis": "src/config.py's last-modified timestamp (2026-07-13T21:55:06Z) is strictly BEFORE this run's start time, and src/llm_client.py (which reads CONFIG.model_name / CONFIG.temperature and passes them to the Anthropic API call) is likewise unmodified since before this run. Both are confirmed via direct file modification-timestamp comparison against this run's start time, cross-checked against this run's own log (successful completion, i.e. the API accepted whatever model string was in effect, and this run's log timestamps fall entirely within the window during which config.py held its current content). Based on the available evidence, the current config.py value is consistent with the configuration used for this run. Additionally, a LOWER BOUND on turns actually used is directly log-verifiable for this run (see verified_lower_bound_from_log): the run completed without exhausting any turn cap, which is consistent with a configured ceiling of 15 but does not independently prove that exact number.",
+        "verified_lower_bound_from_log": 10
+      },
+      "source_file_verification": {
+        "note": "A pipeline file's CURRENT sha256 is trustworthy as 'the version used for this run' only if the file's last-modified time is BEFORE this run's start time (i.e. it was not edited afterward). No git history or backups exist, so if a file WAS edited after this run started, the exact version actually used is not recoverable.",
+        "verified_unchanged_since_this_run": {
+          "src/config.py": "03158cc93f01fa04633594696ecf147adb84e06ecc1e85f76c3281db0d26f1ae",
+          "src/llm_client.py": "414be97cc3a87fb201dbba5f601adb3554c38f0032816a7598493da4579749d8",
+          "src/schemas.py": "196b9ee684f43213e4eb331a8591deb5821cec5782567a3d341c758654e62b9d",
+          "src/tools.py": "bd28f082051afa9e63f52bebdaf8c9767bd40bada2e4507c35fd5b52a7f02d03",
+          "src/validation.py": "3672c907ecb28322326af74dad2565ab10e53c4349e724eb10fd26d35afdff19",
+          "src/retrieval/europepmc.py": "6728cd338169426097a7fa9d2664ffa0eb3c613d092dc58553c8f745a3bad446",
+          "src/retrieval/open_targets.py": "91a722c634f586a2d237e33656fac473909220b5186fdeba2df409348a22403a",
+          "src/retrieval/civic.py": "b1f46d18326bf294eb6adc238b6c9e5c152a79c1858bd6aa7bfe137e8720cc43",
+          "src/retrieval/clinical_trials.py": "cfca289b5aface6516c578f21a75cd7aacae227bc041f4b8d1fac73c29e3754e",
+          "src/retrieval/__init__.py": "8526f395389ab3a3a2eebb95bd1a4ef1953abd8a99af9b9de094436736a69e26",
+          "src/baseline/run_baseline.py": "3fbf34772d2b1118ae925cd3c5d93d32fd02b6361605d9fd0a8943d35deacc62",
+          "src/multiagent/orchestrator.py": "ec6fae66f4c87763efe5f319bbb09a3b738dcc0e879616ffdad0a4df78ad0af8",
+          "src/multiagent/generator_agent.py": "6e5cc8413b122bf6048c65489f242004fca1ee31a84e6c49b084ad6fd6281dd7",
+          "src/multiagent/literature_agent.py": "64aaa6f1ea2d558ac531ea4b4715cbdcaf04e6efe4974bb8cb9f1aa343046e71",
+          "src/multiagent/molecular_agent.py": "3aab26aa4fe6e01352f7404df019392d384968c68d3460cc3c97c078569ddbfb",
+          "src/multiagent/signal_agent.py": "833d896e464939f4f8072327935b8151c53d9d5e35af48456ee163ebf14f14d7",
+          "src/multiagent/adversarial_agent.py": "9bec8d4a6e57462e8862a6449524ef33e0233e6d7f648065f50d2676b3136fb0",
+          "src/multiagent/ranking_agent.py": "989ce768d1980c92926fa1a996e594b48966f52f233369401d6ca95ee0cb7c16",
+          "src/evaluation/judge.py": "07a6eed5196f35e9d17794113a2d00a442c807edc4cbf029964b7b9cf4d0057c",
+          "src/evaluation/falsification.py": "cf31ce1b7929f1b51c83152ca78b6823b86aa618708fe4524f384702d3b9319e",
+          "src/evaluation/metrics.py": "5b90eef7bf5943ceae0448ce855261988ec093e4038cd042a0651f36868819a5",
+          "src/evaluation/run_evaluation.py": "89d8bda38e8da18edd101aeafe376737d6226bb059cc825e1d8a2761d45cc861",
+          "run_baseline.py": "e20b1afc0c05e4a24835ca89065647569df762f5d658db878d541fc4516906e1",
+          "run_multiagent.py": "95a017ab3b990c25dd293bf439a1a00d5164b897c991b4f7a17be8274e3742c8",
+          "run_evaluation.py": "f9315b777a93951a5a93ef295ae874c8ac220bec7279bb5cb4a4277923400175"
+        },
+        "modified_after_this_run_version_not_recoverable": [
+          "src/logging_utils.py"
+        ]
+      }
+    }
+  ],
+  "incomplete_runs": [
+    {
+      "log_id": "baseline_20260713T191909Z",
+      "system": "baseline",
+      "status": "incomplete_no_output",
+      "log_path": "logs/baseline_20260713T191909Z.jsonl",
+      "log_event_count": 1,
+      "last_logged_event": "agent_start",
+      "termination_cause": {
+        "value": "anthropic.AuthenticationError: 401 invalid x-api-key",
+        "provenance": "VERBATIM_SESSION_TRANSCRIPT",
+        "basis": "Full Python traceback was printed to this session's terminal output and is preserved verbatim in the conversation transcript. Not present in the .jsonl log itself (the process crashed before any error-logging code ran)."
+      }
+    },
+    {
+      "log_id": "baseline_20260713T191951Z",
+      "system": "baseline",
+      "status": "incomplete_no_output",
+      "log_path": "logs/baseline_20260713T191951Z.jsonl",
+      "log_event_count": 1,
+      "last_logged_event": "agent_start",
+      "termination_cause": {
+        "value": "anthropic.AuthenticationError: 401 invalid x-api-key (retry after pinning base_url; root cause was the API key itself, resolved once the user provided a fresh key)",
+        "provenance": "VERBATIM_SESSION_TRANSCRIPT",
+        "basis": "Full Python traceback was printed to this session's terminal output and is preserved verbatim in the conversation transcript."
+      }
+    },
+    {
+      "log_id": "multiagent_20260713T200814Z",
+      "system": "multiagent",
+      "status": "incomplete_no_output",
+      "log_path": "logs/multiagent_20260713T200814Z.jsonl",
+      "log_event_count": 108,
+      "last_logged_event": "agent_submit",
+      "termination_cause": {
+        "value": "TypeError: can only concatenate list (not \"str\") to list, in src/multiagent/adversarial_agent.py review_hypothesis() -- a model response returned additional_conflicting_evidence as a bare string instead of an array.",
+        "provenance": "VERBATIM_SESSION_TRANSCRIPT",
+        "basis": "Full Python traceback was printed to this session's terminal output and is preserved verbatim in the conversation transcript. This bug was subsequently fixed (see src/multiagent/adversarial_agent.py, isinstance(new_conflicting, str) handling)."
+      }
+    },
+    {
+      "log_id": "multiagent_20260713T202646Z",
+      "system": "multiagent",
+      "status": "incomplete_no_output",
+      "log_path": "logs/multiagent_20260713T202646Z.jsonl",
+      "log_event_count": 15,
+      "last_logged_event": "agent_submit",
+      "termination_cause": {
+        "value": "unknown",
+        "provenance": "NOT_VERIFIED",
+        "basis": "No output file was produced and no verbatim error text for this specific run_id was captured in this session's transcript. The only evidence available is what's in the .jsonl log itself (15 events, ending at an agent_submit). Cause of non-completion is NOT confirmed and is not being guessed at."
+      }
+    },
+    {
+      "log_id": "evaluation_20260713T204933Z",
+      "system": "evaluation",
+      "status": "incomplete_no_output",
+      "log_path": "logs/evaluation_20260713T204933Z.jsonl",
+      "log_event_count": 278,
+      "last_logged_event": "tool_call",
+      "termination_cause": {
+        "value": "anthropic.BadRequestError: credit balance too low, during the n=10 evaluation pass. Progress at time of failure: 14 of 20 hypotheses had completed the blind judge stage (per this run's own evaluation_progress log events).",
+        "provenance": "VERBATIM_SESSION_TRANSCRIPT_PLUS_LOG",
+        "basis": "Traceback captured verbatim in this session's terminal output; the '14/20' progress figure was independently re-derived from this run's own evaluation_progress log events during the session."
+      }
+    },
+    {
+      "log_id": "evaluation_20260714T004840Z",
+      "system": "evaluation",
+      "status": "incomplete_no_output",
+      "log_path": "logs/evaluation_20260714T004840Z.jsonl",
+      "log_event_count": 1337,
+      "last_logged_event": "judge_start",
+      "termination_cause": {
+        "value": "anthropic.BadRequestError: credit balance too low, during the n=50 evaluation pass. Progress at time of failure: 62 of 102 hypotheses had completed the blind judge stage (per this run's own evaluation_progress log events).",
+        "provenance": "VERBATIM_SESSION_TRANSCRIPT_PLUS_LOG",
+        "basis": "Traceback captured verbatim in this session's terminal output; the '62/102' progress figure was independently re-derived from this run's own evaluation_progress log events during the session."
+      }
+    }
+  ],
+  "pipeline_file_reference": {
+    "src/config.py": {
+      "sha256_current": "03158cc93f01fa04633594696ecf147adb84e06ecc1e85f76c3281db0d26f1ae",
+      "last_modified_utc": "2026-07-13T21:55:06Z",
+      "roles": [
+        "configuration"
+      ]
+    },
+    "src/llm_client.py": {
+      "sha256_current": "414be97cc3a87fb201dbba5f601adb3554c38f0032816a7598493da4579749d8",
+      "last_modified_utc": "2026-07-13T21:55:24Z",
+      "roles": [
+        "generation",
+        "ranking-support",
+        "evaluation-support"
+      ]
+    },
+    "src/schemas.py": {
+      "sha256_current": "196b9ee684f43213e4eb331a8591deb5821cec5782567a3d341c758654e62b9d",
+      "last_modified_utc": "2026-07-13T20:07:34Z",
+      "roles": [
+        "configuration"
+      ]
+    },
+    "src/tools.py": {
+      "sha256_current": "bd28f082051afa9e63f52bebdaf8c9767bd40bada2e4507c35fd5b52a7f02d03",
+      "last_modified_utc": "2026-07-13T19:39:16Z",
+      "roles": [
+        "retrieval",
+        "generation"
+      ]
+    },
+    "src/validation.py": {
+      "sha256_current": "3672c907ecb28322326af74dad2565ab10e53c4349e724eb10fd26d35afdff19",
+      "last_modified_utc": "2026-07-13T19:01:44Z",
+      "roles": [
+        "generation"
+      ]
+    },
+    "src/logging_utils.py": {
+      "sha256_current": "c63bbe0b73fea09cd8d84d20ee4a8fd193ab01e5f9cffa3e8e5e2acdc57ab869",
+      "last_modified_utc": "2026-07-14T18:04:26Z",
+      "roles": [
+        "logging"
+      ]
+    },
+    "src/retrieval/europepmc.py": {
+      "sha256_current": "6728cd338169426097a7fa9d2664ffa0eb3c613d092dc58553c8f745a3bad446",
+      "last_modified_utc": "2026-07-13T19:00:54Z",
+      "roles": [
+        "retrieval"
+      ]
+    },
+    "src/retrieval/open_targets.py": {
+      "sha256_current": "91a722c634f586a2d237e33656fac473909220b5186fdeba2df409348a22403a",
+      "last_modified_utc": "2026-07-13T19:00:58Z",
+      "roles": [
+        "retrieval"
+      ]
+    },
+    "src/retrieval/civic.py": {
+      "sha256_current": "b1f46d18326bf294eb6adc238b6c9e5c152a79c1858bd6aa7bfe137e8720cc43",
+      "last_modified_utc": "2026-07-13T19:01:03Z",
+      "roles": [
+        "retrieval"
+      ]
+    },
+    "src/retrieval/clinical_trials.py": {
+      "sha256_current": "cfca289b5aface6516c578f21a75cd7aacae227bc041f4b8d1fac73c29e3754e",
+      "last_modified_utc": "2026-07-13T19:01:06Z",
+      "roles": [
+        "retrieval"
+      ]
+    },
+    "src/retrieval/__init__.py": {
+      "sha256_current": "8526f395389ab3a3a2eebb95bd1a4ef1953abd8a99af9b9de094436736a69e26",
+      "last_modified_utc": "2026-07-13T19:00:47Z",
+      "roles": [
+        "retrieval"
+      ]
+    },
+    "src/baseline/run_baseline.py": {
+      "sha256_current": "3fbf34772d2b1118ae925cd3c5d93d32fd02b6361605d9fd0a8943d35deacc62",
+      "last_modified_utc": "2026-07-13T23:26:17Z",
+      "roles": [
+        "prompts",
+        "generation"
+      ]
+    },
+    "src/multiagent/orchestrator.py": {
+      "sha256_current": "ec6fae66f4c87763efe5f319bbb09a3b738dcc0e879616ffdad0a4df78ad0af8",
+      "last_modified_utc": "2026-07-13T20:07:45Z",
+      "roles": [
+        "generation",
+        "ranking"
+      ]
+    },
+    "src/multiagent/generator_agent.py": {
+      "sha256_current": "6e5cc8413b122bf6048c65489f242004fca1ee31a84e6c49b084ad6fd6281dd7",
+      "last_modified_utc": "2026-07-13T23:25:59Z",
+      "roles": [
+        "generation"
+      ]
+    },
+    "src/multiagent/literature_agent.py": {
+      "sha256_current": "64aaa6f1ea2d558ac531ea4b4715cbdcaf04e6efe4974bb8cb9f1aa343046e71",
+      "last_modified_utc": "2026-07-13T19:39:29Z",
+      "roles": [
+        "prompts",
+        "generation"
+      ]
+    },
+    "src/multiagent/molecular_agent.py": {
+      "sha256_current": "3aab26aa4fe6e01352f7404df019392d384968c68d3460cc3c97c078569ddbfb",
+      "last_modified_utc": "2026-07-13T19:39:33Z",
+      "roles": [
+        "prompts",
+        "generation"
+      ]
+    },
+    "src/multiagent/signal_agent.py": {
+      "sha256_current": "833d896e464939f4f8072327935b8151c53d9d5e35af48456ee163ebf14f14d7",
+      "last_modified_utc": "2026-07-13T19:39:36Z",
+      "roles": [
+        "prompts",
+        "generation"
+      ]
+    },
+    "src/multiagent/adversarial_agent.py": {
+      "sha256_current": "9bec8d4a6e57462e8862a6449524ef33e0233e6d7f648065f50d2676b3136fb0",
+      "last_modified_utc": "2026-07-13T23:26:35Z",
+      "roles": [
+        "prompts",
+        "ranking-support"
+      ]
+    },
+    "src/multiagent/ranking_agent.py": {
+      "sha256_current": "989ce768d1980c92926fa1a996e594b48966f52f233369401d6ca95ee0cb7c16",
+      "last_modified_utc": "2026-07-13T23:25:41Z",
+      "roles": [
+        "prompts",
+        "ranking"
+      ]
+    },
+    "src/evaluation/judge.py": {
+      "sha256_current": "07a6eed5196f35e9d17794113a2d00a442c807edc4cbf029964b7b9cf4d0057c",
+      "last_modified_utc": "2026-07-13T20:08:30Z",
+      "roles": [
+        "prompts",
+        "evaluation"
+      ]
+    },
+    "src/evaluation/falsification.py": {
+      "sha256_current": "cf31ce1b7929f1b51c83152ca78b6823b86aa618708fe4524f384702d3b9319e",
+      "last_modified_utc": "2026-07-13T20:08:39Z",
+      "roles": [
+        "evaluation"
+      ]
+    },
+    "src/evaluation/metrics.py": {
+      "sha256_current": "5b90eef7bf5943ceae0448ce855261988ec093e4038cd042a0651f36868819a5",
+      "last_modified_utc": "2026-07-13T20:29:09Z",
+      "roles": [
+        "evaluation"
+      ]
+    },
+    "src/evaluation/run_evaluation.py": {
+      "sha256_current": "89d8bda38e8da18edd101aeafe376737d6226bb059cc825e1d8a2761d45cc861",
+      "last_modified_utc": "2026-07-13T20:11:34Z",
+      "roles": [
+        "evaluation"
+      ]
+    },
+    "run_baseline.py": {
+      "sha256_current": "e20b1afc0c05e4a24835ca89065647569df762f5d658db878d541fc4516906e1",
+      "last_modified_utc": "2026-07-13T19:02:43Z",
+      "roles": [
+        "generation"
+      ]
+    },
+    "run_multiagent.py": {
+      "sha256_current": "95a017ab3b990c25dd293bf439a1a00d5164b897c991b4f7a17be8274e3742c8",
+      "last_modified_utc": "2026-07-13T19:40:16Z",
+      "roles": [
+        "generation"
+      ]
+    },
+    "run_evaluation.py": {
+      "sha256_current": "f9315b777a93951a5a93ef295ae874c8ac220bec7279bb5cb4a4277923400175",
+      "last_modified_utc": "2026-07-13T20:11:37Z",
+      "roles": [
+        "evaluation"
+      ]
+    }
+  },
+  "smoke_test": {
+    "purpose": "Confirm the run_config logging change works before relying on it for future real runs, without polluting the research dataset (logs/ and outputs/) with test data.",
+    "executed_at_utc": "2026-07-14T18:30:50Z",
+    "isolation": "RunLogger was invoked with an explicit log_dir pointing to this session's private scratchpad directory, entirely outside the project folder -- not logs/, not outputs/, not any path under C:\\Users\\adelu\\Chol-research.",
+    "run_id": "smoketest_20260714T183050Z",
+    "log_path_used": "<session-scratchpad>/smoke_test_logs/smoketest_20260714T183050Z.jsonl (ephemeral; not part of this project's tracked files)",
+    "result": "PASS",
+    "first_line_content": {
+      "timestamp": "2026-07-14T18:30:50.491991+00:00",
+      "event_type": "run_config",
+      "system": "smoketest",
+      "model_name": "claude-sonnet-5",
+      "temperature": 1.0,
+      "run_size": 50,
+      "candidates_per_generator": 25,
+      "max_agent_turns": 15,
+      "disease_context": "cholangiocarcinoma"
+    },
+    "verification": "Confirmed run_config is the first line, contains all six intended fields, excludes the API key, and that no smoke-test files were created under this project's logs/ or outputs/ directories (checked via directory listing immediately after)."
+  }
+}

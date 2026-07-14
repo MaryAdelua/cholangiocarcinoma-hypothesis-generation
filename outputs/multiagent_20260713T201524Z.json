@@ -1,0 +1,1459 @@
+{
+  "system": "multiagent",
+  "hypotheses": [
+    {
+      "claim": "IDH1 hotspot mutations (e.g., R132) represent an early, clonal driver event in a molecularly-defined intrahepatic cholangiocarcinoma subset, and their detection via low-frequency mutation-specific ctDNA assays (blood or bile) could serve as an early, biology-anchored screening/monitoring marker in at-risk or IDH1-mutant-primed populations, independent of any therapeutic implication.",
+      "supporting_evidence": [
+        "CIVIC:EID10886",
+        "CIVIC:EID6439",
+        "PMID:42146765"
+      ],
+      "conflicting_evidence": [
+        "PMID:39858054",
+        "PMID:41866828",
+        "PMID:41899615",
+        "CIVIC:EID374",
+        "PMID:40157958",
+        "PMID:41652428"
+      ],
+      "confidence": 0.4,
+      "reasoning": "CIViC evidence and review literature confirm IDH1 R132 mutations are a recurrent, well-characterized, actionable alteration specifically enriched in intrahepatic cholangiocarcinoma, making it a plausible clonal marker for mutation-specific liquid biopsy assays. However, existing evidence for IDH1 R132 is predominantly from late-stage/refractory cohorts treated with targeted therapy (ivosidenib), not from early-detection or pre-diagnostic screening cohorts, so its utility as an early-detection biomarker (versus a treatment-selection biomarker) remains unproven and requires dedicated screening-cohort validation.",
+      "system": "multiagent"
+    },
+    {
+      "claim": "Bile-based ctDNA analysis (from ERCP-collected bile) detects tumor-derived mutations (e.g., KRAS, TP53, and other driver alterations) with higher sensitivity and tumor-tissue concordance than plasma ctDNA, making bile a preferred liquid-biopsy substrate for early molecular detection of biliary tract cancer, including in patients with indeterminate strictures.",
+      "supporting_evidence": [
+        "PMID:41178929",
+        "PMID:41883993",
+        "PMID:42145022"
+      ],
+      "conflicting_evidence": [
+        "PMID:41866828",
+        "PMID:41399682",
+        "PMID:41652428",
+        "PMID:40932825",
+        "PMID:41904891",
+        "PMID:39273408"
+      ],
+      "confidence": 0.45,
+      "reasoning": "Multiple recent reviews explicitly state bile ctDNA shows higher concordance with tumor tissue than plasma and may precede radiological recurrence, supporting its use as a proximal, less-diluted analyte source for early molecular detection. However, general liquid-biopsy literature notes persistent sensitivity limits at early (stage I) disease due to low tumor DNA shedding, which likely also affects bile-based assays in truly pre-malignant or microscopic lesions, and prospective screening validation in asymptomatic/high-risk populations is still lacking.",
+      "system": "multiagent"
+    },
+    {
+      "claim": "Targeted NGS gene panels applied to endoscopic transpapillary brushing/biopsy/aspiration specimens (obtained during ERCP or cholangioscopy) improve detection of malignant biliary strictures beyond conventional cytology and FISH, enabling earlier molecular diagnosis in patients with indeterminate strictures who would otherwise be missed by morphology-based methods.",
+      "supporting_evidence": [
+        "PMID:42196882",
+        "PMID:41904891",
+        "PMID:39518600"
+      ],
+      "conflicting_evidence": [
+        "PMID:40689505",
+        "PMID:40932825",
+        "PMID:33948111",
+        "PMID:39273408",
+        "PMID:41905556",
+        "PMID:34285068",
+        "PMID:40029142"
+      ],
+      "confidence": 0.5,
+      "reasoning": "A prospective study directly comparing NGS to cytohistology and FISH on cholangioscopy-derived brushings/biopsies found improved diagnostic performance for cholangiocarcinoma, and a systematic review highlights known FISH performance variability depending on positivity thresholds. However, false-negative FISH (40-50%) and likely comparable sampling-dependent false negatives for NGS in cases with sparse malignant cellularity (as shown by predictors-of-false-negative-FISH study) represent a real limitation of brush/biopsy-based molecular testing regardless of assay type, since inadequate cellularity undermines any DNA-based readout from the same specimen source.",
+      "system": "multiagent"
+    },
+    {
+      "claim": "Cell-free DNA methylation signatures in peripheral blood can distinguish biliary tract cancer patients (including early-stage disease) from non-cancer controls, offering a scalable, minimally invasive blood-based screening test that captures epigenetic dysregulation preceding or accompanying tumorigenesis, potentially complementing mutation-based ctDNA panels which suffer from low variant allele fraction at early stages.",
+      "supporting_evidence": [
+        "CT:NCT07176962",
+        "PMID:41866828",
+        "PMID:42123365"
+      ],
+      "conflicting_evidence": [
+        "PMID:41866828",
+        "PMID:42165910",
+        "CT:NCT06115655",
+        "PMID:41935219",
+        "PMID:41883993",
+        "PMID:41652428"
+      ],
+      "confidence": 0.4,
+      "reasoning": "An active clinical trial is specifically designed to validate a cfDNA methylation blood test for BTC screening, and methylation profiling is cited among emerging liquid-biopsy modalities improving early cancer detection sensitivity. The same review, however, explicitly cautions that sensitivity for stage I disease remains limited across cfDNA-based modalities generally due to low tumor burden and analyte scaling issues, so methylation-based tests likely still need combination with other analytes (e.g., fragmentomics, protein markers) to achieve clinically useful early-stage sensitivity.",
+      "system": "multiagent"
+    },
+    {
+      "claim": "Extracellular vesicle (exosome)-derived microRNAs and proteins in bile or blood, potentially amplified in the context of chronic biliary inflammation from risk factors such as Clonorchis sinensis infection or primary sclerosing cholangitis, could serve as early, non-invasive biomarkers reflecting premalignant epithelial changes before overt tumor formation, though validation remains preliminary.",
+      "supporting_evidence": [
+        "PMID:41939857",
+        "PMID:41919759",
+        "PMID:41515889"
+      ],
+      "conflicting_evidence": [
+        "PMID:41919759",
+        "PMID:41866828",
+        "PMID:41465539",
+        "PMID:41217342",
+        "PMID:40647454",
+        "PMID:41095804",
+        "PMID:41973609"
+      ],
+      "confidence": 0.28,
+      "reasoning": "Reviews describe exosomal miRNAs, methylation changes, and parasite-driven epigenetic dysregulation in Clonorchis sinensis-associated cholangiocarcinoma as candidate early/precancerous biomarkers, providing a plausible mechanistic link between chronic inflammatory injury and detectable molecular signals. However, the Clonorchis-focused review itself explicitly notes that this research remains at an early laboratory stage with small, single-center cohorts lacking large-scale prospective validation, so this hypothesis carries lower confidence and is best framed as exploratory/mechanistic rather than near-term actionable.",
+      "system": "multiagent"
+    }
+  ],
+  "dropped_hypotheses": [],
+  "dropped_citations": [],
+  "retrieved_source_count": 193,
+  "run_id": "multiagent_20260713T201524Z",
+  "retrieved_sources": {
+    "PMCID:PMC13287892": {
+      "id": "PMCID:PMC13287892",
+      "source_type": "pubmed",
+      "title": "27Novel blood metabolomic tests for the diagnosis of Primary Sclerosing Cholangitis and associated Cholangiocarcinoma",
+      "snippet": "27Novel blood metabolomic tests for the diagnosis of Primary Sclerosing Cholangitis and associated Cholangiocarcinoma",
+      "url": "https://europepmc.org/article/PMC/PMC13287892"
+    },
+    "PMCID:PMC13287865": {
+      "id": "PMCID:PMC13287865",
+      "source_type": "pubmed",
+      "title": "1Developing a blood-based test for diagnosis, prognosis, and monitoring of cholangiocarcinoma",
+      "snippet": "1Developing a blood-based test for diagnosis, prognosis, and monitoring of cholangiocarcinoma",
+      "url": "https://europepmc.org/article/PMC/PMC13287865"
+    },
+    "PMID:42326744": {
+      "id": "PMID:42326744",
+      "source_type": "pubmed",
+      "title": "Ectopic β-hCG-Expressing Hepatic Neoplasm with Cutaneous Metastasis in a Young Postpartum Woman: A Case Report and Literature Review.",
+      "snippet": "This case report describes a rare presentation of intrahepatic cholangiocarcinoma (ICC) in a 33-year-old postpartum woman, with extensive systemic and cutaneous metastases as the initial clinical manifestations. She presented with a palpable mass on her back and was subsequently found to have hepatic masses accompanied by elevated serum carbohydrate antigen (CA) 19-9 and β-human chorionic gonadotropin (β-hCG). Subsequent imaging and histopathological evaluation confirmed a poorly differentiated ICC with atypical trabecular, nested, and sheet-like growth patterns, without evidence of trophoblastic differentiation. Immunohistochemical analysis revealed a Cytokeratin (CK) 7-negative/CK19-positive immunophenotype and moderate hCG expression (++). In postpartum patients with unexplained β-hCG e",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42326744/"
+    },
+    "PMID:41963542": {
+      "id": "PMID:41963542",
+      "source_type": "pubmed",
+      "title": "Early MRCP surveillance for recurrent primary sclerosing cholangitis after liver transplantation: a prospective imaging study.",
+      "snippet": "The true incidence and early course of recurrent primary sclerosing cholangitis (rPSC) after liver transplantation (LT) remain uncertain, largely because most studies rely on clinical/biochemical features which trigger imaging. We prospectively evaluated rPSC incidence, risk factors, and outcomes in all adult PSC transplant recipients (January 2017 - September 2024) using a predefined magnetic resonance cholangiopancreatography (MRCP) surveillance protocol at 1 and 3 years. rPSC was diagnosed by Mayo criteria, and advanced rPSC was defined by therapeutic endoscopic intervention, retransplantation, or death. Among 119 recipients, 105 were eligible for follow-up and 102 completed at least the first scheduled MRCP. Recurrent disease occurred in 50 of 102 recipients (49.0%), including 31 (30.4",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41963542/"
+    },
+    "PMCID:PMC13299596": {
+      "id": "PMCID:PMC13299596",
+      "source_type": "pubmed",
+      "title": "Serum β-hCG Combined with Traditional Tumor Markers Improves Detection Efficacy and Prognostic Prediction in Cholangiocarcinoma",
+      "snippet": "Serum β-hCG Combined with Traditional Tumor Markers Improves Detection Efficacy and Prognostic Prediction in Cholangiocarcinoma",
+      "url": "https://europepmc.org/article/PMC/PMC13299596"
+    },
+    "PMID:42185667": {
+      "id": "PMID:42185667",
+      "source_type": "pubmed",
+      "title": "Co-endemicity of Opisthorchis viverrini and Strongyloides stercoralis infections: evidence from stool examination and serology screening in Champasak Province, Southern Lao People's Democratic Republic.",
+      "snippet": "Helminth infections remain a major public health problem in the Lao People's Democratic Republic (Lao PDR), particularly in rural communities where foodborne trematodes and soil-transmitted helminths are co-endemic. Opisthorchis viverrini is a well-established risk factor for cholangiocarcinoma, while Strongyloides stercoralis can cause severe and potentially fatal disease. This study aimed to determine the prevalence and patterns of helminth infections in southern Lao PDR using combined parasitological and serological diagnostic approaches. A community-based cross-sectional study was conducted among 242 adults residing in three rural villages in Champasak Province, southern Lao PDR. Stool samples were examined using the formalin-ethyl acetate concentration technique (FECT), and point-of-c",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42185667/"
+    },
+    "PMID:42322834": {
+      "id": "PMID:42322834",
+      "source_type": "pubmed",
+      "title": "Polymeric Immunoglobulin Receptor-Lateral Flow Immunochromatographic Strip for Cholangiocarcinoma Screening.",
+      "snippet": "<h4>Introduction</h4>Effective screening or diagnostic tests for cholangiocarcinoma (CCA) are currently unavailable. Most patients are either asymptomatic or exhibit only mild symptoms in the early stages, which results in delayed medical attention and diagnosis at advanced stages. This highlights the urgent need for a reliable screening method for CCA.<h4>Methods</h4>This study developed and evaluated a rapid lateral flow immunochromatographic strip (LFICS) for the screening of patients with CCA using plasma samples. The LFICS was designed to target plasma polymeric immunoglobulin receptor (PIGR), a potential biomarker for CCA. For the study, 69 healthy subjects (HS), 80 subjects infected with Opisthorchis viverrini (OV), 95 patients with CCA, and 84 subjects with other cancers were recru",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42322834/"
+    },
+    "PMID:42196646": {
+      "id": "PMID:42196646",
+      "source_type": "pubmed",
+      "title": "Impact of Community-Based Health Education and Sanitation Interventions on &lt;i&gt;Opisthorchis viverrini&lt;/i&gt; Infection in an Endemic Area of Northeastern Thailand.",
+      "snippet": "<i>Opisthorchis viverrini</i> infection remains a significant public health concern in Southeast Asia, particularly in rural communities of Northeast Thailand, where persistent environmental and behavioral factors sustain transmission. A quasi-experimental study aimed to identify environmental and behavioral risk factors for infection and to evaluate the effectiveness of a community-based intervention program. The intervention program study was conducted over 10 months and comprised three phases: baseline survey' health education intervention program implementation' and follow-up evaluation. The results were analyzed for the prevalence of parasitic infections, and multivariable logistic regression was performed to identify associated factors. The majority of study participants were female ",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42196646/"
+    },
+    "PMID:41071656": {
+      "id": "PMID:41071656",
+      "source_type": "pubmed",
+      "title": "Natural history of liver fluke infection underpins epidemiological patterns of biliary cancer.",
+      "snippet": "Pathogens are major drivers of cancer globally and the processes of infection and carcinogenesis unfold over decades making them difficult to observe in human or natural populations. We investigate these hidden dynamics for the foodborne trematode <i>Opisthorchis viverrini</i>, which is a primary cause of biliary cancer (cholangiocarcinoma) and infects 12 million people in Southeast Asia. In tumors from patients exposed to <i>O. viverrini</i>, we find that the earliest chromosomal amplifications carrying driver genes occurred at 30 y old on average, two to four decades before cancer diagnosis, and disproportionately contain <i>TP53</i>, <i>PTEN</i> and <i>FGFR2</i> genes. We then fitted transmission models to parasitological data from Thailand spanning 27 y (<i>n</i> = 11,517) finding that",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41071656/"
+    },
+    "PMID:41723506": {
+      "id": "PMID:41723506",
+      "source_type": "pubmed",
+      "title": "Molecular evidence of a high prevalence of Opisthorchis viverrini infection in an endemic community in Sakon Nakhon Province, northeastern Thailand.",
+      "snippet": "<h4>Background</h4>Opisthorchiasis caused by Opisthorchis viverrini infection is a major public health concern in Thailand. Despite decades of surveillance and control efforts, accurately estimating the true prevalence of O. viverrini remains a challenge. This study aimed to investigate the epidemiology of O. viverrini infection in an endemic community in northeastern Thailand using a combination of microscopic and molecular diagnostic methods.<h4>Methods</h4>A cross-sectional survey was conducted from May to July 2025 in Kusuman District, Sakon Nakhon Province. Demographic and behavioral data were collected using a standardized questionnaire. Stool samples were obtained from participants and examined using simple wet smear and modified Kato-Katz techniques to detect O. viverrini eggs and ",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41723506/"
+    },
+    "PMID:41559763": {
+      "id": "PMID:41559763",
+      "source_type": "pubmed",
+      "title": "Novel Liquid Biopsy in Gastrointestinal Cancers.",
+      "snippet": "Gastrointestinal (GI) cancers represent a significant global health burden, being among the leading causes of cancer-related deaths. The prognosis for patients remains unsatisfactory, largely because most cancers are detected at advanced stages. Traditional diagnostic methods, such as radiological and histopathological examinations and serum tumor markers like AFP, CEA, CA-125, and CA-199, possess limitations in sensitivity and specificity, particularly for early screening. A major drawback of tissue biopsy is its inability to fully capture the inherent heterogeneity within tumors, as mutations can differ between primary and metastatic sites. In this context, liquid biopsy has emerged as a promising, minimally invasive alternative for detecting cancer-associated materials present in variou",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41559763/"
+    },
+    "PMID:41652428": {
+      "id": "PMID:41652428",
+      "source_type": "pubmed",
+      "title": "Circulating tumor DNA-guided early detection and minimal residual disease monitoring in pancreatic and biliary cancers: evidence, barriers, and opportunities.",
+      "snippet": "Pancreatic ductal adenocarcinoma (PDAC) and biliary tract cancers (BTCs) are characterized by dismal prognoses, largely because effective strategies for early detection are lacking and post-surgical relapse is common. Liquid biopsy—particularly circulating tumor DNA (ctDNA) analysis—offers a minimally invasive and highly specific approach to reshape the clinical management of these malignancies. In this review, we synthesize recent advances in ctDNA applications across two ctDNA-guided scenarios: early diagnosis/screening and postoperative minimal residual disease (MRD) monitoring. We trace the evolution of ctDNA detection technologies from digital PCR (ddPCR) to next-generation sequencing (NGS)–based tumor-informed and tumor-agnostic assays, and summarize key prospective and retrospective",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41652428/"
+    },
+    "PMID:41883993": {
+      "id": "PMID:41883993",
+      "source_type": "pubmed",
+      "title": "Circulating Tumor DNA in Cholangiocarcinoma: A Precision Oncology Roadmap.",
+      "snippet": "Cholangiocarcinoma (CCA) is a rare but aggressive malignancy with a rising global incidence and few therapeutic options for advanced disease. In recent decades, precision oncology for CCA has advanced rapidly, particularly through the development of targeted therapies for patients with actionable genetic alterations. These therapies have markedly prolonged survival and improved other clinical outcomes among patients with unresectable, advanced CCA. The implementation of precision oncology largely depends on detecting genetic mutations to guide patient selection and treatment, using tumor tissue biopsies or liquid biopsies, including circulating tumor DNA (ctDNA) from blood or bile. As a minimally invasive biomarker, ctDNA shows great promise for transforming the clinical management of CCA.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41883993/"
+    },
+    "PMID:41919759": {
+      "id": "PMID:41919759",
+      "source_type": "pubmed",
+      "title": "Clonorchis sinensis and cholangiocarcinoma: molecular mechanisms and biomarker advances.",
+      "snippet": "Clonorchis sinensis, a common food-borne liver fluke in East Asia, is a Group 1 carcinogen strongly linked to cholangiocarcinoma. In recent years, molecular biology and multi-omics studies have revealed that this parasite drives chronic inflammation of the bile duct epithelium, epigenetic abnormalities, and the formation of precancerous lesions. Concurrently, circulating miRNAs, DNA methylation patterns, differential protein expression, metabolite profiles, and parasite-specific antigens have been proposed as potential early molecular biomarkers, which offers new avenues for the non-invasive detection of precancerous conditions. However, current research mainly remains at the laboratory stage and studies have small-scale cohorts, lacking multi-center, large-sample prospective validation an",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41919759/"
+    },
+    "PMID:41866828": {
+      "id": "PMID:41866828",
+      "source_type": "pubmed",
+      "title": "Liquid biopsy biomarkers for early detection of gastrointestinal cancers: Current landscape and emerging technologies.",
+      "snippet": "Early detection of gastrointestinal (GI) cancers remains a critical unmet clinical need, as most patients are diagnosed at advanced stages when prognosis is poor. Liquid biopsy has emerged as a transformative approach for minimally invasive cancer detection by analysing tumour-derived analytes in blood and other body fluids. Recent advances in circulating tumour DNA (ctDNA) sequencing, cell-free DNA methylation profiling, fragmentomics, extracellular vesicle and exosome characterisation, circulating tumour cell isolation and tumour-educated platelets have markedly improved sensitivity and specificity for detecting incipient malignancies. Despite these advances, sensitivity in stage I disease remains limited due to low tumour burden and minimal analyte scaling, resulting in false-negative r",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41866828/"
+    },
+    "PMID:42122131": {
+      "id": "PMID:42122131",
+      "source_type": "pubmed",
+      "title": "Integrating Advanced Endoscopic Techniques and Confocal Microscopy for Early Detection of Extrahepatic Cholangiocarcinoma.",
+      "snippet": "Extrahepatic cholangiocarcinoma (eCCA) is a highly aggressive malignancy arising from the biliary epithelium, with surgical resection representing the only potentially curative treatment. The predominant periductal infiltrating growth pattern, characterized by subepithelial tumor spread and desmoplastic stromal reaction, severely limits the diagnostic sensitivity of conventional endoscopic sampling techniques, which primarily assess the luminal mucosal surface. This review provides a histomorphology-oriented diagnostic framework for indeterminate extrahepatic biliary strictures, integrating advanced endoscopic technologies with emerging optical diagnostic approaches. ERCP combined with cholangioscopy demonstrates superior sensitivity for perihilar strictures, while EUS-guided tissue acquis",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42122131/"
+    },
+    "PMID:41378323": {
+      "id": "PMID:41378323",
+      "source_type": "pubmed",
+      "title": "Two scopes, one mission: An integrated approach of endoscopic retrograde cholangiopancreatography and endoscopic ultrasound to biliary strictures.",
+      "snippet": "The management of biliary strictures is challenging both diagnostically and therapeutically, requiring a combination of advanced endoscopic techniques. Endoscopic retrograde cholangiopancreatography (ERCP) remains the gold standard for therapeutic interventions, including biliary drainage, stent placement, and tissue sampling <i>via</i> brush cytology or forceps biopsy. However, ERCP may not be suitable for obtaining deep tissue samples and can lead to complications such as post-ERCP pancreatitis. Endoscopic ultrasound (EUS) has emerged as a complementary modality, offering high-resolution imaging of the biliary tree and adjacent structures. EUS-guided fine-needle aspiration (EUS-FNA) and EUS-guided fine-needle biopsy (EUS-FNB) improve diagnostic accuracy, especially where ERCP-based sampl",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41378323/"
+    },
+    "PMID:40943794": {
+      "id": "PMID:40943794",
+      "source_type": "pubmed",
+      "title": "Advances in Endoscopic Diagnosis and Management of Cholangiocarcinoma.",
+      "snippet": "Cholangiocarcinoma (CCA) is an aggressive malignancy originating from the epithelial lining of the intrahepatic or extrahepatic bile ducts. Although rare globally, its mortality closely mirrors incidence due to late-stage presentation of the disease and limited curative options. While surgical resection and liver transplantation remain the cornerstone treatments for those with resectable disease, endoscopic techniques have emerged as versatile tools for diagnosis, therapy, and palliation. In recent years, there have been major advancements in endoscopic therapies, including radiofrequency ablation (RFA), intraluminal brachytherapy (ILBT), and photodynamic therapy (PDT). The current narrative review serves to provide an overview of current and emerging endoscopic strategies for CCA, emphasi",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40943794/"
+    },
+    "PMID:39128126": {
+      "id": "PMID:39128126",
+      "source_type": "pubmed",
+      "title": "Benign Biliary Strictures: A Comprehensive Review.",
+      "snippet": "Benign biliary strictures (BBS) ensue from inflammatory conditions (e.g., chronic pancreatitis) or post surgery (e.g., cholecystectomy and liver transplant). High-quality cross-sectional imaging studies such as computed tomography or magnetic resonance cholangiopancre atography are essential in the diagnosis and planning of therapeutic interventions and in ruling out malignancy. Endoscopic retrograde cholangiopancreatography with dilation and stenting is the mainstay treatment for BBS, while surgery is reserved for failed endoscopy or refractory cases.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/39128126/"
+    },
+    "PMID:39273408": {
+      "id": "PMID:39273408",
+      "source_type": "pubmed",
+      "title": "Implementing Massive Parallel Sequencing into Biliary Samples Obtained through Endoscopic Retrograde Cholangiopancreatography for Diagnosing Malignant Bile Duct Strictures.",
+      "snippet": "Despite advancements in radiologic, laboratory, and pathological evaluations, differentiating between benign and malignant bile duct strictures remains a diagnostic challenge. Recent developments in massive parallel sequencing (MPS) have introduced new opportunities for early cancer detection and management, but these techniques have not yet been rigorously applied to biliary samples. We prospectively evaluated the Oncomine Comprehensive Assay (OCA) and the Oncomine Pan-Cancer Cell-Free Assay (OPCCFA) using biliary brush cytology and bile fluid obtained via endoscopic retrograde cholangiopancreatography from patients with bile duct strictures. The diagnostic performance of MPS testing was assessed and compared to the pathological findings of biliary brush cytology and primary tissue. Mutat",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/39273408/"
+    },
+    "PMID:41964937": {
+      "id": "PMID:41964937",
+      "source_type": "pubmed",
+      "title": "Annual magnetic resonance cholangiopancreatography surveillance outcomes in individuals with primary sclerosing cholangitis.",
+      "snippet": "<h4>Background</h4>Annual surveillance for cholangiocarcinoma using magnetic resonance cholangiopancreatography (MRCP) has been recommended in primary sclerosing cholangitis (PSC) to improve the associated dismal outcomes. However, data are limited.<h4>Aims</h4>To compare the outcomes of surveillance versus non-surveillance in patients with PSC.<h4>Methods</h4>A retrospective cohort of patients with PSC at a liver transplant hospital with hepatologist-directed MRCP surveillance were identified. The surveillance group underwent a MRCP every 12 ± 3 months for at least 70% of the follow-up period. Patients were followed from their first MRCP to cholangiocarcinoma diagnosis, liver transplantation, death or the 30 April 2023.<h4>Results</h4>The surveillance group with 108 patients (68%) and non",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41964937/"
+    },
+    "PMID:41682828": {
+      "id": "PMID:41682828",
+      "source_type": "pubmed",
+      "title": "Primary Sclerosing Cholangitis: Diagnosis, Management, and Clinical Challenges.",
+      "snippet": "Primary sclerosing cholangitis is a rare, chronic, inflammatory disease of the biliary tree that leads to progressive ductal obliteration, hepatic dysfunction, and ultimately liver cirrhosis. Most patients eventually require liver transplantation or develop serious complications, the most severe being end-stage liver disease and cholangiocarcinoma. The global prevalence of PSC is rising and has been reported to reach up to 31.7 cases per 100,000 individuals, representing a significant challenge in both diagnosis and management. In this review, we aim to provide a clinically oriented overview of the diagnosis and management of PSC. Furthermore, we seek to highlight key challenges and areas of uncertainty that clinicians encounter in the diagnosis and treatment of patients with this complex ",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41682828/"
+    },
+    "PMID:41824042": {
+      "id": "PMID:41824042",
+      "source_type": "pubmed",
+      "title": "Prevalence, interreader agreement, and prognostic value of high-grade and relevant strictures in individuals with primary sclerosing cholangitis.",
+      "snippet": "<h4>Objectives</h4>High-grade and relevant strictures have recently been introduced in clinical guidelines for primary sclerosing cholangitis (PSC). However, the definition of relevant strictures differs between the two liver associations (AASLD, EASL). We aim to assess the prevalence, the agreement of identification of extrahepatic, high-grade, and relevant strictures, and their association with outcomes in PSC.<h4>Materials and methods</h4>In this retrospective single-center study, three radiologists, independently and in consensus, assessed MRCPs of 170 PSC individuals for the presence of extrahepatic and high-grade strictures. Interreader agreement was calculated with Fleiss kappa. Association of extrahepatic, high-grade, and relevant strictures with outcomes (hepatobiliary malignancy,",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41824042/"
+    },
+    "PMID:41888235": {
+      "id": "PMID:41888235",
+      "source_type": "pubmed",
+      "title": "Clinical outcomes in Caroli disease and Caroli syndrome: a longitudinal observational cohort study.",
+      "snippet": "Caroli's disease (CD) and Caroli's syndrome (CS) are rare congenital fibropolycystic liver disorders. While CS is known to be associated with more severe hepatic complications than isolated CD, direct longitudinal comparisons between the two entities remain limited due to their rarity. This single-center, retrospective, longitudinal observational cohort study descriptively compared clinical features, complications, and long-term outcomes in 19 patients diagnosed with CD (n = 7) or CS (n = 12) between November 2015 and December 2022. Diagnoses were confirmed by magnetic resonance cholangiopancreatography. Patients underwent standardized clinical, laboratory, endoscopic, and imaging assessments during follow-up. Outcomes included recurrent cholangitis, portal hypertension-related complicatio",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41888235/"
+    },
+    "PMID:41463153": {
+      "id": "PMID:41463153",
+      "source_type": "pubmed",
+      "title": "CA19-9 as a Dynamic Biomarker for Continuous Monitoring of Therapeutic Efficacy in Pancreatic Adenocarcinoma.",
+      "snippet": "Pancreatic ductal adenocarcinoma (PDAC) remains one of the most lethal malignancies, largely due to late-stage diagnosis and limited therapeutic efficacy. The carbohydrate antigen 19-9 (CA19-9) is the most widely used serum biomarker in the management of PDAC. While CA19-9 has significant limitations as a screening or diagnostic tool, including low sensitivity for early-stage disease and a lack of expression in the Lewis antigen-negative population, its value in the post-diagnostic setting is well established. This review examines the production and clearance dynamics of CA19-9. It critically evaluates how these factors impact its role as a biomarker for prognosis, assessment of resectability, and real-time monitoring of therapeutic response and recurrence in patients with PDAC. We explore",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41463153/"
+    },
+    "PMID:41948245": {
+      "id": "PMID:41948245",
+      "source_type": "pubmed",
+      "title": "Diagnostic and Prognostic Value of CA19-9 in Pancreatic Tumors: A Retrospective Study.",
+      "snippet": "<h4>Background</h4>Carbohydrate antigen 19-9 (CA19-9) is a widely used biomarker for pancreatic cancer, but the interpretation of its level is confounded by false positives in patients with cholestasis and false negatives in Lewis antigen-negative patients. The aim of the study was to investigate the diagnostic accuracy of CA19-9 in differentiating malignant from benign pancreatic lesions and its prognostic significance following tumor resection.<h4>Methods</h4>We retrospectively reviewed the data of 81 consecutive pancreatic resections performed at Al-Latron Military Hospital, a tertiary center in Amman, Jordan, from January 2016 through June 2024. Preoperative CA19-9 levels, clinical variables, and pathology findings were collected. Diagnostic discriminability was assessed via receiver o",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41948245/"
+    },
+    "PMID:41767619": {
+      "id": "PMID:41767619",
+      "source_type": "pubmed",
+      "title": "Clinical Utility of the Apolipoprotein A2 Isoform Index as a Tumor Marker for Pancreatic Cancer.",
+      "snippet": "<h4>Background and aims</h4>We investigated the clinical utility of the apolipoprotein A2 isoform index (apoA2-i index), a novel tumor marker for pancreatic cancer, in clinical practice, particularly for CA19-9-negative pancreatic cancer.<h4>Methods</h4>Between May 2024 and July 2025, patients who underwent abdominal computed tomography (CT) for the differential diagnosis of pancreatic diseases had their CEA, CA19-9, and apoA2-i indexes measured. We evaluated the sensitivity and specificity for pancreatic cancer and analyzed the relationship between the apoA2-i index and pancreatic atrophy or main pancreatic duct dilatation on CT.<h4>Results</h4>A total of 115 patients were included: 38 with pancreatic cancer, 47 with intraductal papillary mucinous neoplasms (IPMNs), and 30 with other cond",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41767619/"
+    },
+    "PMID:41217342": {
+      "id": "PMID:41217342",
+      "source_type": "pubmed",
+      "title": "Multimarker Model Enhances Diagnostic Accuracy in Biliary Stricture Determination: Meta-Analysis Validation.",
+      "snippet": "<h4>Introduction</h4>Biliary strictures present diagnostic challenges, necessitating early differentiation between benign and malignant cases. This study evaluates the diagnostic value of biliary and serum carcinoembryonic antigen (SCEA, BCEA) and carbohydrate antigen 19-9 (BCA19-9, SCA19-9) to enhance diagnostic accuracy.<h4>Methods</h4>A single-center retrospective cohort study enrolled 268 endoscopic retrograde cholangiopancreatography-treated patients, divided into training (n = 160) and validation (n = 108) sets. Levels of SCEA/SCA19-9 and BCEA/BCA19-9 were measured, and a combined diagnostic model was developed using receiver operating characteristic analysis and logistic regression. A meta-analysis of 7 studies assessed pooled odds ratios and heterogeneity in marker detection.<h4>Re",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41217342/"
+    },
+    "PMID:41901688": {
+      "id": "PMID:41901688",
+      "source_type": "pubmed",
+      "title": "Discovery of a Secretory Granule Lumen-Enriched Serum Protein Signature in Resectable Pancreatic Ductal Adenocarcinoma.",
+      "snippet": "<i>Background and Objectives</i>: Serum biomarker discovery in resectable pancreatic ductal adenocarcinoma (PDAC) remains a critical unmet need, as over 80% of patients present with unresectable disease. Serum proteomics offers a promising approach for identifying circulating biomarkers associated with early-stage disease; however, clinical translation has been limited by inconsistent validation and the absence of clinically relevant comparator populations. <i>Materials and Methods</i>: We performed a discovery-phase study using data-independent acquisition mass spectrometry-based serum proteomics in 35 patients with resectable, non-metastatic PDAC and 34 non-cancer controls without hepato-biliary-pancreatic disease. Following quality filtering (≥80% detection threshold), 407 proteins were",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41901688/"
+    },
+    "PMID:41781899": {
+      "id": "PMID:41781899",
+      "source_type": "pubmed",
+      "title": "Epidemiologic transition of biliary tract cancers in an endemic region of Korea: insights from a regional cancer center cohort.",
+      "snippet": "<h4>Background</h4>Biliary tract cancers (BTCs) in East Asia have traditionally been linked to inflammation-related etiologies. However, metabolic risk factors are increasingly contributing to BTC development. Temporal trends in BTC epidemiology remain underexplored in the Korean population. This study aimed to review 13-year trends in BTCs, focusing on metabolic and inflammatory comorbidities, in a southeastern Korean cancer center historically characterized by a high incidence of inflammation-related BTCs.<h4>Methods</h4>This retrospective observational study analyzed 2,001 patients diagnosed with BTC at a southeastern Korean cancer center between 2009 and 2021. Data on general demographics (age, sex, smoking, alcohol), metabolic factors (hypertension, body mass index (BMI) ≥ 25 kg/m<sup",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41781899/"
+    },
+    "PMID:42192874": {
+      "id": "PMID:42192874",
+      "source_type": "pubmed",
+      "title": "Persistently Elevated Gamma-Glutamyl Transferase and Hepatobiliary Malignancies: A Real-World Cohort Study.",
+      "snippet": "<h4>Background</h4>Gamma-glutamyl transferase (GGT) has been associated with increased risks of multiple cancers and mortality. Because GGT is also a marker of hepatobiliary injury, metabolic dysfunction, and alcohol exposure, this study evaluated associations between persistently elevated GGT and hepatobiliary and pancreatic outcomes.<h4>Materials and methods</h4>This retrospective cohort study used TriNetX data from the US Collaborative Network to compare adults aged 40 years or older with persistently elevated GGT against those with normal GGT using a 65 U/L threshold on two occasions 6-12 months apart. Outcomes were assessed from 180 to 1095 days after the index event. Following 1:1 propensity score matching, 14,590 patients per cohort were analyzed. Cox proportional hazards analysis e",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42192874/"
+    },
+    "PMID:42184304": {
+      "id": "PMID:42184304",
+      "source_type": "pubmed",
+      "title": "Metformin use and the risk of liver cancer in a Swedish population-based cohort study.",
+      "snippet": "<h4>Background</h4>It is uncertain whether medication with metformin decreases the risk of liver cancer. This study aimed to test the hypotheses that use of metformin decreases the risk of developing both main subtypes of liver cancer, that is, hepatocellular carcinoma and intrahepatic cholangiocarcinoma.<h4>Methods</h4>This nationwide population-based cohort study included all individuals who had dispensed anti-diabetic medications between 2005 and 2018 in Sweden, except for those with a history of viral hepatitis. We assessed the associations between metformin use and the risk of hepatocellular carcinoma and intrahepatic cholangiocarcinoma by using Cox regression, adjusted for age, sex, calendar year, smoking-related diagnoses, alcohol-related diagnoses, non-alcoholic fatty liver disease",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42184304/"
+    },
+    "PMID:42268607": {
+      "id": "PMID:42268607",
+      "source_type": "pubmed",
+      "title": "Artificially Sweetened and Sugar-Sweetened Beverage Intake and Risk of Liver Cancer.",
+      "snippet": "<h4>Importance</h4>Artificially sweetened beverages (ASBs) and sugar-sweetened beverages (SSBs) are widely consumed worldwide and have been linked to metabolic disorders, including obesity and type 2 diabetes, which are established risk factors associated with liver cancer. However, prospective evidence examining beverage consumption and liver cancer subtypes remains limited and inconsistent.<h4>Objective</h4>To examine associations between ASB and SSB consumption and risk of incident liver cancer overall and by subtype, including hepatocellular carcinoma (HCC) and intrahepatic cholangiocarcinoma (ICC).<h4>Design, setting, and participants</h4>In this pooled analysis of 11 prospective cohort studies (10 US cohorts and 1 European cohort, comprising adults without a history of cancer at base",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42268607/"
+    },
+    "PMID:42328122": {
+      "id": "PMID:42328122",
+      "source_type": "pubmed",
+      "title": "Prognostic Role of Gut Microbiota and Clinical Parameters in Predicting Survival in Advanced Cholangiocarcinoma Patients Receiving Chemotherapy.",
+      "snippet": "<h4>Introduction</h4>Cholangiocarcinoma (CCA) is high prevalent in Asia. Emerging evidence indicates gut and tissue microbiota are involved in CCA carcinogenesis and progression. This study investigated the potential role of gut and tissue microbiota as prognostic biomarkers associated with treatment outcomes in advanced intrahepatic CCA (ICCA) patients.<h4>Methods</h4>This prospective study comprised two cohorts: hepatocellular carcinoma (HCC) or ICCA patients undergoing surgery or biopsy, and unresectable ICCA patients treated with cisplatin and gemcitabine. Gut bacterial profiles were characterized from pre-treatment fecal samples using 16S rRNA and analyzed with clinical outcomes. Tissue bacterial profiles were determined by real-time qPCR.<h4>Results</h4>In 30 ICCA patients receiving ",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42328122/"
+    },
+    "PMID:41939857": {
+      "id": "PMID:41939857",
+      "source_type": "pubmed",
+      "title": "Exosomes and cholangiocarcinoma: mechanisms, diagnostic, and therapeutic perspectives.",
+      "snippet": "Cholangiocarcinoma (CCA) is a highly malignant solid tumor originating from the biliary tract epithelium. Due to its aggressive behavior and late clinical presentation, it poses significant diagnostic and therapeutic challenges. Therefore, finding specific biomarkers and early screening of CCA susceptible people are the current top priorities. Exosomes, a subtype of extracellular vesicles, are secreted by many cells and widely distributed in body fluids. In recent years, exosomes are known to play pivotal roles in cell communication, tumorigenesis, metastasis, and immune modulation. This review summarizes recent advances in our understanding of the relationship between exosomes and cholangiocarcinoma, with a focus on their biological functions, diagnostic implications, and therapeutic pote",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41939857/"
+    },
+    "PMID:41515889": {
+      "id": "PMID:41515889",
+      "source_type": "pubmed",
+      "title": "Extracellular Vesicle-Derived microRNAs: Novel Non-Invasive Biomarkers for Gastrointestinal Malignancies.",
+      "snippet": "Gastrointestinal (GI) cancers represent a heterogeneous group of malignant neoplasms arising from the digestive tract, including gastric, colorectal, hepatic, pancreatic, and biliary cancers. These tumors represent a major public health challenge due to their aggressive nature and poor prognosis. Although significant progress has been made in diagnostic imaging, endoscopy, and multimodal therapies, early detection remains difficult. Conventional serum biomarkers often lack sufficient sensitivity and specificity for reliable diagnosis, prompting a growing interest in identifying novel, minimally invasive biomarkers. In this context, liquid biopsy is emerging as a revolutionary tool in oncology. Among its components, extracellular vesicles (EVs) have gained increasing attention because they ",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41515889/"
+    },
+    "PMID:41683945": {
+      "id": "PMID:41683945",
+      "source_type": "pubmed",
+      "title": "Exploring the Role of Extracellular Vesicles in Pancreatic and Hepatobiliary Cancers: Advances Through Artificial Intelligence.",
+      "snippet": "Gastrointestinal (GI) cancers constitute an umbrella term for a wide variety of malignancies that are located in the digestive tract (esophageal, gastric, small and large intestine, anus, liver, gallbladder, and pancreas), with 25% of total cancers and 35% of cancer-related deaths being attributed to them. An alarming trend of rising GI malignancy diagnoses, especially in younger age groups, underscores the need for discoveries in liquid-based biomarkers that facilitate both early detection and optimal disease management. Extracellular vesicles (EVs) not only constitute promising nano-sized biomarkers, but also, via bioengineering, have shown a great therapeutic potential, with artificial intelligence (AI) revolutionizing their research via the selection of the best biomarkers from omics, ",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41683945/"
+    },
+    "OT:MONDO_0019087": {
+      "id": "OT:MONDO_0019087",
+      "source_type": "open_targets",
+      "title": "cholangiocarcinoma (disease)",
+      "snippet": "A carcinoma that arises from the intrahepatic biliary tree (intrahepatic cholangiocarcinoma) or from the junction, or adjacent to the junction, of the right and left hepatic ducts (hilar cholangiocarcinoma). Grossly, the malignant lesions are solid, nodular, and grayish. Morphologically, the vast majority of cases are adenocarcinomas. Signs and symptoms include malaise, weight loss, right upper quadrant abdominal pain, and night sweats. Early detection is difficult and the prognosis is generally poor.",
+      "url": "https://platform.opentargets.org/disease/MONDO_0019087"
+    },
+    "OT:MONDO_0044791": {
+      "id": "OT:MONDO_0044791",
+      "source_type": "open_targets",
+      "title": "combined hepatocellular carcinoma and cholangiocarcinoma (disease)",
+      "snippet": "A rare tumor containing unequivocal elements of both hepatocellular and cholangiocarcinoma that are intimately admixed. This tumor should be distinguished from separate hepatocellular carcinoma and cholangiocarcinoma arising in the same liver. The prognosis of this tumor is poor.",
+      "url": "https://platform.opentargets.org/disease/MONDO_0044791"
+    },
+    "OT:MONDO_0003345": {
+      "id": "OT:MONDO_0003345",
+      "source_type": "open_targets",
+      "title": "hilar cholangiocarcinoma (disease)",
+      "snippet": "A cholangiocarcinoma that arises from the junction, or adjacent to the junction, of the right and left hepatic ducts.",
+      "url": "https://platform.opentargets.org/disease/MONDO_0003345"
+    },
+    "OT:MONDO_0003210": {
+      "id": "OT:MONDO_0003210",
+      "source_type": "open_targets",
+      "title": "intrahepatic cholangiocarcinoma (disease)",
+      "snippet": "A carcinoma that arises from the intrahepatic bile duct epithelium in any site of the intrahepatic biliary tree. Grossly, the malignant lesions are solid, nodular, and grayish. Morphologically, the vast majority of cases are adenocarcinomas. Signs and symptoms include malaise, weight loss, right upper quadrant abdominal pain, and night sweats. Early detection is difficult and the prognosis is generally poor.",
+      "url": "https://platform.opentargets.org/disease/MONDO_0003210"
+    },
+    "OT:ENSG00000224017": {
+      "id": "OT:ENSG00000224017",
+      "source_type": "open_targets",
+      "title": "LINC01449 (target)",
+      "snippet": "long independently transcribed non-coding RNA 1449",
+      "url": "https://platform.opentargets.org/target/ENSG00000224017"
+    },
+    "CIVIC:EID10886": {
+      "id": "CIVIC:EID10886",
+      "source_type": "civic",
+      "title": "IDH1 R132 — Cholangiocarcinoma (PREDICTIVE, level A, SUPPORTS SENSITIVITYRESPONSE)",
+      "snippet": "The multicenter randomized double-blind phase 3 study included patients with IDH1-mutant cholangiocarcinoma who had progressed on previous therapy. Patients were randomly assigned to Ivosidenib or placebo. Placebo to Ivosidenib crossover was permitted on radiological progression. The primary endpoint was progression-free survival by independent central review. Progression-free survival was significantly improved with Ivosidenib compared with the placebo (median 2.7, vs 1.4 months; hazard ratio 0.37; 95% CI 0.25-0.54; one-side p<0.0001). Median overall survival was 10.8 months for the Ivosidenib group versus 9.7 months for the placebo group (HR 0.69 [95% CI 0.44-1.10]; p=0.060) in which 35 patients were crossover from the placebo group. In a prespecified exploratory analysis, the rank-prese",
+      "url": "https://civicdb.org/evidence/10886/summary"
+    },
+    "CIVIC:EID6439": {
+      "id": "CIVIC:EID6439",
+      "source_type": "civic",
+      "title": "IDH1 R132 — Intrahepatic Cholangiocarcinoma (PREDICTIVE, level D, SUPPORTS SENSITIVITYRESPONSE)",
+      "snippet": "Through a high-throughput drug screen of a large panel of cancer cell lines, including 17 biliary tract cancers, this work found that IDH mutant (IDHm) ICC cells demonstrate a striking response to the multikinase inhibitor dasatinib,  identifying SRC as a critical dasatinib target in IDHm ICC. Dasatinib-treated IDHm xenografts exhibited pronounced apoptosis and tumor regression.",
+      "url": "https://civicdb.org/evidence/6439/summary"
+    },
+    "PMID:42145022": {
+      "id": "PMID:42145022",
+      "source_type": "pubmed",
+      "title": "Advances and applications of liquid biopsy approaches in hepatopancreatobiliary (HPB) cancers: a literature review.",
+      "snippet": "<h4>Background and objective</h4>Hepatopancreatobiliary (HPB) cancers, including pancreatic ductal adenocarcinoma (PDAC), hepatocellular carcinoma (HCC), and cholangiocarcinoma (CCA), are among the deadliest malignancies due to late-stage diagnosis and limited curative options. Conventional tissue biopsies are often invasive and insufficient for longitudinal monitoring. This review synthesizes the current available literature on liquid biopsy, a minimally invasive approach that uses analysis of circulating tumor DNA (ctDNA) and cell-free DNA (cfDNA) in serum, plasma, or bile, to enable better early detection, surveillance, and treatment monitoring of HPB cancers.<h4>Methods</h4>A search of PubMed, Cumulative Index to Nursing and Allied Health Literature (CINAHL), Scopus, and Google Scholar",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42145022/"
+    },
+    "PMID:41549295": {
+      "id": "PMID:41549295",
+      "source_type": "pubmed",
+      "title": "Recent advances in molecular classification and multimodal treatment of intrahepatic cholangiocarcinoma.",
+      "snippet": "Intrahepatic cholangiocarcinoma (ICC) is the second most common primary liver malignancy and is characterized by aggressive biological behavior and poor prognosis. Surgical resection remains the only potentially curative treatment; however, most patients are ineligible for surgery at diagnosis, and recurrence rates remain high even after curative resection.In recent years, locoregional therapies including transarterial chemoembolization, hepatic arterial infusion chemotherapy, and radiotherapy have achieved promising clinical outcomes and are increasingly incorporated into multimodal treatment strategies alongside surgery and systemic therapy. Liver transplantation has also shown potential benefits in carefully selected early-stage cases. Meanwhile, advances in targeted therapy and immunot",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41549295/"
+    },
+    "PMID:42146765": {
+      "id": "PMID:42146765",
+      "source_type": "pubmed",
+      "title": "Research on Targeted Therapy for Malignant Tumors of the Biliary Tract.",
+      "snippet": "Biliary tract cancers (BTCs) are aggressive malignancies with rising incidence and dismal outcomes. This review synthesizes transformative advances in precision oncology and immunotherapy reshaping BTC management. Genomic profiling reveals targetable alterations-IDH1/2 mutations, FGFR2 fusions, HER2 aberrations, BRAF V600E-driving the clinical success of specific inhibitors (ivosidenib, FGFR inhibitors, HER2-targeted ADCs/antibodies, dabrafenib/trametinib). These agents demonstrate unprecedented response rates and survival benefits in molecularly defined subsets compared to chemotherapy. Emerging immunotherapies, including checkpoint blockade (especially for MSI-H/dMMR tumors), adoptive cell therapy, and cancer vaccines, show promise, often synergizing with targeted approaches. However, ov",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42146765/"
+    },
+    "PMID:42123365": {
+      "id": "PMID:42123365",
+      "source_type": "pubmed",
+      "title": "Advances in In Vitro Diagnostics for Cholangiocarcinoma: From Biomarker Discovery to Artificial Intelligence.",
+      "snippet": "Cholangiocarcinoma (CCA) is a highly aggressive malignancy that is difficult to diagnose early and carries a poor prognosis. Conventional serological diagnostics are limited by inadequate sensitivity and the risks of invasive procedures, resulting in most patients being diagnosed at an advanced stage. In recent years, liquid biopsy has emerged as a novel approach for non-invasive and dynamic molecular tumor monitoring by detecting biomarkers such as circulating tumor cells (CTCs), extracellular vesicles (EVs), circulating tumor DNA (ctDNA) and clusterin (CLU). Furthermore, artificial intelligence (AI) has demonstrated strong potential in aiding diagnosis through medical image analysis, pathological pattern recognition, and multi-omics data integration, significantly improving the precision",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42123365/"
+    },
+    "PMID:42196882": {
+      "id": "PMID:42196882",
+      "source_type": "pubmed",
+      "title": "Comprehensive Gene Panel Analysis of Biliary Tract Cancer Using Next-Generation Sequencing of Endoscopic Transpapillary Brushing/Biopsy/Aspiration Specimens: A Narrative Review.",
+      "snippet": "The undesired prognosis of biliary tract cancer is mainly attributed to the difficulty in detecting cancer lesions, including intraepithelial neoplasia, and other hurdles in procuring sufficient pathological samples by forceps biopsy and brushing, or even their combination. However, the transpapillary approach under endoscopic retrograde cholangiopancreatography (ERCP) is the mainstream approach for the work-up and treatment of biliary tract diseases, especially biliary tract cancers, because the ERCP-guided approach efficiently enables simultaneous biliary drainage for the treatment of cholangitis/jaundice and specimen acquisition for the diagnosis of biliary tract lesions. To improve diagnostic accuracy, several studies have been conducted on the feasibility and efficacy of genomic analy",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42196882/"
+    },
+    "PMID:41487574": {
+      "id": "PMID:41487574",
+      "source_type": "pubmed",
+      "title": "Liquid biopsy in biliary tract cancers: early diagnosis, precision therapy, and prognostic evaluation.",
+      "snippet": "Biliary tract cancers represent a heterogeneous group of malignancies, including gallbladder cancer, intrahepatic cholangiocarcinoma, perihilar cholangiocarcinoma, and distal cholangiocarcinoma. These cancers share several common characteristics, such as challenges in early diagnosis, aggressive biological behavior, limited treatment options, and a propensity for drug resistance, all of which contribute to a notably poor prognosis for patients. Therefore, discovering new tumor biomarkers is urgently needed for early diagnosis, personalized treatment, and the prediction and monitoring of treatment effectiveness. Given that biopsy procedures are invasive and that repeated biopsies can diminish patient compliance, the ongoing advancement of liquid biopsy technology-characterized by its non-in",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41487574/"
+    },
+    "PMID:42196390": {
+      "id": "PMID:42196390",
+      "source_type": "pubmed",
+      "title": "Recent Advances in Pancreatic Cancer and Biliary Tract Cancers: Biology, Biomarkers, and Evolving Systemic Therapy.",
+      "snippet": "Pancreatic ductal adenocarcinoma (PDAC) and biliary tract cancers (BTCs) remain highly lethal gastrointestinal malignancies because of late presentation, marked molecular heterogeneity, and limited durable benefit from conventional systemic therapy. This narrative review summarizes recent advances in both diseases, focusing on practice-informing clinical trials, biomarker-driven treatment strategies, and translational insights into tumor biology and resistance. In PDAC, progress includes refinement of perioperative management, broader germline and somatic testing, recognition of DNA damage repair-deficient subsets, and development of KRAS-directed therapies and rational combination strategies. In BTCs, especially intrahepatic cholangiocarcinoma, comprehensive molecular profiling has expand",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42196390/"
+    },
+    "PMID:41178929": {
+      "id": "PMID:41178929",
+      "source_type": "pubmed",
+      "title": "Circulating tumor DNA in biliary tract cancers: A review of current applications.",
+      "snippet": "Molecular profiling of biliary tract cancers (BTCs) has paved the way for a broader range of therapeutic options, leading to improved survival outcomes. Given the challenges of tissue evaluation in BTCs, circulating tumor DNA (ctDNA) has emerged as a promising non-invasive biomarker for genomic profiling. Bile has been proven to be a reliable ctDNA source, demonstrating higher concordance with tumor tissue than plasma. More importantly, ctDNA provides valuable insights into both clonal evolution and treatment response, including the detection of resistance mechanisms and mutation clearance, which are often associated with disease control. Although its role in recurrence monitoring remains investigational, early studies suggest that ctDNA detection may precede radiological recurrences. This",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41178929/"
+    },
+    "PMID:42195126": {
+      "id": "PMID:42195126",
+      "source_type": "pubmed",
+      "title": "The Papanicolaou Smear Reimagined: A Narrative Review of Cervicovaginal Cytology and Molecular Biospecimens for Ovarian Cancer Detection.",
+      "snippet": "The Papanicolaou (Pap) smear, a cornerstone of cervical cancer prevention, has emerged as a compelling, though unconventional, biospecimen for the detection of ovarian cancer (OC). This structured narrative review synthesizes the evolving evidence on the utility of cervicovaginal cytology and molecular analysis of Pap test material for OC detection. While conventional cytology provides a proof of concept, its sensitivity is low, ranging from incidental detection of OC in 0.004% of routine screens to 19.3% in patients with known OC. Specific cytologic findings, however, carry significant predictive value: atypical glandular cells (AGC) confer a two-fold increased OC risk, and psammoma bodies (PB) are strongly associated with serous malignancies. Driven by the sensitivity limitations of morp",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42195126/"
+    },
+    "OT:ENSG00000182165": {
+      "id": "OT:ENSG00000182165",
+      "source_type": "open_targets",
+      "title": "TP53TG1 (target)",
+      "snippet": "TP53 target 1",
+      "url": "https://platform.opentargets.org/target/ENSG00000182165"
+    },
+    "PMID:41095804": {
+      "id": "PMID:41095804",
+      "source_type": "pubmed",
+      "title": "Point-of-Care Testing and Biomarkers in Biliary Diseases: Current Evidence and Future Directions.",
+      "snippet": "Biliary tract diseases, including both benign and malignant conditions such as cholangitis, cholelithiasis, primary sclerosing cholangitis, cholangiocarcinoma, and gallbladder cancer, present significant challenges for timely diagnosis and effective clinical management. Conventional diagnostic approaches, which primarily rely on imaging and standard laboratory tests, often lack the sensitivity and specificity needed for early detection, accurate risk stratification, and personalized treatment planning. In recent years, advancements in point-of-care (POC) diagnostic technologies, along with the identification and validation of novel biomarkers, have begun to reshape the diagnostic landscape. This review provides a comprehensive overview of the clinical utility and limitations of current POC",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41095804/"
+    },
+    "PMID:42311093": {
+      "id": "PMID:42311093",
+      "source_type": "pubmed",
+      "title": "Advances in liver transplantation for hepatic malignancies.",
+      "snippet": "Transplant Oncology is an evolving field. While liver transplantation was once contraindicated in patients with cancer, the safety and survival benefit of utilizing transplantation as a curative-intent treatment for primary and metastatic hepatic malignancies has been demonstrated. Currently, liver transplantation is offered to selected patients with hepatocellular carcinoma, perihilar and intrahepatic cholangiocarcinoma, colorectal cancer with isolated liver metastases, and neuroendocrine tumors with isolated liver metastases. We will cover the current inclusion and exclusion criteria and clinical and pathologic factors of each oncologic indication, and future directions in liver transplant oncology. Successful oncologic outcomes for liver transplantation hinge on careful selection of pat",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42311093/"
+    },
+    "PMID:40689505": {
+      "id": "PMID:40689505",
+      "source_type": "pubmed",
+      "title": "The incidence and predictors of false-negative pancreatobiliary fluorescence in situ hybridization (PB-FISH) in biliary strictures: A prospective study.",
+      "snippet": "<h4>Background</h4>Fluorescence in situ hybridization (FISH) is recommended as part of multimodality sampling in the evaluation of biliary strictures, but can be false negative in 40%-50% cases. The aim of this study was to comprehensively assess predictors of false-negative FISH in patients with biliary strictures.<h4>Methods</h4>Patients undergoing tissue sampling for biliary strictures from October 20 to February 22 were prospectively enrolled (NCT04572711). Procedural factors such as sampling techniques, order, and utilization of combination sampling were recorded. Results of an optimized pancreatobiliary FISH panel with locus-specific probes for 1q21, 7p12, 8q24, and 9p21 were reported per guidelines. Statistical analyses were performed using BlueSky Statistics v.10.3.1, R package v8.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40689505/"
+    },
+    "PMID:41904891": {
+      "id": "PMID:41904891",
+      "source_type": "pubmed",
+      "title": "Molecular endoscopy with next-generation sequencing improves diagnosis of cholangiocarcinoma in patients with extrahepatic biliary strictures.",
+      "snippet": "<h4>Background & aims</h4>Differentiating benign from malignant extrahepatic biliary strictures remains a diagnostic challenge, despite advances in sampling techniques and ancillary tests. Next-generation sequencing (NGS) may improve diagnostic performance and enable essential molecular profiling for malignancies. We aimed to assess the diagnostic performance of targeted NGS compared to cytohistology and fluorescence in situ hybridization (FISH), using samples exclusively collected via optimized single-operator cholangioscopy.<h4>Methods</h4>We prospectively enrolled 104 patients with extrahepatic biliary strictures or suspected cholangiocarcinoma. A definitive diagnosis was established through cytohistology and clinical follow-up. In total, 445 samples (265 brushings and 180 biopsies) wer",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41904891/"
+    },
+    "PMID:39518600": {
+      "id": "PMID:39518600",
+      "source_type": "pubmed",
+      "title": "Diagnostic Accuracy Performance of Fluorescence In Situ Hybridization (FISH) for Biliary Strictures: A Systematic Review and Meta-Analysis.",
+      "snippet": "<b>Background and Aims</b>: This systematic review and meta-analysis aims to compare the performance of UroVysion<sup>®</sup> FISH based on the different definitions of a positive result used in published literature with the goal of determining the optimal FISH definition for detecting pancreaticobiliary malignancy. <b>Methods</b>: A systematic literature search identified studies from database inception to Sept 2024 that evaluated the diagnostic performance of FISH in determining malignancy among patients with biliary strictures. All thresholds for positive FISH, as defined by the individual study, were included in this review. Subgroup analysis was performed based on the definitions of positive FISH as follows: (1) polysomy only; (2) polysomy, tetrasomy, or trisomy; and (3) polysomy or 9",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/39518600/"
+    },
+    "CT:NCT07176962": {
+      "id": "CT:NCT07176962",
+      "source_type": "clinical_trials",
+      "title": "A Cell-free DNA Methylation Blood-Based Test for Biliary Tract Cancers Screening",
+      "snippet": "Biliary tract carcinoma (BTC), including gallbladder cancer, intrahepatic cholangiocarcinoma, and extrahepatic cholangiocarcinoma, ranks sixth in incidence among gastrointestinal malignancies and tenth in cancer-related mortality worldwide. Due to the lack of specific early symptoms, high malignancy, and frequent recurrence and metastasis, the rate of curative resection is only about 16.5%, and the overall 5-year survival rate is less than 5%. Early and accurate detection is therefore critical for improving patient outcomes. Circulating tumor DNA (ctDNA), a fraction of circulating free DNA (cfDNA), carries genetic and epigenetic information from tumor cells and can be detected even at the early stages of cancer development. Among various liquid biopsy biomarkers, ctDNA methylation shows pa",
+      "url": "https://clinicaltrials.gov/study/NCT07176962"
+    },
+    "OT:MONDO_0003060": {
+      "id": "OT:MONDO_0003060",
+      "source_type": "open_targets",
+      "title": "biliary tract cancer (disease)",
+      "snippet": "A malignant neoplasm involving the biliary tree",
+      "url": "https://platform.opentargets.org/disease/MONDO_0003060"
+    },
+    "OT:MONDO_0005304": {
+      "id": "OT:MONDO_0005304",
+      "source_type": "open_targets",
+      "title": "biliary tract neoplasm (disease)",
+      "snippet": "A neoplasm that involves the biliary tract.",
+      "url": "https://platform.opentargets.org/disease/MONDO_0005304"
+    },
+    "OT:MONDO_0018531": {
+      "id": "OT:MONDO_0018531",
+      "source_type": "open_targets",
+      "title": "carcinoma of liver and intrahepatic biliary tract (disease)",
+      "snippet": "A carcinoma that arises from the hepatocytes or intrahepatic bile ducts. The main subtypes are hepatocellular carcinoma (hepatoma) and cholangiocarcinoma.",
+      "url": "https://platform.opentargets.org/disease/MONDO_0018531"
+    },
+    "OT:MONDO_0018918": {
+      "id": "OT:MONDO_0018918",
+      "source_type": "open_targets",
+      "title": "carcinoma of gallbladder and extrahepatic biliary tract (disease)",
+      "snippet": "Carcinoma of the gallbladder (GBC) is the most common and aggressive form of biliary tract cancer (BTC) usually arising in the fundus of the gallbladder, rapidly metastasizing to lymph nodes and distant sites.",
+      "url": "https://platform.opentargets.org/disease/MONDO_0018918"
+    },
+    "OT:MONDO_0004868": {
+      "id": "OT:MONDO_0004868",
+      "source_type": "open_targets",
+      "title": "biliary tract disorder (disease)",
+      "snippet": "A disease involving the biliary tree.",
+      "url": "https://platform.opentargets.org/disease/MONDO_0004868"
+    },
+    "PMID:42353153": {
+      "id": "PMID:42353153",
+      "source_type": "pubmed",
+      "title": "Serum β-hCG Combined with Traditional Tumor Markers Improves Detection Efficacy and Prognostic Prediction in Cholangiocarcinoma.",
+      "snippet": "Cholangiocarcinoma (CCA) in Northeast Thailand is characterized by late diagnosis and poor prognosis, creating a critical need for effective early-detection biomarkers. This study utilized a multi-omics approach to identify novel diagnostic targets and improve CCA screening. Initial serum proteomic and transcriptomic analyses revealed significant upregulation of the luteinizing hormone/choriogonadotropin receptor (LHCGR) in CCA patients, correlating with advanced disease stages. Interaction network analysis subsequently identified its circulating ligand, beta-human chorionic gonadotropin (β-hCG), as a highly translatable clinical target. The protein expression of β-hCG was assessed via immunohistochemistry (IHC) in 100 tissue samples, and serum levels of β-hCG, alongside routine markers (C",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42353153/"
+    },
+    "PMCID:PMC13287889": {
+      "id": "PMCID:PMC13287889",
+      "source_type": "pubmed",
+      "title": "45Prognostic Utility of ctDNA vs. Conventional Biomarkers in Resected Biliary Tract Cancer: A Real-World Analysis",
+      "snippet": "45Prognostic Utility of ctDNA vs. Conventional Biomarkers in Resected Biliary Tract Cancer: A Real-World Analysis",
+      "url": "https://europepmc.org/article/PMC/PMC13287889"
+    },
+    "PMID:42094822": {
+      "id": "PMID:42094822",
+      "source_type": "pubmed",
+      "title": "Advances in cerebrospinal fluid biomarkers for the diagnosis, treatment and monitoring of leptomeningeal metastases (Review).",
+      "snippet": "Leptomeningeal metastasis (LM) is an aggressive complication characterized by the dissemination of malignant cells to the leptomeninges, typically resulting in rapid neurological deterioration and poor prognosis. Clinical diagnosis and management are impeded by non-specific symptoms and the limited sensitivity of conventional cerebrospinal fluid (CSF) cytology. Consequently, CSF biomarkers have emerged as critical tools for diagnosis, treatment monitoring and prognostic evaluation. The present review summarizes recent advancements in CSF biomarkers, categorizing them into proteins, nucleic acids and metabolites. These biomarkers enhance diagnostic accuracy, facilitate longitudinal disease tracking and assess therapeutic efficacy. Despite notable progress, challenges persist regarding bioma",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42094822/"
+    },
+    "PMID:42373229": {
+      "id": "PMID:42373229",
+      "source_type": "pubmed",
+      "title": "Transcriptomic Profiling Identifies Higher DOT1L Expression as a Candidate Biomarker for a Positive Response to Gemcitabine in Cholangiocarcinoma.",
+      "snippet": "<h4>Background/aim</h4>Cholangiocarcinoma (CCA) has a poor prognosis, partly due to late diagnosis and limited efficacy of systemic therapies. Gemcitabine remains a commonly used chemotherapeutic agent for CCA; however, the clinical response is heterogeneous, and predictive biomarkers are lacking. Although epigenetic regulators have been implicated in gemcitabine sensitivity in other malignancies, their relevance in CCA has not been explored systematically. This study aimed to identify epigenetic candidates associated with the gemcitabine response in CCA and to validate their functional role.<h4>Materials and methods</h4>RNA sequencing was performed on 24 paired non-tumor and tumor bile duct tissues. Differential expression and enrichment analyses were conducted to identify pathways and ep",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42373229/"
+    },
+    "PMID:42015571": {
+      "id": "PMID:42015571",
+      "source_type": "pubmed",
+      "title": "Diagnostic and Prognostic Values of Bile Biomarkers for Malignant Biliary Stenosis.",
+      "snippet": "<h4>Introduction</h4>Differentiating between malignant and benign biliary strictures remains a clinical challenge because current diagnostic tools have limited sensitivity. The detection of tumour-related biomarkers directly in bile, which is in close contact with the lesion, may enhance diagnostic accuracy. This study aimed at evaluating the diagnostic and prognostic values of biliary concentrations of VEGF, PDGF-AA, IGF and MMPs in patients with extrahepatic cholangiocarcinoma (CCA), pancreatic ductal adenocarcinoma (PDAC), or benign obstruction.<h4>Methods</h4>A total of 100 consecutive patients undergoing ERCP for obstructive jaundice were enrolled and categorised into benign (n = 48), CCA (n = 23) and PDAC (n = 29) groups. Bile samples collected during ERCP were analysed. The diagnost",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42015571/"
+    },
+    "PMID:42286359": {
+      "id": "PMID:42286359",
+      "source_type": "pubmed",
+      "title": "Emerging omics diagnosis of perihilar cholangiocarcinoma.",
+      "snippet": "Perihilar cholangiocarcinoma (pCCA) frequently presents as an indeterminate perihilar biliary stricture. The diagnosis is often delayed or uncertain because of the limited sensitivity of conventional endobiliary sampling and blood-based markers, especially in patients with additional confounding conditions such as primary sclerosing cholangitis (PSC). This diagnostic ambiguity can significantly impact clinical outcomes as timely detection and accurate classification are critical for referral and curative-intent treatment. As such, research focused on advancing diagnostic methodologies is a priority. pCCA has a distinct proteomic signature, pattern of activated signaling cascades, epigenetic modifications, and metabolic interactions within its anatomic niche. Recent advances in omics-based ",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42286359/"
+    },
+    "PMID:42067191": {
+      "id": "PMID:42067191",
+      "source_type": "pubmed",
+      "title": "Accurate detection of cholangiocarcinoma in primary sclerosing cholangitis using DNA methylation biomarkers in bile and plasma.",
+      "snippet": "<h4>Background & aims</h4>Current methods for cholangiocarcinoma (CCA) detection in primary sclerosing cholangitis (PSC) lack accuracy, often leading to late, non-curative diagnoses. In this study, we aim at identifying DNA methylation biomarkers in liquid biopsies for earlier and more accurate CCA detection.<h4>Methods</h4>Reduced representation bisulfite sequencing was used to analyze tissue samples from individuals with CCA (n = 10) and PSC (n = 9), yielding 12 candidate DNA methylation biomarkers. After droplet digital PCR assay development, quality control, and verification in tissue, we selected four biomarkers for evaluation in bile (n = 272) and plasma (n = 128) samples from individuals with PSC and/or CCA collected across three different hospitals.<h4>Results</h4>Four biomarkers d",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42067191/"
+    },
+    "PMID:42313299": {
+      "id": "PMID:42313299",
+      "source_type": "pubmed",
+      "title": "Pharmacokinetic modelling of MRI-based liver function for risk assessment in primary sclerosing cholangitis: a prospective pilot study.",
+      "snippet": "<h4>Objective</h4>Primary sclerosing cholangitis (PSC) is a rare fibroinflammatory hepatobiliary disease with a highly variable clinical course. Identifying patients at risk for poor outcomes remains challenging. Magnetic resonance imaging (MRI)-based approaches such as DiStrict, Anali score, and relative enhancement (RE) show promise but are limited by operator dependency or static measurements. This study explored pharmacokinetic modelling of liver function as a quantitative imaging biomarker for risk assessment in PSC.<h4>Materials and methods</h4>A prospective cohort of 26 PSC patients underwent up to five annual MRI examinations with follow-up up to 7.5 years. Clinical endpoints included liver transplantation, decompensated cirrhosis, and cholangiocarcinoma. Correlation and receiver o",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42313299/"
+    },
+    "PMID:41583258": {
+      "id": "PMID:41583258",
+      "source_type": "pubmed",
+      "title": "Ketamine-Induced Cholangiopathy With Concomitant Hemorrhagic Cystitis: An Emerging and Underrecognized Cause of Cholestasis.",
+      "snippet": "Ketamine-induced cholangiopathy (KIC) is a rare but increasingly recognized manifestation of chronic ketamine toxicity, often accompanied by urinary tract injury such as hemorrhagic cystitis. We report the case of a 55-year-old female with recurrent hemorrhagic cystitis and a long-standing history of intermittent recreational ketamine use who presented with asymptomatic cholestatic liver enzyme abnormalities. Hepatobiliary ultrasound revealed hepatic steatosis without ductal dilatation, and magnetic resonance cholangiopancreatography demonstrated multifocal biliary stricturing with a beaded appearance of the intrahepatic bile ducts. Serological testing for autoimmune and infectious etiologies was negative. Cystoscopy revealed inflammatory bladder changes, and histopathology confirmed ketam",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41583258/"
+    },
+    "PMID:42145083": {
+      "id": "PMID:42145083",
+      "source_type": "pubmed",
+      "title": "A multi-centre, prospective trial of a methylation-based liquid biopsy for early detection of liver cancer in high-risk populations.",
+      "snippet": "<h4>Background and aims</h4>Existing imaging and serum-marker assays miss many early liver cancers, especially in high-risk chronic liver disease carriers. We aimed to create a highly accurate, non-invasive, methylation-based liquid biopsy for early detection.<h4>Methods</h4>We used a comprehensive, multi-platform, multi-cohort strategy for marker discovery, starting with methylation profiling of hepatocellular carcinoma samples from TCGA and in-house cohorts. From 30 initial candidates, nine highly liver-specific methylation markers were shortlisted, and three optimal cfDNA markers (RNF135, CHFR, PAX5) were selected to develop a robust diagnostic model, tuned in a training set (N = 280) and locked in an internal testing set (N = 124). The model was then validated in a prospective, large-s",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42145083/"
+    },
+    "PMID:42261877": {
+      "id": "PMID:42261877",
+      "source_type": "pubmed",
+      "title": "Bile-Derived Exosomal miR-196a/-196b as Diagnostic Biomarkers Associated With Tumor Progression in Biliary Tract Cancer.",
+      "snippet": "Bile-based liquid biopsy presents a promising approach for identifying novel biomarkers for biliary tract cancer (BTC) given its proximity to tumor sites. The aim of this study was to identify bile-derived exosomal microRNAs (miRNAs) with diagnostic potential for BTC. The candidate miRNAs were initially screened by RNA sequencing of exosomal RNA from the bile samples of 10 BTC patients and 10 controls, resulting in the identification of miR-196a, miR-196b, and miR-424. Subsequent validation using TaqMan PCR in an independent cohort (50 BTC, 53 controls) confirmed that miR-196a and miR-196b were specifically elevated in the bile of BTC patients, with miR-196a also elevated in early-stage BTC. MiR-196a achieved an area under the receiver operating characteristic curve (AUROC) of 0.79 for the",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42261877/"
+    },
+    "PMID:41588412": {
+      "id": "PMID:41588412",
+      "source_type": "pubmed",
+      "title": "Research progress on early diagnostic markers for pancreatic cancer.",
+      "snippet": "Pancreatic cancer (PC) is a highly aggressive malignancy characterized by insidious onset, rapid progression, and poor prognosis, predominantly affecting middle-aged and elderly men. Biomarker detection represents the most widely utilized approach for early PC diagnosis, encompassing both traditional and novel categories. Although traditional biomarkers like CA 19 - 9 are widely employed clinically, they carry a risk of false negatives in Lewis antigen-negative individuals, underscoring the urgent need for multi-parameter detection strategies to enhance accuracy. Integrating core indicators such as CEA and CA 242 can significantly improve the diagnostic effect of early PC and optimize diagnosis and treatment decisions. In recent years, breakthroughs have been made in biomarkers. Novel dete",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41588412/"
+    },
+    "PMID:42214175": {
+      "id": "PMID:42214175",
+      "source_type": "pubmed",
+      "title": "Current opinions on CEA in the diagnosis and prognosis of colorectal cancer.",
+      "snippet": "Colorectal cancer (CRC), marked by high mortality and recurrence rate, poses a significant threat to public health. Differences in survival rates exist, with patients in CRC stage IV much worse than those in stage I and stage II. Carcinoembryonic antigen (CEA) has gained widespread use as a tumor marker for CRC. The method is easy to assess, inexpensive, noninvasive, with many advantages in monitoring the prognosis. However, its effectiveness in early detection of CRC leaves much to be desired. In this review, we summarized the current applications of CEA and discussed the innovative usage of CEA as a biomarker in CRC to facilitate a much more precise predictive and prognostic strategy. What's more, we concluded the biological features of CEA, involving its structure and gene regulation, a",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42214175/"
+    },
+    "PMID:41778239": {
+      "id": "PMID:41778239",
+      "source_type": "pubmed",
+      "title": "A Sequential Proteomic Relay Defines a Decade-long Pre-diagnostic Window for Pancreatic Cancer.",
+      "snippet": "<h4>Background/aim</h4>Pancreatic adenocarcinoma is characterized by late-stage presentation and high mortality, largely due to the absence of biomarkers that signal disease during its prolonged preclinical phase. The aim of this study was to identify and temporally characterize circulating proteomic biomarkers that undergo systematic change years before clinical diagnosis, and to determine whether these trajectories define discrete pre-diagnostic risk windows that could enable earlier, biologically informed interception.<h4>Materials and methods</h4>Using longitudinal proteomic data from the UK Biobank, we employed hinge-regression change-point modeling to identify temporal inflection points for circulating proteins. We partitioned the pre-diagnostic period into \"Far\" (5-10 years) and \"Ne",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41778239/"
+    },
+    "PMID:41245225": {
+      "id": "PMID:41245225",
+      "source_type": "pubmed",
+      "title": "The Interplay Between CA19-9 and the Lewis Blood Group System: Implications for the Diagnosis of Gallbladder Cancer.",
+      "snippet": "CA19-9 is one of the most widely applied tumor markers in clinical oncology, particularly in the diagnosis and prognostic evaluation of biliary tract and pancreatic cancers. However, its clinical utility is limited by biological variability, most notably the influence of the Lewis blood group system, which may result in false-negative findings. The Lewis system is composed of three major phenotypes, Le(a+b-), Le(a-b+), and Le(a-b-), with the less frequent Le(a+b+) also reported in certain populations. Current evidence indicates that CA19-9 expression occurs predominantly in Le(a+b-) or Le(a-b+) individuals, whereas it is largely absent in Le(a-b-) individuals. Insufficient consideration of this factor in clinical settings reduces diagnostic accuracy and complicates interpretation of CA19-9",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41245225/"
+    },
+    "PMID:40849358": {
+      "id": "PMID:40849358",
+      "source_type": "pubmed",
+      "title": "AI-enhanced rapid diagnostic testing platform for mass opisthorchiasis screening.",
+      "snippet": "Cholangiocarcinoma (CCA) is a prevalent malignancy in countries along Mekong basin, closely linked to chronic infections caused by Opisthorchis viverrini (OV). Early detection of OV-infected individuals holds significant promise for screening at-risk populations in endemic regions. Recent advancements in immunochromatographic methods have led to the development of a rapid diagnostic test (RDT) based on urinary antigens. However, the current interpretation relies on visual assessment of T-band color intensity, which can be subjective and prone to variability. Furthermore, aggregating data at the regional/country level demands data digitization, a time and resource intense task that introduces further errors. To address this limitation, we introduce the OV-RDT platform, a cloud-based system ",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40849358/"
+    },
+    "PMID:39733414": {
+      "id": "PMID:39733414",
+      "source_type": "pubmed",
+      "title": "Sonographic Predictors for Developing Cholangiocarcinoma: A Cohort Study from an Endemic Area.",
+      "snippet": "<h4>Background and aim</h4>Cholangiocarcinoma (CCA) is an aggressive malignancy with a poor prognosis. Bile duct and peribiliary changes related to CCA may present on ultrasound (US) findings. This study aims to evaluate US findings that could be used as predictors for developing CCA through our surveillance program in an endemic area of Thailand.<h4>Methods</h4>The study population was 4,337 villagers in Northern Thailand with a 5-year abdominal US surveillance. Patient demographics data and ultrasound findings of calcifications/granulomas, periductal fibrosis, and diffuse bile duct dilatation were included. A logistic regression model was used to determine significant predictors.<h4>Results</h4>There were 4,225 people included with an average age of 45.49±7.66 years. Prevalence of calcif",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/39733414/"
+    },
+    "PMID:41852652": {
+      "id": "PMID:41852652",
+      "source_type": "pubmed",
+      "title": "Parasite burden: Prevalence and risk factors in Ko-ae, Ubon Ratchathani, Thailand.",
+      "snippet": "<h4>Objectives</h4>Parasitic infections (PI) remain a significant public health concern in Southeast Asia. Understanding local prevalence and associated risk factors is essential for guiding effective interventions. This study aimed to determine the prevalence of PI and to examine the associated risk factors influencing PI in Ko-ae, a rural Thai community.<h4>Methods</h4>A community-based cross-sectional survey was conducted in Ko-ae Subdistrict, Ubon Ratchathani Province, northeastern Thailand, from January to July 2021. Stool samples were collected from 941 participants and examined for intestinal parasites using standard parasitological techniques. Structured questionnaires were administered to assess participants' sociodemographic characteristics, health knowledge, and perceptions rela",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41852652/"
+    },
+    "PMID:40790595": {
+      "id": "PMID:40790595",
+      "source_type": "pubmed",
+      "title": "Associations between pesticide exposure and hepatobiliary disease among agricultural workers in the Northeastern region of Thailand: a cross-sectional study.",
+      "snippet": "<h4>Background</h4>Occupational exposure to pesticides has been linked to hepatobiliary diseases, particularly liver cancer and cholangiocarcinoma (CCA). In Thailand, pesticides are crucial for agriculture, enhancing crop protection and yields. This study aimed to determine the association between pesticide exposure and the prevalence of hepatobiliary diseases among agricultural workers in Northeastern Thailand.<h4>Methods</h4>The abdominal ultrasonographic findings of the CCA risk population were retrieved from the Isan cohort. Biological monitoring data on pesticide exposure were collected via serum cholinesterase testing from 8 provinces in Northeast Thailand, including Khon Kaen, Roi Et, Udon Thani, Nong Bua Lamphu, Kalasin, Buriram, Nakhon Phanom, and Sakon Nakhon provinces during 201",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40790595/"
+    },
+    "OT:MONDO_0021662": {
+      "id": "OT:MONDO_0021662",
+      "source_type": "open_targets",
+      "title": "bile duct neoplasm (disease)",
+      "snippet": "A benign or malignant neoplasm that affects the intrahepatic or extrahepatic bile ducts. Representative examples of benign neoplasms include bile duct adenoma and extrahepatic bile duct lipoma. Representative examples of malignant neoplasms include intrahepatic and extrahepatic cholangiocarcinoma.",
+      "url": "https://platform.opentargets.org/disease/MONDO_0021662"
+    },
+    "OT:MONDO_0005496": {
+      "id": "OT:MONDO_0005496",
+      "source_type": "open_targets",
+      "title": "bile duct carcinoma (disease)",
+      "snippet": "A carcinoma that arises from epithelial cells of the bile duct",
+      "url": "https://platform.opentargets.org/disease/MONDO_0005496"
+    },
+    "CT:NCT06380309": {
+      "id": "CT:NCT06380309",
+      "source_type": "clinical_trials",
+      "title": "A Clinical Study on Evaluating Intravenous Administration of IDOV-SAFE",
+      "snippet": "Subjects were Chinese patients with histologically or cytologically confirmed advanced malignant solid tumors (mainly focused on MSS type colon and rectal cancer) who had failed standard systemic therapy and were inoperable.\n\nThe first stage was the dose escalation stage, which was divided into 4 dose groups according to the \"3+3\" dose escalation principle. One patient was enrolled in the first dose group, and 3-6 patients were enrolled in each of the latter three dose groups, with a total of 10-19 patients enrolled.\n\nThe second stage is the security extension stage, which is selected by SMC 1-2 dose cohorts were expanded for safety and divided into three cohorts in total(IIA, IIB, IIC) to explore the safety of sequential or combined administration modes with immune targeted therapy. Each ",
+      "url": "https://clinicaltrials.gov/study/NCT06380309"
+    },
+    "PMCID:PMC13100460": {
+      "id": "PMCID:PMC13100460",
+      "source_type": "pubmed",
+      "title": "Diagnostic and Prognostic Values of Bile Biomarkers for Malignant Biliary Stenosis",
+      "snippet": "Diagnostic and Prognostic Values of Bile Biomarkers for Malignant Biliary Stenosis",
+      "url": "https://europepmc.org/article/PMC/PMC13100460"
+    },
+    "PMID:40409293": {
+      "id": "PMID:40409293",
+      "source_type": "pubmed",
+      "title": "The value of cholangioscopy-guided bite-on-bite (-on bite) biopsies in indeterminate biliary duct strictures.",
+      "snippet": "<h4>Background</h4>Digital single-operator cholangioscopy (dSOC) has improved the diagnostic accuracy of indeterminate biliary duct strictures (IBDS) through targeted intraductal biopsy sampling. However, the optimal biopsy technique remains uncertain.<h4>Methods</h4>This international, multicenter, prospective interventional study (November 2020-August 2022) included patients with IBDS undergoing dSOC. Stricture sampling involved obtaining at least four single biopsies and at least one bite-on-bite biopsy (BBB) in all patients. Definitive diagnosis was established by pathology outcomes and 1-year clinical follow-up. The primary outcome was the accuracy of both biopsy techniques.<h4>Results</h4>89 patients were included, with 76 hilar strictures and 13 distal strictures. Technical success ",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40409293/"
+    },
+    "PMID:40932825": {
+      "id": "PMID:40932825",
+      "source_type": "pubmed",
+      "title": "Yield of next-generation sequencing in diagnostic work up of suspicious biliary strictures.",
+      "snippet": "<h4>Background and study aims</h4>This study addressed the need for improved diagnostic tools to identify malignancy in suspicious biliary strictures. Traditional cytological morphology is often indecisive, prompting exploration of next-generation sequencing (NGS) for enhanced sensitivity. Our aim was to evaluate NGS's additional value in classifying biliary brushes and biopsies and its impact on clinical decision making (CDM).<h4>Patients and methods</h4>In this retrospective single-center cohort study, patients were included from 2019 to 2022 in whom morphologic interpretation and NGS were performed on cytological or histological material from suspicious biliary strictures. Sensitivity and specificity of NGS were calculated for benign or atypical vs. suspicious for malignancy or malignan",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40932825/"
+    },
+    "PMCID:PMC13299248": {
+      "id": "PMCID:PMC13299248",
+      "source_type": "pubmed",
+      "title": "Liquid Biopsy-Derived microRNAs in Pancreatic Ductal Adenocarcinoma: Matrix-Specific Evidence and Translational Challenges",
+      "snippet": "Liquid Biopsy-Derived microRNAs in Pancreatic Ductal Adenocarcinoma: Matrix-Specific Evidence and Translational Challenges",
+      "url": "https://europepmc.org/article/PMC/PMC13299248"
+    },
+    "PMID:42168331": {
+      "id": "PMID:42168331",
+      "source_type": "pubmed",
+      "title": "Machine learning and artificial intelligence in liquid biopsy-based early detection of pancreatic cancer: a scoping review.",
+      "snippet": "Pancreatic ductal adenocarcinoma (PDAC) presents as a cancer with an especially poor prognosis, largely due to the challenges surrounding its early diagnosis. Liquid biopsy has emerged as a promising, noninvasive method for screening across a variety of cancers. This approach is limited, however, by the extensive heterogeneity of biological samples, a challenge that teams are looking to address using artificial intelligence (AI) and machine learning (ML) strategies. By harnessing the ability of ML algorithms to extract the most salient features from complex datasets, researchers can identify biomarkers with high predictive value for PDAC. This review explores the current landscape of AI-powered liquid biopsy for early PDAC diagnosis, focusing on specific techniques and their respective deg",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42168331/"
+    },
+    "PMID:41692706": {
+      "id": "PMID:41692706",
+      "source_type": "pubmed",
+      "title": "Toward Timely Diagnosis of Pancreatic Cancer: Revolutionizing Early Detection Through Genomics, Artificial Intelligence, and Noninvasive Biomarkers.",
+      "snippet": "<h4>Background</h4>Pancreatic ductal adenocarcinoma (PDAC) remains one of the most aggressive cancers, typically diagnosed at an advanced stage due to its subtle and often absent early symptoms. Despite representing only 3% of new cancer cases, it is projected to become the second leading cause of cancer-related deaths by 2030. Currently, early diagnosis remains a significant challenge, and survival rates remain poor due to the lack of effective screening tools.<h4>Methods</h4>We conducted a comprehensive literature review to explore the most recent advances in PDAC detection, focusing on novel biomarkers, liquid biopsies, artificial intelligence (AI)-enhanced imaging, and non-invasive surveillance strategies. We examined the role of circulating tumor DNA (ctDNA), microRNAs, and volatile o",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41692706/"
+    },
+    "PMCID:PMC13297555": {
+      "id": "PMCID:PMC13297555",
+      "source_type": "pubmed",
+      "title": "Role of Endoscopic Ultrasonography in Management of Pancreaticobiliary Cancers: Recent Trends and Advances",
+      "snippet": "Role of Endoscopic Ultrasonography in Management of Pancreaticobiliary Cancers: Recent Trends and Advances",
+      "url": "https://europepmc.org/article/PMC/PMC13297555"
+    },
+    "PMID:41709698": {
+      "id": "PMID:41709698",
+      "source_type": "pubmed",
+      "title": "Unveiling the Invisible: A Case of Canine Diffuse Microscopic Pancreatic Adenocarcinoma With Normal Imaging and Gross Appearance of the Pancreas Complicated by Sterile Peritonitis and Disseminated Intravascular Coagulation.",
+      "snippet": "Pancreatic adenocarcinoma is an uncommon neoplasm in dogs, typically presenting as a discrete mass with metastasis frequently identified at the time of diagnosis. Herein, we describe an unusual presentation of canine pancreatic adenocarcinoma, characterised by diffuse microscopic infiltration of the pancreas without gross abnormalities on advanced imaging or exploratory laparotomy. An 11-year-old male neutered Shetland Sheepdog presented with recurrent anorexia, lethargy, and haematuria. Diagnostic investigations revealed progressive anaemia, thrombocytopenia, pulmonary consolidations and sterile peritonitis. Despite the absence of macroscopic pancreatic abnormalities, histopathology confirmed the presence of a diffuse pancreatic adenocarcinoma with associated fibrinohaemorrhagic peritonit",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41709698/"
+    },
+    "PMCID:PMC13226172": {
+      "id": "PMCID:PMC13226172",
+      "source_type": "pubmed",
+      "title": "Extracellular vesicle biomarkers: current status and future perspectives as novel tools in liquid biopsy",
+      "snippet": "Extracellular vesicle biomarkers: current status and future perspectives as novel tools in liquid biopsy",
+      "url": "https://europepmc.org/article/PMC/PMC13226172"
+    },
+    "PMID:39934875": {
+      "id": "PMID:39934875",
+      "source_type": "pubmed",
+      "title": "A scoping review of factors influencing the implementation of liquid biopsy for cancer care.",
+      "snippet": "<h4>Background</h4>Liquid biopsy (LB) offers a promising, minimally invasive alternative to traditional tissue biopsies in cancer care, enabling real-time monitoring and personalized treatment. Despite its potential, the routine implementation of LB in clinical practice faces significant challenges. This scoping review examines the barriers and facilitators influencing the implementation of liquid biopsies into standard cancer care.<h4>Methods</h4>Four academic databases (PubMed, Scopus, Embase, and Web of Science) were systematically searched without language restrictions. We included peer-reviewed articles that were published between January 2019 and March 2024 that focused on the implementation of LB in cancer care or described barriers and facilitators to its implementation. Data relev",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/39934875/"
+    },
+    "PMID:41312258": {
+      "id": "PMID:41312258",
+      "source_type": "pubmed",
+      "title": "Management of common bile duct stones: a comprehensive review.",
+      "snippet": "CBD stones impose significant morbidity and cost. This review compares the efficacy and safety of endoscopic sphincterotomy (EST) and laparoscopic common bile duct exploration (LCBDE) and summarizes emerging techniques and remaining controversies. While EST remains a cornerstone for rapid stone extraction, particularly in high-risk surgical candidates, its association with post-procedural pancreatitis and long-term sphincter dysfunction underscores the need for judicious patient selection. Conversely, LCBDE emerges as a compelling alternative, offering superior complete stone clearance rates for larger or complex stones, reduced post-procedural pancreatitis, and the unique advantage of direct biliary tree visualization. However, its technical demands and bile leak risk necessitate standard",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41312258/"
+    },
+    "PMID:42344705": {
+      "id": "PMID:42344705",
+      "source_type": "pubmed",
+      "title": "Covered Self-Expandable Metallic Stents versus Multiple Plastic Stents for Benign Biliary Strictures: A Systematic Review, Meta-Analysis, and Trial Sequential Analysis.",
+      "snippet": "<h4>Purpose</h4>We aim to compare the benefits, harms, and costs of multiple plastic stents (MPS) versus covered self-expandable metallic stents (CSEMS) in the treatment of benign biliary strictures (BBS).<h4>Methods</h4>A comprehensive database search through June 6, 2024 identified randomized controlled trials (RCT) involving adult patients with BBS comparing MPS to CSEMS in terms of stricture resolution, recurrence, technical success, number of required procedures and stents, treatment duration, all-cause mortality, adverse events, and stent migration. We utilized the Cochrane Risk of Bias (RoB) tool2 for study quality assessment. Meta-analysis following the random effects model was performed.<h4>Results</h4>After screening 365 references, we included 7 RCTs (high RoB) involving 594 pat",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42344705/"
+    },
+    "PMID:39809054": {
+      "id": "PMID:39809054",
+      "source_type": "pubmed",
+      "title": "Duct-related complications of pediatric post-traumatic pancreatitis: A case report from Syria.",
+      "snippet": "<h4>Introduction</h4>Pancreatic trauma is a rare type of abdominal injury, representing only 0.3 % of pediatric trauma cases. This condition may progress to chronic pancreatitis and result in multiple complications following damage to the pancreatic duct.<h4>Presentation of case</h4>A 5-year-old boy presented to the hospital with abdominal pain and had a history of chronic pancreatitis following a bicycle handlebar accident one year ago. Ultrasound screening revealed the presence of abdominal ascites which was treated conservatively. Two months post-treatment, the patient developed a pseudocyst in the head of the pancreas and a right-sided pleural effusion that was treated by inserting a plastic stent into the pancreatic duct through endoscopic retrograde cholangiopancreatography (ERCP). T",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/39809054/"
+    },
+    "PMID:39329866": {
+      "id": "PMID:39329866",
+      "source_type": "pubmed",
+      "title": "Current Gallstone Treatment Methods, State of the Art.",
+      "snippet": "This study aims to provide valuable references for clinicians in selecting appropriate surgical methods for biliary tract stones based on patient conditions. In this paper, the advantages and disadvantages of various minimally invasive cholelithiasis surgical techniques are systematically summarized and innovative surgical approaches and intelligent stone removal technologies are introduced. The goal is to evaluate and predict future research priorities and development trends in the field of gallstone surgery. In recent years, the incidence of gallstone-related diseases, including cholecystolithiasis and choledocholithiasis, has significantly increased. This surge in cases has prompted the development of several innovative methods for gallstone extraction, with minimally invasive procedure",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/39329866/"
+    },
+    "PMID:42116802": {
+      "id": "PMID:42116802",
+      "source_type": "pubmed",
+      "title": "Clinical Practice Update on the Evaluation, Diagnosis, and Management of Pancreatic Exocrine Insufficiency: Expert Review.",
+      "snippet": "Pancreatic exocrine insufficiency (PEI) is characterized by inadequate synthesis, secretion, and/or activation of exocrine pancreatic secretions. This guideline has been developed to assist clinicians and researchers in understanding the definition, etiopathogenesis, epidemiology, diagnosis, treatment, and follow-up of PEI based on the current literature. All statements within this review were developed through consensus among the authors based on a comprehensive literature review.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42116802/"
+    },
+    "PMID:40498965": {
+      "id": "PMID:40498965",
+      "source_type": "pubmed",
+      "title": "EACR 2025 Congress: Innovative Cancer Science, 16-19 June 2025.",
+      "snippet": "Abstracts submitted to the 'EACR 2025 Congress: Innovative Cancer Science', from 16-19 June 2025 and accepted by the Congress Organising Committee are published in this Supplement of Molecular Oncology, an affiliated journal of the European Association for Cancer Research (EACR).",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40498965/"
+    },
+    "PMCID:PMC11627200": {
+      "id": "PMCID:PMC11627200",
+      "source_type": "pubmed",
+      "title": "Abstracts from the 57th European Society of Human Genetics (ESHG) Conference: Hybrid Posters",
+      "snippet": "Abstracts from the 57th European Society of Human Genetics (ESHG) Conference: Hybrid Posters",
+      "url": "https://europepmc.org/article/PMC/PMC11627200"
+    },
+    "PMCID:PMC11470993": {
+      "id": "PMCID:PMC11470993",
+      "source_type": "pubmed",
+      "title": "UEG Week 2024 Oral Presentations",
+      "snippet": "UEG Week 2024 Oral Presentations",
+      "url": "https://europepmc.org/article/PMC/PMC11470993"
+    },
+    "PMCID:PMC11470995": {
+      "id": "PMCID:PMC11470995",
+      "source_type": "pubmed",
+      "title": "UEG Week 2024 Poster Presentations",
+      "snippet": "UEG Week 2024 Poster Presentations",
+      "url": "https://europepmc.org/article/PMC/PMC11470995"
+    },
+    "PMCID:PMC7129186": {
+      "id": "PMCID:PMC7129186",
+      "source_type": "pubmed",
+      "title": "Abstracts",
+      "snippet": "Abstracts",
+      "url": "https://europepmc.org/article/PMC/PMC7129186"
+    },
+    "PMID:41399682": {
+      "id": "PMID:41399682",
+      "source_type": "pubmed",
+      "title": "Bile cell-free DNA shows benefit as a potential sample for somatic mutation detection of resectable cholangiocarcinoma.",
+      "snippet": "<h4>Background and aims</h4>Cholangiocarcinoma (CCA), a highly aggressive hepatobiliary malignancy, faces significant diagnostic challenges in early stages due to nonspecific clinical manifestations. Although plasma cell-free DNA (cfDNA) analysis via next-generation sequencing (NGS) is widely used for noninvasive cancer detection, its sensitivity in CCA remains suboptimal owing to the low tumor DNA abundance. This study aims to compare bile and plasma as sources for liquid biopsy in CCA genomic profiling, focusing on analytical accuracy and biomolecular stability.<h4>Methods</h4>Ten patients with resectable CCA were prospectively enrolled in this study. DNA extracted from matched plasma, bile, and tumor tissue underwent NGS for somatic mutation, microsatellite stability (MSI), and tumor mu",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41399682/"
+    },
+    "PMID:41493844": {
+      "id": "PMID:41493844",
+      "source_type": "pubmed",
+      "title": "Abstracts of the 84&lt;sup&gt;th&lt;/sup&gt; Annual Meeting of the Japanese Cancer Association.",
+      "snippet": "Abstracts of the 84&lt;sup&gt;th&lt;/sup&gt; Annual Meeting of the Japanese Cancer Association.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41493844/"
+    },
+    "PMID:41147645": {
+      "id": "PMID:41147645",
+      "source_type": "pubmed",
+      "title": "ISEV2025 Abstract Book.",
+      "snippet": "ISEV2025 Abstract Book.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41147645/"
+    },
+    "PMCID:PMC9811969": {
+      "id": "PMCID:PMC9811969",
+      "source_type": "pubmed",
+      "title": "Nalini Bai Thakkar Award",
+      "snippet": "Nalini Bai Thakkar Award",
+      "url": "https://europepmc.org/article/PMC/PMC9811969"
+    },
+    "PMCID:PMC13290681": {
+      "id": "PMCID:PMC13290681",
+      "source_type": "pubmed",
+      "title": "Abstract",
+      "snippet": "Abstract",
+      "url": "https://europepmc.org/article/PMC/PMC13290681"
+    },
+    "PMID:39597885": {
+      "id": "PMID:39597885",
+      "source_type": "pubmed",
+      "title": "The Catheter Flushing Method Shows a Similar Diagnostic Yield to the Conventional Method in Brushing Cytology for Biliary Strictures.",
+      "snippet": "<b>Background/Objectives</b>: Endobiliary brushing is usually performed in the diagnosis of indeterminate biliary strictures; however, in this setting, brush cytology is limited by a low diagnostic yield and sensitivity. Here, we compared the catheter flushing method (CFM) with the conventional cytologic method (CCM) in terms of cellularity and diagnostic performance. <b>Methods</b>: Endobiliary brushings were obtained during endoscopic retrograde cholangiopancreatography (ERCP) from patients with biliary strictures enrolled at six tertiary hospitals. Additionally, the CFM was performed after brushing. Using liquid-based cytologic preparations of samples, we assessed the diagnostic performance of the CCM using Pap staining and the CFM using methionyl-transfer RNA synthetase 1 (MARS1) immun",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/39597885/"
+    },
+    "PMID:41675329": {
+      "id": "PMID:41675329",
+      "source_type": "pubmed",
+      "title": "Advancing gastrointestinal cancer diagnosis and treatment: a narrative review of circulating tumor DNA in gastrointestinal malignancies.",
+      "snippet": "<h4>Background and objective</h4>Gastrointestinal (GI) cancers represent a substantial global health burden due to their high morbidity and mortality rates. These cancers are often diagnosed at advanced stages, leading to poor prognosis and limited treatment options. Early detection and personalized treatment strategies are critical to improving outcomes, yet traditional diagnostic methods, such as tissue biopsies and imaging, often fall short in sensitivity, specificity and the ability to capture tumor heterogeneity. Circulating tumor DNA (ctDNA), which comprises small fragments of tumor-derived DNA shed into the bloodstream, has emerged as a transformative tool in the diagnosis and management of GI cancers. This review aims to summarize the clinical and utility of ctDNA in GI cancers and",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41675329/"
+    },
+    "PMCID:PMC13167178": {
+      "id": "PMCID:PMC13167178",
+      "source_type": "pubmed",
+      "title": "The Annual Canadian Liver Meeting 2026 of the Canadian Association for the Study of the Liver (CASL), the Canadian Network on Hepatitis C (CanHepC) and CanMASLD",
+      "snippet": "The Annual Canadian Liver Meeting 2026 of the Canadian Association for the Study of the Liver (CASL), the Canadian Network on Hepatitis C (CanHepC) and CanMASLD",
+      "url": "https://europepmc.org/article/PMC/PMC13167178"
+    },
+    "PMID:40102723": {
+      "id": "PMID:40102723",
+      "source_type": "pubmed",
+      "title": "Role of the oral-gut microbiota axis in pancreatic cancer: a new perspective on tumor pathophysiology, diagnosis, and treatment.",
+      "snippet": "Pancreatic cancer, one of the most lethal malignancies, remains challenging due to late diagnosis, aggressive progression, and therapeutic resistance. Recent advances have revealed the presence of intratumoral microbiota, predominantly originating from the oral and gut microbiomes, which play pivotal roles in pancreatic cancer pathogenesis. The dynamic interplay between oral and gut microbial communities, termed the \"oral-gut microbiota axis,\" contributes multifacetedly to pancreatic ductal adenocarcinoma (PDAC). Microbial translocation via anatomical or circulatory routes establishes tumor-resident microbiota, driving oncogenesis through metabolic reprogramming, immune regulation, inhibition of apoptosis, chronic inflammation, and dysregulation of the cell cycle. Additionally, intratumora",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40102723/"
+    },
+    "PMID:41899615": {
+      "id": "PMID:41899615",
+      "source_type": "pubmed",
+      "title": "Liquid Biopsy in Gastrointestinal Cancers: Circulating Tumor DNA for Molecular Residual Disease Assessment and Early Treatment Monitoring.",
+      "snippet": "<b>Background:</b> Liquid biopsy using circulating tumor DNA (ctDNA) is rapidly reshaping gastrointestinal (GI) oncology. The highest-impact applications are molecular residual disease (mRD) detection after curative-intent therapy and early recognition of progression or resistance during systemic treatment. <b>Methods:</b> We performed a structured, clinically oriented narrative synthesis by using explicit search, eligibility, evidence prioritization, and clinical interpretation rules, integrating landmark prospective cohorts, randomized ctDNA-guided strategy trials where available, meta-analyses, key methodological research (e.g., pre-analytics, assay design, and clonal hematopoiesis (CH)/clonal hematopoiesis of indeterminate potential (CHIP)), and selected trial registries. <b>Results:</",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41899615/"
+    },
+    "PMID:41563984": {
+      "id": "PMID:41563984",
+      "source_type": "pubmed",
+      "title": "Feasibility of tumor-informed circulating tumor DNA for detecting minimal residual disease in surgically resected biliary tract cancer.",
+      "snippet": "<h4>Background</h4>We prospectively investigated the potential of tumor-informed circulating tumor DNA (ctDNA) for detecting minimal residual disease (MRD) in surgically resected biliary tract cancer (BTC).<h4>Methods</h4>Personalized panels were developed using individual variants identified from the whole-exome sequencing of surgical specimens from each patient. Two sequential blood samples, collected preoperatively and within 6 weeks after surgery, were analyzed. A positive ctDNA result was defined as the identification of two or more patient-specific mutations.<h4>Results</h4>A total of 18 patients were enrolled. However, 1 patient was excluded due to inoperability detected during surgery, and personalized target panels could not be created for 3 patients due to a low number of target ",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41563984/"
+    },
+    "PMID:42165910": {
+      "id": "PMID:42165910",
+      "source_type": "pubmed",
+      "title": "Noninvasive detection and prognostic stratification of biliary tract cancer using cell-free DNA fragmentomics: a model development and validation study.",
+      "snippet": "Biliary tract cancer (BTC) is typically diagnosed at an advanced stage due to the lack of effective screening tools, resulting in limited therapeutic options and poor survival outcomes. Therefore, there is a critical need for non-invasive strategies that enable early detection and risk stratification. Fragmentomic profiling of cell-free DNA (cfDNA) captures genome-wide fragmentation patterns reflecting tumor-associated chromatin structure and genomic instability, providing a promising approach for non-invasive cancer detection. In this study, we developed a low-pass whole-genome sequencing (WGS)-based framework for BTC detection and postoperative risk assessment. Plasma samples were analyzed to derive three fragmentomic features, including copy number variation, fragment size distribution,",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42165910/"
+    },
+    "PMID:40658318": {
+      "id": "PMID:40658318",
+      "source_type": "pubmed",
+      "title": "Identification of a 10-species microbial signature of inflammatory bowel disease by machine learning and external validation.",
+      "snippet": "Genetic and microbial factors influence inflammatory bowel disease (IBD), prompting our study on non-invasive biomarkers for enhanced diagnostic precision. Using the XGBoost algorithm and variable analysis and the published metadata, we developed the 10-species signature XGBoost classification model (XGB-IBD10). By using distinct species signatures and prior machine and deep learning models and employing standardization methods to ensure comparability between metagenomic and 16S sequencing data, we constructed classification models to assess the XGB-IBD10 precision and effectiveness. XGB-IBD10 achieved a notable accuracy of 0.8722 in testing samples. In addition, we generated metagenomic sequencing data from collected 181 stool samples to validate our findings, and the model reached an acc",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40658318/"
+    },
+    "PMID:37770126": {
+      "id": "PMID:37770126",
+      "source_type": "pubmed",
+      "title": "British Society of Gastroenterology guidelines for the diagnosis and management of cholangiocarcinoma.",
+      "snippet": "These guidelines for the diagnosis and management of cholangiocarcinoma (CCA) were commissioned by the British Society of Gastroenterology liver section. The guideline writing committee included a multidisciplinary team of experts from various specialties involved in the management of CCA, as well as patient/public representatives from AMMF (the Cholangiocarcinoma Charity) and PSC Support. Quality of evidence is presented using the Appraisal of Guidelines for Research and Evaluation (AGREE II) format. The recommendations arising are to be used as guidance rather than as a strict protocol-based reference, as the management of patients with CCA is often complex and always requires individual patient-centred considerations.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37770126/"
+    },
+    "PMID:39941254": {
+      "id": "PMID:39941254",
+      "source_type": "pubmed",
+      "title": "Diagnostic Approach to Biliary Strictures.",
+      "snippet": "Biliary strictures represent a narrowing of the bile ducts, leading to obstruction that may result from benign or malignant etiologies. Accurate diagnosis is crucial but challenging due to overlapping features between benign and malignant strictures. This review presents a comprehensive diagnostic approach that integrates biochemical markers, imaging modalities, and advanced endoscopic techniques to distinguish between these causes. Imaging tools such as ultrasound, MRI/MRCP, and CECT are commonly used, each with distinct advantages and limitations. Furthermore, endoscopic procedures such as ERCP and EUS are key in tissue acquisition, enhancing diagnostic accuracy, especially for indeterminate or complex strictures. Recent innovations, including artificial intelligence and new endoscopic t",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/39941254/"
+    },
+    "PMID:39026441": {
+      "id": "PMID:39026441",
+      "source_type": "pubmed",
+      "title": "Welcoming the new, revisiting the old: a brief glance at cytopathology reporting systems for lung, pancreas, and thyroid.",
+      "snippet": "This review addresses new reporting systems for lung and pancreatobiliary cytopathology as well as the most recent edition of The Bethesda Reporting System for Thyroid Cytopathology. The review spans past, present, and future aspects within the context of the intricate interplay between traditional morphological assessments and cutting-edge molecular diagnostics. For lung and pancreas, the authors discuss the evolution of reporting systems, emphasizing the bridge between past directives and more recent collaborative efforts of the International Academy of Cytology and the World Health Organization in shaping universal reporting systems. The review offers a brief overview of the structure of these novel systems, highlighting their strengths and pinpointing areas that require further refinem",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/39026441/"
+    },
+    "PMID:40191142": {
+      "id": "PMID:40191142",
+      "source_type": "pubmed",
+      "title": "The World Health Organization System for Reporting Pancreaticobiliary Cytopathology: Standardized Categories and Practical Approaches to Pancreatic Lesions.",
+      "snippet": "The World Health Organization System for Reporting Pancreaticobiliary Cytopathology introduces a seven-tier category system to standardize terminology and nomenclature. This system includes the following categories: Insufficient/non-diagnostic, benign/negative for malignancy, atypia, pancreaticobiliary neoplasm low-risk/grade, pancreaticobiliary neoplasm high-risk/grade, suspicious for malignancy, and malignant categories. Adopting a standardized reporting scheme facilitates consistent diagnostic criteria among pathologists, thereby reducing report variability and enhancing communication with the clinical team for optimal patient management. The report also highlights the role of critical ancillary tests in improving diagnostic accuracy for pancreatic lesions and discusses practical approa",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40191142/"
+    },
+    "PMID:36425869": {
+      "id": "PMID:36425869",
+      "source_type": "pubmed",
+      "title": "Molecular diagnosis of pancreatobiliary tract cancer by detecting mutations and methylation changes in bile samples.",
+      "snippet": "<h4>Background</h4>Patients with pancreatobiliary tract cancer usually have a poor clinical outcome, with a 5-year overall survival rate below 20%. This is mainly associated with the late diagnosis. In addition, the standard-of-care for patients with malignant biliary stenosis involves a major surgery, the Whipple procedure. An accurate preoperative diagnosis, including differentiation from benign diseases, is critical to avoid unnecessary treatment. Here we developed BileScreen, a sensitive detection modality for the diagnosis of pancreatobiliary tract cancer based on massively parallel sequencing mutation and methylation changes in bile samples.<h4>Methods</h4>A total of 338 patients, from five hospitals in China, with pancreatobiliary system disorders were enrolled in this study between",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/36425869/"
+    },
+    "PMID:41905556": {
+      "id": "PMID:41905556",
+      "source_type": "pubmed",
+      "title": "Diagnostic Utility of Single Nucleotide Polymorphism Microarray in Evaluating Pancreaticobiliary Brushing Specimens in Conjunction with Conventional Cytology.",
+      "snippet": "Bile duct brushings are noninvasive samplings of cells from the biliary tract for cytologic evaluation and are useful to diagnose pancreaticobiliary malignancies. Although specificity of cytology is satisfactory, sensitivity is inherently low because of challenging or absent morphologic features. Using molecular markers by incorporating fluorescence in situ hybridization has significantly improved sensitivity and diagnosis. To further advance the use of molecular markers, OncoScan microarray was used, which has genome-wide coverage and significantly higher resolution compared with fluorescence in situ hybridization. This study tested 128 pancreaticobiliary brushing specimens with OncoScan and compared them with cytology while using the biopsy of these patients as a reference. OncoScan was ",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41905556/"
+    },
+    "PMID:40124277": {
+      "id": "PMID:40124277",
+      "source_type": "pubmed",
+      "title": "Cholangiocarcinoma: The era of liquid biopsy.",
+      "snippet": "Cholangiocarcinoma (CCA) is a highly aggressive and heterogeneous malignancy arising from the epithelial cells of the biliary tract. The limitations of the current methods in the diagnosis of CCA highlight the urgent need for new, accurate tools for early cancer detection, better prognostication and patient monitoring. Liquid biopsy (LB) is a modern and non-invasive technique comprising a diverse group of methodologies aiming to detect tumour biomarkers from body fluids. These biomarkers include circulating tumour cells, cell-free DNA, circulating tumour DNA, RNA and extracellular vesicles. The aim of this review is to explore the current and potential future applications of LB in CCA management, with a focus on diagnosis, prognostication and monitoring. We examine both its significant pot",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40124277/"
+    },
+    "PMCID:PMC10576948": {
+      "id": "PMCID:PMC10576948",
+      "source_type": "pubmed",
+      "title": "UEG Week 2023 Poster Presentations",
+      "snippet": "UEG Week 2023 Poster Presentations",
+      "url": "https://europepmc.org/article/PMC/PMC10576948"
+    },
+    "PMID:33236167": {
+      "id": "PMID:33236167",
+      "source_type": "pubmed",
+      "title": "Abstracts : 32 <sup>nd</sup> Congress of the ESP and XXXIII International Congress of the IAP.",
+      "snippet": "Abstracts : 32 <sup>nd</sup> Congress of the ESP and XXXIII International Congress of the IAP.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/33236167/"
+    },
+    "PMID:34448894": {
+      "id": "PMID:34448894",
+      "source_type": "pubmed",
+      "title": "33&lt;sup&gt;rd&lt;/sup&gt; European Congress of Pathology - Abstracts.",
+      "snippet": "33&lt;sup&gt;rd&lt;/sup&gt; European Congress of Pathology - Abstracts.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/34448894/"
+    },
+    "PMCID:PMC12496558": {
+      "id": "PMCID:PMC12496558",
+      "source_type": "pubmed",
+      "title": "UEG Week 2025 Oral Presentations",
+      "snippet": "UEG Week 2025 Oral Presentations",
+      "url": "https://europepmc.org/article/PMC/PMC12496558"
+    },
+    "PMCID:PMC12496564": {
+      "id": "PMCID:PMC12496564",
+      "source_type": "pubmed",
+      "title": "UEG Week 2025 Moderated Posters",
+      "snippet": "UEG Week 2025 Moderated Posters",
+      "url": "https://europepmc.org/article/PMC/PMC12496564"
+    },
+    "PMID:33948111": {
+      "id": "PMID:33948111",
+      "source_type": "pubmed",
+      "title": "Optimal tissue sampling during ERCP and emerging molecular techniques for the differentiation of benign and malignant biliary strictures.",
+      "snippet": "Patients with cholangiocarcinoma have poor survival since the majority of patients are diagnosed at a stage precluding surgical resection, due to locally irresectable tumors and/or metastases. Optimization of diagnostic strategies, with a principal role for tissue diagnosis, is essential to detect cancers at an earlier stage amenable to curative treatment. Current barriers for a tissue diagnosis include both insufficient tissue sampling and a difficult cyto- or histopathological assessment. During endoscopic retrograde cholangiopancreatography, optimal brush sampling includes obtaining more than one brush within an individual patient to increase its diagnostic value. Currently, no significant increase of the diagnostic accuracy for the new cytology brush devices aiming to enhance the cellu",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/33948111/"
+    },
+    "PMID:36512172": {
+      "id": "PMID:36512172",
+      "source_type": "pubmed",
+      "title": "63rd Annual Conference of the Indian Society of Gastroenterology, ISGCON 2022-January 5th - 8th, 2023 in Jaipur.",
+      "snippet": "63rd Annual Conference of the Indian Society of Gastroenterology, ISGCON 2022-January 5th - 8th, 2023 in Jaipur.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/36512172/"
+    },
+    "PMID:40029142": {
+      "id": "PMID:40029142",
+      "source_type": "pubmed",
+      "title": "Mutational Analysis of Bile Cell-Free DNA in Primary Sclerosing Cholangitis: A Pilot Study.",
+      "snippet": "<h4>Background</h4>Primary sclerosing cholangitis (PSC) is a chronic liver disease characterised by inflammation and fibrosis of the bile ducts, conferring an increased risk of cholangiocarcinoma (CCA). However, detecting CCA early in PSC patients remains challenging due to the limited sensitivity of conventional diagnostic methods, including imaging or bile duct brush cytology during endoscopic retrograde cholangiopancreatography (ERCP). This study aims to evaluate the potential of bile cell-free DNA (cfDNA) mutational analysis, termed the Bilemut assay, as a tool for CCA detection in PSC patients.<h4>Methods</h4>Sixty-three PSC patients undergoing ERCP due to biliary strictures were prospectively recruited. Bile samples were collected, and cfDNA was extracted and analysed using the Oncom",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40029142/"
+    },
+    "PMID:40585845": {
+      "id": "PMID:40585845",
+      "source_type": "pubmed",
+      "title": "Biliary tract cancers: advances in diagnostic and management.",
+      "snippet": "Biliary tract cancers (BTCs) are aggressive malignancies associated with poor prognosis and limited treatment options. Advances in precision oncology, notably the identification of recurrent molecular alterations such as fibroblast growth factor receptor 2 (<i>FGFR2</i>) fusions, isocitrate dehydrogenase 1 (<i>IDH1</i>) mutations, <i>ERBB2</i> amplifications, and v-Raf murine sarcoma viral oncogene homolog B (<i>BRAF</i>) V600E mutations, have introduced new therapeutic avenues and modest survival benefits for patients with advanced disease. However, the practical implementation of targeted therapies remains hampered by challenges in tumor tissue acquisition and molecular testing, highlighting the need for alternative genomic profiling strategies. This comprehensive review examines the rol",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40585845/"
+    },
+    "PMID:34285068": {
+      "id": "PMID:34285068",
+      "source_type": "pubmed",
+      "title": "Next-generation sequencing of bile cell-free DNA for the early detection of patients with malignant biliary strictures.",
+      "snippet": "<h4>Objective</h4>Despite significant progresses in imaging and pathological evaluation, early differentiation between benign and malignant biliary strictures remains challenging. Endoscopic retrograde cholangiopancreatography (ERCP) is used to investigate biliary strictures, enabling the collection of bile. We tested the diagnostic potential of next-generation sequencing (NGS) mutational analysis of bile cell-free DNA (cfDNA).<h4>Design</h4>A prospective cohort of patients with suspicious biliary strictures (n=68) was studied. The performance of initial pathological diagnosis was compared with that of the mutational analysis of bile cfDNA collected at the time of first ERCP using an NGS panel open to clinical laboratory implementation, the Oncomine Pan-Cancer Cell-Free assay.<h4>Results</",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/34285068/"
+    },
+    "PMID:41825099": {
+      "id": "PMID:41825099",
+      "source_type": "pubmed",
+      "title": "Evaluation and management of primary sclerosing cholangitis patients awaiting liver transplantation.",
+      "snippet": "Primary sclerosing cholangitis (PSC) is a rare, progressive cholestatic liver disease characterised by biliary strictures, increased risk of cholangiocarcinoma, and a strong association with inflammatory bowel disease. Despite its low prevalence, PSC accounts for up to 17% of all liver transplants (LT) performed globally. Transplant-free survival ranges from a median of 9 to 21 years from diagnosis. LT is the only definitive treatment, with post-LT survival in PSC exceeding 80% at 5 years. However, PSC recurs in approximately 25% of individuals. The absence of disease-modifying therapy necessitates timely LT in select cases of hepatic decompensation, refractory pruritus, recurrent cholangitis, or selected early-stage malignancies. However, PSC poses unique challenges in pre-transplant asse",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41825099/"
+    },
+    "PMID:37444495": {
+      "id": "PMID:37444495",
+      "source_type": "pubmed",
+      "title": "Using Endoscopy in the Diagnosis of Pancreato-Biliary Cancers.",
+      "snippet": "Pancreatic cancer and cholangiocarcinoma are life threatening oncological conditions with poor prognosis and outcome. Pancreatic cystic lesions are considered precursors of pancreatic cancer as some of them have the potential to progress to malignancy. Therefore, accurate identification and classification of these lesions is important to prevent the development of invasive cancer. In the biliary tract, the accurate characterization of biliary strictures is essential for providing appropriate management and avoiding unnecessary surgery. Techniques have been developed to improve the diagnosis, risk stratification, and management of pancreato-biliary lesions. Endoscopic ultrasound (EUS) and associated techniques, such as elastography, contrasted-enhanced EUS, and EUS-guided needle confocal la",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37444495/"
+    },
+    "PMID:39126005": {
+      "id": "PMID:39126005",
+      "source_type": "pubmed",
+      "title": "Duodenal Fluid Analysis as a Rewarding Approach to Detect Low-Abundance Mutations in Biliopancreatic Cancers.",
+      "snippet": "Diagnosis of biliopancreatic cancers by the available serum tumor markers, imaging, and histopathological tissue specimen examination remains a challenge. Circulating cell-free DNA derived from matched pairs of secretin-stimulated duodenal fluid (DF) and plasma from 10 patients with biliopancreatic diseases and 8 control subjects was analyzed using AmpliSeq™ HD technology for Ion Torrent Next-Generation Sequencing to evaluate the potential of liquid biopsy with DF in biliopancreatic cancers. The median cfDNA concentration was greater in DF-derived than in plasma-derived samples. A total of 13 variants were detected: 11 vs. 1 were exclusive for DF relative to the plasma source, and 1 was shared between the two body fluids. According to the four-tier systems, 10 clinical tier-I-II (76.9%), 1",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/39126005/"
+    },
+    "PMCID:PMC12463576": {
+      "id": "PMCID:PMC12463576",
+      "source_type": "pubmed",
+      "title": "Abstract",
+      "snippet": "Abstract",
+      "url": "https://europepmc.org/article/PMC/PMC12463576"
+    },
+    "PMID:37568696": {
+      "id": "PMID:37568696",
+      "source_type": "pubmed",
+      "title": "Advances in the Early Detection of Hepatobiliary Cancers.",
+      "snippet": "Hepatocellular cancer (HCC) and biliary tract cancers (BTCs) have poor survival rates and a low likelihood of a cure, especially in advanced-stage disease. Early diagnosis is crucial and can significantly improve survival rates through curative treatment approaches. Current guidelines recommend abdominal ultrasonography (USG) and alpha-fetoprotein (AFP) monitoring for HCC screening in high-risk groups, and abdominal USG, magnetic resonance imaging (MRI), and magnetic resonance cholangiopancreatography (MRCP) monitoring for biliary tract cancer. However, despite this screening strategy, many high-risk individuals still develop advanced-stage HCC and BTC. Blood-based biomarkers are being developed for use in HCC or BTC high-risk groups. Studies on AFP, AFP-L3, des-gamma-carboxy prothrombin, ",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37568696/"
+    },
+    "PMID:42232485": {
+      "id": "PMID:42232485",
+      "source_type": "pubmed",
+      "title": "Rare Long-Term Transformation from Solitary Hepatocellular Carcinoma to Synchronous Double Primary Hepatocellular Carcinoma and Intrahepatic Cholangiocarcinoma: A Case Report and Literature Review.",
+      "snippet": "Synchronous double primary hepatocellular carcinoma and intrahepatic cholangiocarcinoma (sdpHCC-ICC) is rare, particularly when evolving metachronously from solitary HCC. This study reports a unique case of such transformation over two decades and reviews the relevant literature. A 55-year-old male with chronic hepatitis B underwent curative resection for HCC in 2005. Following multiple recurrences treated with local therapies over 19 years, subsequent resection in 2024 revealed two distinct malignancies: recurrent HCC and a spatially separate intrahepatic cholangiocarcinoma (ICC), confirmed by immunohistochemistry. We additionally analyzed 31 reported sdpHCC-ICC cases to summarize their clinicopathological characteristics and outcomes. The patient eventually developed systemic metastases ",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42232485/"
+    },
+    "PMID:41802450": {
+      "id": "PMID:41802450",
+      "source_type": "pubmed",
+      "title": "Combined hepatocellular-cholangiocarcinoma: a contemporary pathologic and molecular perspective.",
+      "snippet": "Combined hepatocellular cholangiocarcinoma (cHCC-CCA) is a rare primary liver carcinoma characterized by the unequivocal coexistence of hepatocytic and cholangiocytic differentiation within a single tumor. Despite its low incidence, cHCC-CCA has received considerable attention because of its marked histologic heterogeneity, diagnostic challenges, and poorer clinical outcomes than conventional hepatocellular carcinoma. Historically, the biological nature of cHCC-CCA has been controversial, with competing hypotheses, including derivation from hepatic progenitor cells, collision of independent tumors, and transdifferentiation between hepatocytic and biliary lineages. Recent advances in genomic and transcriptomic profiling have substantially improved this understanding. Accumulating evidence i",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41802450/"
+    },
+    "PMID:41873318": {
+      "id": "PMID:41873318",
+      "source_type": "pubmed",
+      "title": "Integrating Circulating Tumor DNA (ctDNA) Into Postoperative Surveillance After the Resection of Intrahepatic Cholangiocarcinoma: A Proposed Hybrid Imaging-Molecular Framework.",
+      "snippet": "Recurrence after curative-intent resection remains common in intrahepatic cholangiocarcinoma (ICC) and continues to limit long-term survival. Although repeat liver resection may benefit carefully selected patients, this opportunity is often lost because recurrence is detected only after radiographic progression. Postoperative surveillance relies primarily on cross-sectional imaging, which performs well for macroscopic disease but lacks sensitivity for microscopic residual tumor. Consequently, relapse is frequently recognized only after structural visibility, when tumor biology may already be unfavorable. Minimal residual disease (MRD) represents the persistence of viable malignant cells below the threshold of radiographic detection and is increasingly implicated in early relapse. Circulati",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41873318/"
+    },
+    "PMID:40157958": {
+      "id": "PMID:40157958",
+      "source_type": "pubmed",
+      "title": "Whole exome sequencing of multi-regions reveals tumor heterogeneity in Opisthorchis viverrini-associated cholangiocarcinoma.",
+      "snippet": "The study examines Opisthorchis viverrini (OV)-related cholangiocarcinoma (CCA), a serious malignancy common in Southeast Asia. Through multi-regional whole-exome sequencing of 52 tumor samples and 13 adjacent tissues from 13 patients, significant intratumoral heterogeneity (ITH) and inter-patient heterogeneity are shown. Chronic liver fluke infection induces a distinct mutational landscape, with 48-90% of mutations concentrated in each region of the tumor. The average mutation burden is 95 non-synonymous mutations per area, exceeding previous CCA investigations. Critical driver mutations in TP53, SMAD4, and other genes underscore their significance in pathogenesis. Mutational markers elucidate mechanisms including spontaneous deamination and impaired DNA repair. Unique mutation patterns d",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40157958/"
+    },
+    "PMID:41286719": {
+      "id": "PMID:41286719",
+      "source_type": "pubmed",
+      "title": "Single-cell multi-omics analysis reveals drivers of intrahepatic cholangiocarcinoma metastasis.",
+      "snippet": "BACKGROUND: Intrahepatic cholangiocarcinoma (ICC) is a highly heterogeneous malignancy with poor prognosis, in which tumor metastasis represents a critical event driving disease progression and treatment failure. Understanding the cellular drivers of ICC metastasis and establishing effective risk assessment models are essential for improving patient outcomes. METHODS: We analyzed the GSE201425 single-cell RNA sequencing dataset to explore the cellular origins and mechanisms of ICC metastasis. Copy number variation (CNV) profiling and clonal evolution analysis were performed to identify malignant epithelial cells. Pseudotime trajectory analysis revealed metastasis-associated epithelial cells (MAECs). Key biomarkers within MAECs were screened, and a Metastasis Index (Met-Index) based on one-",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41286719/"
+    },
+    "PMID:41256339": {
+      "id": "PMID:41256339",
+      "source_type": "pubmed",
+      "title": "Rethinking p16, p53, and HPV in HNCSCC through lessons from glioblastoma subclonal evolution toward patient-centric N-of-1 single-cell RNA sequencing paradigm.",
+      "snippet": "Head and neck cutaneous squamous cell carcinoma (HNCSCC) remains underexplored compared to oropharyngeal squamous cell carcinoma, particularly in relation to human papillomavirus (HPV) and molecular markers such as p16 and p53. While p16 is a well-established surrogate for HPV in oropharyngeal cancer, our review highlights its unreliable role in HNCSCC, where positivity is instead associated with recurrence and metastasis. Similarly, p53 illustrates a dual role - wild-type as a genomic safeguard, mutated as an oncogenic driver - complicating prognostication. Methodological considerations, including the limitations of immunohistochemistry for HPV detection, underscore the need for multi-method and molecular validation in future studies. Ultraviolet radiation is posited as a key modifier of ",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41256339/"
+    },
+    "PMID:39858054": {
+      "id": "PMID:39858054",
+      "source_type": "pubmed",
+      "title": "The Immune-Genomics of Cholangiocarcinoma: A Biological Footprint to Develop Novel Immunotherapies.",
+      "snippet": "Cholangiocarcinoma (CCA) represents approximately 3% of all gastrointestinal cancers and is a highly heterogeneous and aggressive malignancy originating from the epithelial cells of the biliary tree. CCA is classified by anatomical location into intrahepatic (iCCA), extrahepatic (eCCA), gallbladder cancer (GBC), and ampullary cancers. Although considered a rare tumor, CCA incidence has risen globally, particularly due to the increased diagnosis of iCCA. Genomic and immune profiling studies have revealed significant heterogeneity within CCA, leading to the identification of molecular subtypes and actionable genetic alterations in 40-60% of cases, particularly in iCCA. Among these, <i>FGFR2</i> rearrangements or fusions (7-15%) and <i>IDH1</i> mutations (10-20%) are common in iCCA, while <i>",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/39858054/"
+    },
+    "PMCID:PMC10701103": {
+      "id": "PMCID:PMC10701103",
+      "source_type": "pubmed",
+      "title": "The 12th Asia-Pacific Primary Liver Cancer Expert Meeting (APPLE 2022)",
+      "snippet": "The 12th Asia-Pacific Primary Liver Cancer Expert Meeting (APPLE 2022)",
+      "url": "https://europepmc.org/article/PMC/PMC10701103"
+    },
+    "CIVIC:EID11508": {
+      "id": "CIVIC:EID11508",
+      "source_type": "civic",
+      "title": "IDH1 R132C OR IDH1 R132H OR IDH1 R132L OR IDH1 R132G OR IDH1 R132S — Low Grade Glioma (PREDICTIVE, level A, SUPPORTS SENSITIVITYRESPONSE)",
+      "snippet": "This phase 3 clinical trial was conducted to assess the progression free survival in patients with IDH-mutant gliomas treated with Vorasidenib, an oral brain-penetrant inhibitor, which showed preliminary activity in mutant gliomas. In this double-blind study, participants having residual or recurrent IDH-mutated grade 2 gliomas were randomly selected to either receive vorasidenib or placebo in 28-day cycles. The results showed significant improvement in progression-free survival for patients treated with vorasidenib compared to placebo (median progression-free survival, 27.7 months vs. 11.1 months; hazard ratio for disease progression or death, 0.39; 95% confidence interval [CI], 0.27 to 0.56; P<0.001). Vorasidenib treatment also delayed the time to the next intervention.",
+      "url": "https://civicdb.org/evidence/11508/summary"
+    },
+    "CIVIC:EID480": {
+      "id": "CIVIC:EID480",
+      "source_type": "civic",
+      "title": "IDH1 R132 — Glioblastoma (PROGNOSTIC, level B, SUPPORTS BETTER_OUTCOME)",
+      "snippet": "In patients with a glioblastoma, those with mutations at R132 of IDH1 had better overall survival than wild-type patients.",
+      "url": "https://civicdb.org/evidence/480/summary"
+    },
+    "CIVIC:EID481": {
+      "id": "CIVIC:EID481",
+      "source_type": "civic",
+      "title": "IDH1 R132 — Malignant Astrocytoma (PROGNOSTIC, level B, SUPPORTS BETTER_OUTCOME)",
+      "snippet": "In patients with anaplastic astrocytoma, those with mutations at R132 of IDH1 had better overall survival than wild-type patients.",
+      "url": "https://civicdb.org/evidence/481/summary"
+    },
+    "CIVIC:EID374": {
+      "id": "CIVIC:EID374",
+      "source_type": "civic",
+      "title": "IDH1 R132 — Myelodysplastic Syndrome (PROGNOSTIC, level B, SUPPORTS POOR_OUTCOME)",
+      "snippet": "IDH1 R132 mutation in patients suffering from myelodysplastic syndromes is associated with worse overall survival.",
+      "url": "https://civicdb.org/evidence/374/summary"
+    },
+    "PMID:41641651": {
+      "id": "PMID:41641651",
+      "source_type": "pubmed",
+      "title": "Clinical decisions in clonal hematopoiesis: a contemporary review for clinicians.",
+      "snippet": "Clonal hematopoiesis (CH) has emerged as a critical mediator of age-associated diseases, with far-reaching implications for hematologic malignancies, cardiovascular diseases, cancer therapy, autoimmune disorders, and other health conditions. This review synthesizes the current evidence supporting the integration of CH testing and monitoring into clinical practice, with a focus on translating scientific discoveries into actionable diagnostic and therapeutic strategies. We present a systematic framework for establishing and operating a dedicated CH program, drawing on institutional experience and evolving best practices. Our analysis encompasses risk stratification approaches, surveillance protocols, and intervention timing for various CH-associated conditions. Special attention is given to ",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41641651/"
+    },
+    "PMID:41721022": {
+      "id": "PMID:41721022",
+      "source_type": "pubmed",
+      "title": "Implementation of a 1021-gene liquid biopsy assay for real-world tumor genomic profiling in oncology practice.",
+      "snippet": "The application of advanced next-generation sequencing (NGS) technologies in the analysis of circulating tumor DNA (ctDNA) enabled the comprehensive evaluation of tumor-derived alterations in the bloodstream. In this study, we evaluated the analytical performance and clinical utility of a large-scale liquid biopsy assay in patients with metastatic cancer. A total of 1,110 unique patients underwent ctDNA NGS testing using a 1021-gene panel; matched tissue biopsy data were available for 145 cases. In 16.18% of the cases, at least one on-label variant was identified. In addition, off-label, clinical trial–related, and resistance-associated findings collectively increased the proportion of clinically actionable results by 40.65%. Importantly, 8.65% of the total population could also benefit fr",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41721022/"
+    },
+    "PMID:41892838": {
+      "id": "PMID:41892838",
+      "source_type": "pubmed",
+      "title": "Landscape of Measurable Residual Disease in Acute Myeloid Leukemia: From Molecular Detection to Clinical Practice.",
+      "snippet": "Measurable residual disease (MRD) has become a central determinant of prognosis and treatment planning in acute myeloid leukemia (AML). MRD assessment is now aided by a wide range of technologies, including next-generation sequencing, PCR-based assays, multiparameter flow cytometry, and emerging approaches such as liquid biopsy platforms and imaging-based detection. These modalities differ in sensitivity, applicability, and interpretive framework, yet each offers distinct advantages in specific disease contexts. Beyond technical issues, MRD is becoming increasingly integrated into clinical practice. In non-intensive treatment settings, where targeted and low-intensity regimens rely on dynamic disease monitoring to guide ongoing management, MRD is increasingly being used to inform therapeut",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41892838/"
+    },
+    "PMID:41682677": {
+      "id": "PMID:41682677",
+      "source_type": "pubmed",
+      "title": "Ultra-Sensitive Mutation Detection Technology in Myeloid Neoplasms: New Tools for Patient Monitoring.",
+      "snippet": "The clinical management of myeloid neoplasms increasingly relies on the accurate detection and longitudinal monitoring of disease-defining genetic alterations. Many clinically relevant mutations are often present at very low variant allele frequencies, below the detection limits of conventional approaches routinely used in diagnostic workflows. In recent years, a growing number of ultra-sensitive molecular technologies have been developed to overcome these limitations, enabling the detection of rare variants with unprecedented precision, offering complementary strengths in terms of sensitivity, quantification, throughput, and clinical applicability. This review provides a comprehensive overview of established and emerging ultra-sensitive technologies for the diagnosis and molecular monitor",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41682677/"
+    },
+    "PMID:40978277": {
+      "id": "PMID:40978277",
+      "source_type": "pubmed",
+      "title": "Epigenetic crosstalk between stem cells and tumors: mechanisms and emerging perspectives.",
+      "snippet": "Stem cells possess self-renewal and multipotent differentiation capabilities, exhibiting broad applications in regenerative medicine and tissue homeostasis maintenance. Their fate regulation relies heavily on precise epigenetic mechanisms. Cancer stem cells (CSCs), as key drivers of tumor heterogeneity, recurrence, and drug resistance, share extensive epigenetic features with normal stem cells, forming a complex and dynamic regulatory network. Mechanisms including DNA methylation, histone modification, chromatin remodeling, and ncRNAs collectively sustain stem cell pluripotency and tumor stemness, while aberrant epigenetic alterations serve as core drivers of tumor initiation and progression. In recent years, with the advent of single-cell omics and CRISPR-dCas9 epigenetic editing technolo",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40978277/"
+    },
+    "PMID:39956859": {
+      "id": "PMID:39956859",
+      "source_type": "pubmed",
+      "title": "Molecular principles underlying aggressive cancers.",
+      "snippet": "Aggressive tumors pose ultra-challenges to drug resistance. Anti-cancer treatments are often unsuccessful, and single-cell technologies to rein drug resistance mechanisms are still fruitless. The National Cancer Institute defines aggressive cancers at the tissue level, describing them as those that spread rapidly, despite severe treatment. At the molecular, foundational level, the quantitative biophysics discipline defines aggressive cancers as harboring a large number of (overexpressed, or mutated) crucial signaling proteins in major proliferation pathways populating their active conformations, primed for their signal transduction roles. This comprehensive review explores highly aggressive cancers on the foundational and cell signaling levels, focusing on the differences between highly ag",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/39956859/"
+    },
+    "PMID:40517166": {
+      "id": "PMID:40517166",
+      "source_type": "pubmed",
+      "title": "Advances in molecular pathology and therapy of non-small cell lung cancer.",
+      "snippet": "Over the past two decades, non-small cell lung cancer (NSCLC) has witnessed encouraging advancements in basic and clinical research. However, substantial unmet needs remain for patients worldwide, as drug resistance persists as an inevitable reality. Meanwhile, the journey towards amplifying the breadth and depth of the therapeutic effect requires comprehending and integrating diverse and profound progress. In this review, therefore, we aim to comprehensively present such progress that spans the various aspects of molecular pathology, encompassing elucidations of metastatic mechanisms, identification of therapeutic targets, and dissection of spatial omics. Additionally, we also highlight the numerous small molecule and antibody drugs, encompassing their application alone or in combination,",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40517166/"
+    },
+    "PMID:41724188": {
+      "id": "PMID:41724188",
+      "source_type": "pubmed",
+      "title": "Changes in the 6th edition of the World Health Organization classification of tumours of the digestive system.",
+      "snippet": "The 6th Edition of the WHO Classification of Digestive System Tumours represents a significant update to the 5th edition. It integrates pathological, new molecular, and clinical insights to refine the taxonomy of digestive system neoplasms. The revised classification continues to emphasise standardisation in terminology, coding, and diagnostic criteria to facilitate global consistency in diagnosis, treatment, epidemiological reporting and research. Structural reorganisation of book chapters describes epithelial tumours by anatomical site, while separating neuroendocrine, mesenchymal and haematolymphoid tumours into dedicated chapters that are aligned with other WHO tumour volumes. Genetic tumour syndromes are classified by mechanisms, pathways and genes, whereas metastatic disease is compr",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41724188/"
+    },
+    "PMID:41122639": {
+      "id": "PMID:41122639",
+      "source_type": "pubmed",
+      "title": "Immunohistochemistry in intrahepatic cholangiocarcinoma: histological subtyping and drug selection.",
+      "snippet": "<h4>Introduction</h4>Since the release of the <i>World Health Organization</i> (<i>WHO</i>) <i>Classification of Tumours-Digestive System Tumours</i> in 2019, the pathology of intrahepatic cholangiocarcinoma (iCCA) has entered an era of integrated diagnosis, encompassing gross classification, histological subtyping, as well as drug molecular target screening. Substantial evidence indicates that the histological subtypes of iCCA are significantly associated with the detection frequency of molecular targets relevant to the targeted therapy and immunotherapy. Through rational immunohistochemistry profiling, patients with iCCA can be precisely diagnosed and individually managed.<h4>Methods</h4>A thorough literature search was conducted using terms pertinent to the pathological diagnosis, histo",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41122639/"
+    },
+    "PMID:39341365": {
+      "id": "PMID:39341365",
+      "source_type": "pubmed",
+      "title": "Morphomolecular Pathology and Genomic Insights into the Cells of Origin of Cholangiocarcinoma and Combined Hepatocellular-Cholangiocarcinoma.",
+      "snippet": "Cholangiocarcinomas are a highly heterogeneous group of malignancies that, despite recent progress in the understanding of their molecular pathogenesis and clinical management, continue to pose a major challenge to public health. The traditional view posits that cholangiocarcinomas derive from the neoplastic transformation of cholangiocytes lining the biliary tree. However, increasing genetic and experimental evidence has recently pointed to a more complex, and nuanced, scenario for the potential cell of origin of cholangiocarcinomas. Hepatocytes as well as hepatic stem/progenitor cells are being considered as additional potential sources, depending on microenvironmental contexts, including liver injury. The hypothesis of potentially diverse cells of origin for cholangiocarcinoma, albeit c",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/39341365/"
+    },
+    "PMID:41495021": {
+      "id": "PMID:41495021",
+      "source_type": "pubmed",
+      "title": "Signaling pathways and targeted interventions for precancers.",
+      "snippet": "Precancers, defined as normal-appearing or morphologically altered tissues with a risk of oncogenesis, exhibit various detectable manifestations across anatomical sites, including epithelial dysplasia, metaplasia, hyperplasia, and stromal fibrosis. Considering the prevailing assumption that most cancers arise from precancers, early intervention at the precancerous stage has immense potential to reduce cancer-related morbidity and mortality. However, the complex signaling networks governing precancer initiation and progression remain elusive, hampering the development of effective targeted interventions. This review synthesizes three critical dimensions of precancer biology: historical foundations tracing the conceptual evolution of precancer research over the past century; mechanisms under",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41495021/"
+    },
+    "PMID:38730713": {
+      "id": "PMID:38730713",
+      "source_type": "pubmed",
+      "title": "Recent Advancement in Diagnosis of Biliary Tract Cancer through Pathological and Molecular Classifications.",
+      "snippet": "Biliary tract cancers (BTCs), including intrahepatic, perihilar, and distal cholangiocarcinomas, as well as gallbladder cancer, are a diverse group of cancers that exhibit unique molecular characteristics in each of their anatomic and pathological subtypes. The pathological classification of BTCs compromises distinct growth patterns, including mass forming, periductal infiltrating, and intraductal growing types, which can be identified through gross examination. The small-duct and large-duct types of intrahepatic cholangiocarcinoma have been recently introduced into the WHO classification. The presentation of typical clinical symptoms, as well as the extensive utilization of radiological, endoscopic, and molecular diagnostic methods, is thoroughly detailed in the description. To overcome t",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/38730713/"
+    },
+    "PMID:41935219": {
+      "id": "PMID:41935219",
+      "source_type": "pubmed",
+      "title": "The aMAP score combined with plasma cfDNA methylation testing for risk stratification in hepatitis population: a case-control study.",
+      "snippet": "Effective surveillance of the hepatitis populations reduces liver cancer incidence and improves prognosis. This study aimed to develop an easy and non-invasive risk assessment model for this population. A total of 392 subjects were included in the present study, comprising 72 cases of chronic hepatitis, 31 cases of liver fibrosis, 152 cases of cirrhosis and 137 cases of liver cancer from diverse ethnic groups in China. Concurrent evaluation of the methylation levels of the GNB4 and Riplet genes in plasma, alongside the age-male-albumin-bilirubin-platelet (aMAP) score and serum AFP, was performed for each subject. Head-to-head comparisons demonstrated that methylation is a superior diagnostic biomarker for liver cancer relative to AFP and aMAP scores. The sensitivity and specificity of GNB4",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41935219/"
+    },
+    "PMID:42017860": {
+      "id": "PMID:42017860",
+      "source_type": "pubmed",
+      "title": "AGA Clinical Practice Update on Risk Stratification and Emerging Surveillance Strategies for Hepatocellular Carcinoma: Expert Review.",
+      "snippet": "<h4>Description</h4>Hepatocellular carcinoma (HCC) is a leading cause of cancer-related death in patients with cirrhosis. Although advancements in surgical, locoregional, and systemic therapies have improved outcomes for patients with early-stage HCC, most cases are diagnosed at later stages due to both the limitations of currently recommended surveillance modalities and their underuse, with fewer than 1 in 4 patients with cirrhosis receiving surveillance for this tumor. Current guidelines recommend semiannual surveillance with ultrasound and α-fetoprotein, but this strategy has suboptimal sensitivity, and alternative imaging techniques (eg, computed tomography and magnetic resonance imaging) have their own risks and challenges with implementation. HCC surveillance has established benefits",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42017860/"
+    },
+    "PMID:41676065": {
+      "id": "PMID:41676065",
+      "source_type": "pubmed",
+      "title": "Microbial dysbiosis in cholangiocarcinoma.",
+      "snippet": "Cholangiocarcinoma (CCA) is a highly aggressive malignancy of the biliary epithelium, with its incidence and mortality rates continuing to rise worldwide. Advances in high-throughput sequencing and metabolomic technologies have intensified interest in elucidating the role of the microbiome in CCA. Microbial dysbiosis may contribute to tumor initiation and progression by inducing chronic inflammation, altering metabolic pathways, and modulating the immune microenvironment. Moreover, these microbial alterations have been associated with therapeutic resistance, underscoring their potential impact on disease progression and treatment outcomes. This review summarizes the potential origins of intratumoral microorganisms and the microbiome alterations associated with distinct CCA subtypes. Crucia",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41676065/"
+    },
+    "PMID:40124424": {
+      "id": "PMID:40124424",
+      "source_type": "pubmed",
+      "title": "All you need to know about the overlap between primary sclerosing cholangitis and inflammatory bowel disease.",
+      "snippet": "Primary sclerosing cholangitis (PSC) is a progressive auto-inflammatory condition of the biliary ducts clinically characterized by painless cholestasis and jaundice. Histologically, the typical findings in PSC are periductal fibrosis with inflammation, bile duct proliferation, and ductopenia. These hallmarks eventually develop into end-stage liver disease requiring liver transplantation (LT), although the latency between diagnosis and LT is variable among patients. PSC is the leading indication for LT among patients with autoimmune liver disease. The interplay of PSC and inflammatory bowel disease (IBD) is intricate and poorly understood, as exemplified by the ongoing debate as to whether these are 2 distinct diseases or a complex 2-sided manifestation of the same disease spectrum. A true ",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40124424/"
+    },
+    "PMCID:PMC12496561": {
+      "id": "PMCID:PMC12496561",
+      "source_type": "pubmed",
+      "title": "UEG Week 2025 Poster Presentations",
+      "snippet": "UEG Week 2025 Poster Presentations",
+      "url": "https://europepmc.org/article/PMC/PMC12496561"
+    },
+    "PMID:31889746": {
+      "id": "PMID:31889746",
+      "source_type": "pubmed",
+      "title": "Characterisation of the Urinary Metabolic Profile of Liver Fluke-Associated Cholangiocarcinoma.",
+      "snippet": "<h4>Background</h4>Human infection with <i>Opisthorchis viverrini</i>, a carcinogenic liver fluke inhabiting the biliary tree, is endemic in Southeast Asia. Chronic infection is associated with a fatal complication, cholangiocarcinoma (CCA), a late-presenting and aggressive malignancy. Currently, annual mortality rates from CCA mirror trends in incidence, due in part to limited availability of efficient prognostic and early diagnostic biomarkers. With ability to detect thousands of urinary metabolites using metabonomics, the urine metabolome holds great potential in providing an insight into system-level alterations in carcinogenesis and in identifying metabolic markers altered in response to disturbed homoeostasis.<h4>Methods</h4>Global molecular profiling using reversed-phase ultraperfor",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/31889746/"
+    },
+    "PMID:42022539": {
+      "id": "PMID:42022539",
+      "source_type": "pubmed",
+      "title": "Early Cancer Detection: What's Going on and What's Next.",
+      "snippet": "Late-stage cancer diagnosis and limited treatment options for advanced disease remain major contributors to cancer-related morbidity and mortality. Blood-based multicancer early detection (MCED) assays have consequently gained momentum as a means to shift diagnosis toward earlier, more curable stages. Despite their promise, substantial methodological, clinical, and implementation barriers hinder widespread adoption. Integrative approaches coupling multi-omics profiling with advanced molecular imaging may improve detection accuracy and tumor localization, while risk-adapted MCED paradigms could support more targeted, individualized screening strategies. This article reviews the current landscape of MCED technologies, with a primary focus on circulating cell-free DNA and circulating tumor DN",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42022539/"
+    },
+    "PMID:41266596": {
+      "id": "PMID:41266596",
+      "source_type": "pubmed",
+      "title": "From concept to clinic: a roadmap for DNA methylation biomarkers in liquid biopsies.",
+      "snippet": "Global cancer incidence continues to rise, emphasizing the urgent need for improved diagnostics and management strategies. DNA methylation biomarkers in liquid biopsies offer a promising, minimally invasive solution. Despite their potential, only a few tests have successfully transitioned from research to clinical practice. This review addresses key aspects influencing successful biomarker development and clinical implementation-including liquid biopsy source selection, biomarker discovery workflow and targeted validation in clinical sample series-and provide strategies to improve accuracy, reproducibility and clinical utility. Altogether, these considerations could aid in bridging the translational gap from research to clinical application, and to increase the number of clinically impleme",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41266596/"
+    },
+    "PMID:41790338": {
+      "id": "PMID:41790338",
+      "source_type": "pubmed",
+      "title": "Clinical development of molecular residual disease (MRD) and multi-cancer early detection (MCED) using liquid biopsy multiomics with artificial intelligence (AI).",
+      "snippet": "<h4>Background</h4>Early detection of cancer and precise recurrence monitoring remain major unmet needs in oncology. Conventional screening is limited to a few cancer types, leaving nearly half of cancers without established programs. Multi-cancer early detection (MCED) tests based on circulating tumor biomarkers have shown promise, but sensitivity for early-stage remains a challenge. In parallel, detection of molecular residual disease (MRD) using circulating tumor DNA (ctDNA) has emerged as a powerful prognostic and predictive tool, though current assays remain limited in sensitivity and specificity. This study aims to integrate multi-omics data to develop more refined and highly sensitive MCED and MRD assays.<h4>Methods</h4>This study leverages clinical information and biospecimens from",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41790338/"
+    },
+    "PMID:41593642": {
+      "id": "PMID:41593642",
+      "source_type": "pubmed",
+      "title": "New genomic and proteomic biomarker discovery in cancer: revolutionizing diagnosis and prognostication.",
+      "snippet": "Cancer remains a major global health challenge, with substantial morbidity and mortality worldwide. Advances in genomic and proteomic biomarker discovery have transformed cancer diagnosis, prognosis, and treatment selection. The evolution from early serological markers such as carcinoembryonic antigen (CEA) and prostate-specific antigen (PSA) to modern multi-omics approaches enabled by next-generation sequencing (NGS), mass spectrometry (MS), and advanced bioinformatics has revolutionized personalized medicine and targeted therapy, leading to improved outcomes. This review highlights the historical evolution of cancer biomarkers and the current landscape of genomic, proteomic, and proteogenomic biomarkers. We emphasize the role of liquid biopsies, artificial intelligence (AI), and integrat",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41593642/"
+    },
+    "CT:NCT06115655": {
+      "id": "CT:NCT06115655",
+      "source_type": "clinical_trials",
+      "title": "A Single-center, Prospective Cohort Study on the Differentiation of Benign and Malignant Bile Duct Stenosis Based on Bile and Peripheral Blood cfDNA Methylation Profiles",
+      "snippet": "The goal of this observational study is to detect the methylation characteristics of cfDNA in the bile and plasma of patients with bile duct stricture. The main question it aims to answer is: Can the developed model, using peripheral blood and bile cell-free DNA sequencing, work well in screening and classifying unknown biliary stricture? Participants will collect approximately 10ml of peripheral blood and 5ml of bile from the patient.",
+      "url": "https://clinicaltrials.gov/study/NCT06115655"
+    },
+    "CT:NCT05504772": {
+      "id": "CT:NCT05504772",
+      "source_type": "clinical_trials",
+      "title": "Precision Medicine for Every Child With Cancer",
+      "snippet": "To improve outcomes for childhood cancer patients through the implementation of precision medicine.",
+      "url": "https://clinicaltrials.gov/study/NCT05504772"
+    },
+    "PMID:42102112": {
+      "id": "PMID:42102112",
+      "source_type": "pubmed",
+      "title": "Targeted analysis of KRAS and CREBBP mutations uncovers a potential population-specific signature in thai patients with liver fluke-associated cholangiocarcinoma.",
+      "snippet": "Intrahepatic cholangiocarcinoma (iCCA) is an aggressive malignancy with limited therapeutic options and a poor prognosis. Opisthorchis viverrini (OV) infection is a major risk factor in endemic regions, particularly in Southeast Asia. However, the molecular mechanisms underlying iCCA development and progression remain incompletely understood. This study, as it is, is observational and demonstrates association rather than causation. This study aimed to characterize genetic alterations in key germline variants associated with cancer risk and prognosis, as well as components of the oxidative stress pathway, and to evaluate their associations with clinicopathological features in Thai iCCA patients. A cohort study was conducted involving 112 iCCA patients, 60 OV-infected individuals, and 156 he",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42102112/"
+    },
+    "PMID:42122162": {
+      "id": "PMID:42122162",
+      "source_type": "pubmed",
+      "title": "Liquid Biopsy in Advanced Prostate Cancer.",
+      "snippet": "Liquid biopsy has emerged as a transformative tool in oncology, enabling minimally invasive and dynamic characterization of tumor biology. In prostate cancer, marked by high heterogeneity and frequent bone metastases, tissue biopsy is often challenging, highlighting the clinical value of circulating biomarkers. Circulating tumor DNA (ctDNA) is the most clinically advanced analyte, supporting detection of actionable alterations such as BRCA1/2 and ATM mutations, guiding targeted therapies, and enabling real-time monitoring of treatment response and resistance. Circulating tumor cells (CTCs) and extracellular vesicles (EVs) provide complementary insights into tumor biology and disease progression. However, challenges remain, including limited sensitivity in low tumor burden and biological co",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42122162/"
+    },
+    "PMID:40647454": {
+      "id": "PMID:40647454",
+      "source_type": "pubmed",
+      "title": "Advancing Cholangiocarcinoma Diagnosis: The Role of Liquid Biopsy and CRISPR/Cas Systems in Biomarker Detection.",
+      "snippet": "<b>Background/Objectives</b>: Cholangiocarcinoma (CCA) is a highly heterogeneous malignancy of the biliary tract with limited diagnostic tools for early detection. Current serum markers, such as CA19-9, lack specificity and sensitivity, particularly in early-stage disease, which hinders the effectiveness of curative interventions. This narrative review evaluates the limitations of existing diagnostic approaches and explores the potential of combining liquid biopsy (LB) technologies with CRISPR/Cas-based systems for precise, minimally invasive biomarker detection. <b>Methods</b>: A narrative review was conducted, synthesizing literature from 2018 to 2025 across PubMed, MDPI, Web of Science, Google Scholar, and Embase using MeSH terms such as \"cholangiocarcinoma,\" \"liquid biopsy,\" \"miRNA,\" a",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40647454/"
+    },
+    "PMID:40996984": {
+      "id": "PMID:40996984",
+      "source_type": "pubmed",
+      "title": "A circulating microRNA panel enhances the diagnosis of cholangiocarcinoma.",
+      "snippet": "<h4>Background and aim</h4>Cholangiocarcinoma (CCA), a malignancy with a high incidence in regions endemic for the liver fluke Opisthorchis viverrini, is frequently characterized by alterations in the p53 tumor-suppressor gene, a process often modulated by microRNAs. Our study aimed to identify circulating miRNAs as potential diagnostic biomarkers for CCA.<h4>Methods</h4>We sequenced small RNAs to identify differentially expressed microRNAs (miRNAs) in two CCA cell lines (one p53-mutant, one p53-wildtype) relative to an immortalized cholangiocyte cell line. Candidate miRNAs exhibiting significant upregulation with a log2 fold change > 4.5 were selected for validation via RT-qPCR in serum samples from patients with CCA. The diagnostic utility of these serum miRNAs was subsequently evaluated",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40996984/"
+    },
+    "PMID:41408188": {
+      "id": "PMID:41408188",
+      "source_type": "pubmed",
+      "title": "Exploring the biliary microbiome in hepatopancreatobiliary disorders: a comprehensive systematic review of microbial signatures and diagnostic potential.",
+      "snippet": "<h4>Background</h4>Hepatopancreatobiliary (HPB) diseases, encompassing hepatobiliary and pancreatic disorders, pose substantial global health challenges due to their high morbidity and mortality rates. Recent research highlights the crucial role of the biliary microbiome in the development of these diseases.<h4>Methods</h4>This study provides a comprehensive systematic review of the biliary microbiome's characteristics across various HPB disorders, including cholangiocarcinoma (CCA), pancreatic cancer (PC), primary sclerosing cholangitis (PSC), and gallstone disease (GSD). Following Preferred Reporting Items for Systematic Reviews and Meta-Analyses (PRISMA) guidelines, we screened articles from multiple databases, focusing on original research utilizing 16 S rRNA gene sequencing or metagen",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41408188/"
+    },
+    "PMID:40857390": {
+      "id": "PMID:40857390",
+      "source_type": "pubmed",
+      "title": "Integrating multi-omics in bile for biomarker discovery in cholangiocarcinoma.",
+      "snippet": "<h4>Background</h4>Cholangiocarcinoma (CCA) is an aggressive cancer with a poor prognosis. Histopathology evaluation of brushings and biopsies obtained during endoscopic retrograde cholangiopancreatography (ERCP) currently remains the main method of diagnosis, which has limited sensitivity for malignancy detection. Our study aimed to identify human bile-derived biomarkers to improve CCA diagnosis. Bile samples were collected from patients during ERCP for primary sclerosing cholangitis, CCA, or benign biliary disease.<h4>Methods</h4>Bile samples were collected from patients undergoing ERCP for biliary obstruction due to primary sclerosing cholangitis, newly identified malignant strictures concerning for CCA, or benign biliary disease. Using 16S sequencing, metabolomics, and bile acid quanti",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40857390/"
+    },
+    "PMID:42041598": {
+      "id": "PMID:42041598",
+      "source_type": "pubmed",
+      "title": "Exosomal microRNAs in Bronchial Aspirate and Other Liquid Biopsy Specimens for Lung Cancer: Current Evidence and Future Perspectives-A Narrative Review.",
+      "snippet": "Lung cancer remains the leading cause of cancer mortality worldwide, with most cases diagnosed at advanced stages. Conventional tissue biopsy is invasive, and low-dose CT (LDCT) screening-although effective-faces practical and logistical limitations. Liquid biopsy has emerged as a minimally invasive approach to capture tumor-derived material, including circulating tumor DNA (ctDNA), cells, and extracellular vesicles (EVs). Among EVs, exosomes and their microRNA (miRNA) cargo offer a stable, disease-specific signal. Airway-proximal fluids such as bronchial aspirate and bronchoalveolar lavage fluid (BALF) are in direct contact with the tumor microenvironment and may contain higher concentrations of tumor-derived exosomal miRNAs compared with blood. This review synthesizes the limited but pro",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42041598/"
+    },
+    "PMID:42076017": {
+      "id": "PMID:42076017",
+      "source_type": "pubmed",
+      "title": "Diagnostic Potential of Exosomes in Colorectal Cancer: Current Advances and Future Perspectives.",
+      "snippet": "Colorectal cancer (CRC) remains one of the leading causes of cancer-related mortality worldwide and is frequently diagnosed at an advanced stage due to limitations of current screening methods. Although surgical resection is the standard treatment, conventional tissue biopsies are invasive and restrict real-time assessment of tumor dynamics. Liquid biopsy has emerged as a promising noninvasive approach enabling repeated analysis of tumor-derived components in body fluids. Among these, exosomes have gained considerable attention as potential diagnostic biomarkers in CRC. This review summarizes current evidence on exosome biogenesis, molecular composition, and their diagnostic relevance in colorectal cancer. We discuss exosomal nucleic acids, proteins, and lipids as biomarkers detectable in ",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42076017/"
+    },
+    "PMID:41898149": {
+      "id": "PMID:41898149",
+      "source_type": "pubmed",
+      "title": "MicroRNAs in Breast Cancer: Diagnostic and Prognostic Potential, Challenges, and Clinical Reliability.",
+      "snippet": "Despite the rise in precision medicine, breast cancer management still lacks the non-invasive tools necessary to track tumor dynamics in real time. MicroRNAs (miRNAs) have emerged as strong candidates to fill this gap, particularly within the liquid biopsy framework. Their inherent stability in circulation and their ability to reflect specific molecular changes make them compelling biomarkers for clinical use. This review outlines the current state of miRNA research in breast cancer, specifically assessing their utility in early diagnosis and the prediction of patient outcomes. The focus is on a range of high-priority targets, such as miR-21, miR-155, and the miR-200 family, which have demonstrated consistent dysregulation across different molecular subtypes of breast cancer. These molecul",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41898149/"
+    },
+    "PMID:42278225": {
+      "id": "PMID:42278225",
+      "source_type": "pubmed",
+      "title": "State-Aware RNA Biomarkers in Triple-Negative Breast Cancer (TNBC): Integrating Tumor Plasticity, Spatial Architecture, and Temporal Monitoring.",
+      "snippet": "Triple-negative breast cancer is defined by the absence of druggable receptor targets and by a biologically dynamic phenotype that renders static, single-timepoint biomarker strategies fundamentally inadequate. Current predictive markers, including PD-L1 expression, tumor mutational burden, and genomic profiling, fail to capture the therapy-induced transcriptional reprogramming, spatial heterogeneity, and drug-tolerant persister states that drive resistance and relapse. In this review, we argue that RNA, particularly non-coding RNA (ncRNA), represents a complementary and state-aware platform for biomarker development in TNBC, capable of capturing transcriptional adaptation, regulatory threshold dynamics, and cell state transitions that static genomic markers cannot fully detect. Unlike mes",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42278225/"
+    },
+    "PMID:42077394": {
+      "id": "PMID:42077394",
+      "source_type": "pubmed",
+      "title": "Urinary Extracellular Vesicles for High-Precision Bladder Cancer Subtyping and Prognosis.",
+      "snippet": "Bladder cancer (BCa) exhibits molecular heterogeneity that complicates early diagnosis and prognosis, and drives confounding clinical outcomes. Non-muscle invasive and muscle-invasive subtypes, especially for intermediate to high grade, carry a 25%-50% progression-free survival rate, underscoring the need for high-precision prognostic strategy. Urinary extracellular vesicles (uEVs) are promising carriers of tumour-derived RNAs and proteins. However, significant challenges in studying uEVs arise from the diverse cellular origin of uEVs associated with the dynamic composition of urine, which presents roadblocks for developing the clinical utility of uEVs. We developed an AI-driven EV liquid biopsy pipeline that integrates (1) standardised EV isolation via NanoPom magnetic beads, (2) transcri",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42077394/"
+    },
+    "PMID:42196625": {
+      "id": "PMID:42196625",
+      "source_type": "pubmed",
+      "title": "Clinical Applications of Blood-Derived Extracellular Vesicle Biomarkers in Breast Cancer: A Scoping Review.",
+      "snippet": "Blood-derived extracellular vesicle (EV) biomarkers have emerged as promising liquid-biopsy analytes for monitoring treatment response and prognosis in breast cancer. This scoping review mapped the clinical evidence on blood-derived EV in breast cancer and identified key barriers to clinical translation. Following the Joanna Briggs Institute framework and PRISMA-ScR guidelines, we searched PubMed, Embase, and Web of Science for eligible studies published through November 2025. After duplicate removal, title and abstract screening, and full-text assessment, 64 clinical studies were included. Research activity increased markedly from 2020 onward, accounting for 87.5% (56/64) of included studies. The literature was concentrated in East Asia, particularly China (51.6%, 33/64). RNA-based biomar",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42196625/"
+    },
+    "PMID:41465539": {
+      "id": "PMID:41465539",
+      "source_type": "pubmed",
+      "title": "How Laboratory Guidelines Promote the Validity of Circulating Extracellular Vesicle-Associated Nucleic Acid Biomarker Signatures in Liquid Biopsy.",
+      "snippet": "Circulating nucleic acids, particularly those associated with extracellular vesicles (EVs), represent a promising class of molecular biomarkers in liquid biopsy for 'non-invasive' disease diagnostics, for better prognosis, and for therapeutic monitoring. However, the translation of this new circulating biomarker source into clinical practice is mostly hindered by methodological variability and a lack of standardization across the analytical workflow. This article highlights the implementation of international academic guidelines, such as Minimum Information for Publication of Quantitative Real-Time PCR Experiments (MIQE) and Minimal Information for Studies of Extracellular Vesicles (MISEV), in the entire analytical procedure in promoting the integrity, reproducibility, and validity of EV-a",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41465539/"
+    },
+    "PMID:41973609": {
+      "id": "PMID:41973609",
+      "source_type": "pubmed",
+      "title": "Cholangiocyte biology in primary sclerosing cholangitis and other cholangiopathies: pathogenesis, clinical insights, and experimental tools.",
+      "snippet": "Cholangiocytes are specialized epithelial cells that line the intrahepatic and extrahepatic biliary tree and play a critical role in bile modification, liver homeostasis, and response to injury. Cholangiocytes exhibit notable heterogeneity and plasticity, and their dysfunction is central to a spectrum of diseases targeting the bile ducts, collectively called cholangiopathies. These disorders include genetic, infectious, immune-mediated, and malignant diseases, with primary sclerosing cholangitis (PSC) representing one of the most complex and enigmatic of these disorders. PSC is a progressive, fibro-inflammatory disease of the bile ducts that is closely linked to inflammatory bowel disease, carries a heightened risk of cancer, and lacks any approved therapies. This review explores the biolo",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41973609/"
+    },
+    "PMID:40426891": {
+      "id": "PMID:40426891",
+      "source_type": "pubmed",
+      "title": "Clinically Uncertain Liver Masses: A Guide to Distinguishing Poorly Differentiated Primary Liver Cancer.",
+      "snippet": "<b>Objectives</b>: The distinction of clinically uncertain, poorly differentiated liver masses into primary liver cancer (PLC) of cholangiocytic origin (intrahepatic cholangiocarcinoma; CCA) or hepatocellular origin (hepatocellular carcinoma; HCC) vs. metastasis is highly relevant to guiding patient treatment. Protocols differ in terms of resection, local ablation, liver transplantation, or systemic therapies with immune checkpoint inhibitors (ICIs) and tyrosine kinase inhibitors (TKIs). <b>Methods</b>: This retrospective case series exemplifies a multidisciplinary, practical guide to clinically uncertain liver masses using imaging, histomorphology, immune phenotyping, and mutational testing of telomerase promoter (<i>TERT</i>) combined with a literature review. <b>Results</b>: In 2/3 pati",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40426891/"
+    }
+  }
+}

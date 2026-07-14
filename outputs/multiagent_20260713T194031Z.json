@@ -1,0 +1,211 @@
+{
+  "system": "multiagent",
+  "hypotheses": [
+    {
+      "claim": "In patients with primary sclerosing cholangitis (PSC), a panel of DNA methylation biomarkers measured in bile and/or plasma can detect cholangiocarcinoma earlier and more accurately than current standard-of-care (imaging, brush cytology, CA19-9), and could be incorporated into risk-stratified surveillance protocols for this high-risk population.",
+      "supporting_evidence": [
+        "PMID:42067191",
+        "PMID:41964937",
+        "PMID:41879306"
+      ],
+      "conflicting_evidence": [
+        "PMID:42136955",
+        "PMID:41682828",
+        "PMID:41892837",
+        "PMID:40689505",
+        "PMID:39518600",
+        "PMID:41919759",
+        "PMID:41866828",
+        "PMID:42004961",
+        "PMID:42112333",
+        "PMID:39103092"
+      ],
+      "confidence": 0.5,
+      "reasoning": "A multi-center study specifically developed and validated four DNA methylation biomarkers in bile (n=272) and plasma (n=128) from PSC/CCA patients, directly targeting the diagnostic gap in PSC surveillance, where current MRCP-based surveillance has limited demonstrated benefit and ERCP-based brush cytology/biopsy has low sensitivity. However, a case report of intrahepatic CCA arising in 'small-duct' PSC (traditionally considered lower risk) suggests that risk stratification and surveillance criteria may need to be broadened beyond classic large-duct PSC, and general PSC reviews note diagnostic complexity that could affect biomarker performance across PSC subtypes.",
+      "system": "multiagent"
+    },
+    {
+      "claim": "Multi-omics profiling of bile (combining 16S microbiome sequencing, metabolomics, and bile acid quantification) obtained during ERCP can distinguish cholangiocarcinoma from benign biliary strictures and PSC more accurately than cytology alone, offering a route to improved diagnostic yield at the time of endoscopic evaluation even if not suitable as a first-line population screening test.",
+      "supporting_evidence": [
+        "PMID:40857390",
+        "PMCID:PMC13287892",
+        "PMID:41903026"
+      ],
+      "conflicting_evidence": [
+        "PMID:41879306",
+        "PMID:41095804",
+        "PMID:41552720",
+        "PMID:41753674",
+        "PMID:41919759",
+        "PMID:42078454",
+        "PMID:40943967"
+      ],
+      "confidence": 0.4,
+      "reasoning": "A dedicated bile multi-omics study integrating microbiome, metabolomics, and bile acid profiling in PSC/CCA/benign biliary disease patients found candidate biomarkers to improve on cytology's limited sensitivity, and complementary plasma metabolomic work identified panels differentiating PSC-related conditions. However, bile collection requires invasive ERCP, restricting use to patients already undergoing endoscopic workup rather than enabling true population-level early detection, and existing reviews of ERCP-based diagnostics (brush cytology, FISH, biopsy) note persistent limited sensitivity even with advanced techniques, implying multi-omics biomarkers still need prospective validation before clinical adoption.",
+      "system": "multiagent"
+    },
+    {
+      "claim": "A panel of 3-4 tumor-specific DNA methylation biomarkers, detectable by droplet digital PCR in bile or plasma, can accurately distinguish early cholangiocarcinoma (CCA) from benign primary sclerosing cholangitis (PSC), enabling earlier, non-invasive detection in this high-risk surveillance population.",
+      "supporting_evidence": [
+        "PMID:42067191"
+      ],
+      "conflicting_evidence": [
+        "PMID:41866828",
+        "PMID:38905442",
+        "PMID:42165910"
+      ],
+      "confidence": 0.5,
+      "reasoning": "A dedicated study used reduced representation bisulfite sequencing to identify 12 candidate methylation markers from CCA vs PSC tissue, narrowed to 4 validated biomarkers tested via ddPCR in bile (n=272) and plasma (n=128) across three hospitals, reporting improved detection accuracy over current clinical methods. This directly supports methylation-based liquid biopsy for early CCA detection in the PSC surveillance context, a population with defined elevated risk where early detection has high clinical value. However, general GI liquid-biopsy literature notes that sensitivity for stage I disease remains limited due to low tumor DNA shedding, which could limit real-world performance at the earliest, most clinically desirable stage.",
+      "system": "multiagent"
+    },
+    {
+      "claim": "A targeted DNA-methylation biomarker panel measured in bile (and to a lesser extent plasma) via droplet digital PCR can accurately distinguish cholangiocarcinoma from primary sclerosing cholangitis (PSC) alone, offering a practical surveillance tool for the known high-risk PSC population.",
+      "supporting_evidence": [
+        "PMID:42067191"
+      ],
+      "conflicting_evidence": [
+        "PMID:42286359",
+        "PMID:41919759",
+        "PMID:41866828",
+        "PMID:40689505",
+        "PMID:41904891",
+        "PMID:37894314",
+        "PMID:41178929"
+      ],
+      "confidence": 0.4,
+      "reasoning": "This multi-hospital study (bile n=272, plasma n=128) identified four validated methylation biomarkers derived from reduced-representation bisulfite sequencing that improved on current PSC surveillance methods, which are noted elsewhere to have limited diagnostic accuracy leading to late, non-curative diagnoses. Bile collection still requires ERCP (invasive, not a pure 'routine blood test'), and analogous liquid-biopsy biomarker work in other CCA risk groups (e.g., liver-fluke-associated) is flagged as small-scale and lacking multi-center prospective validation, so broader generalizability beyond PSC cohorts is uncertain.",
+      "system": "multiagent"
+    },
+    {
+      "claim": "Circulating tumor DNA (ctDNA)-based liquid biopsy, especially tracking mutations such as IDH1/2, can enable detection of minimal residual/molecular disease after resection and potentially earlier detection of recurrence than imaging alone, but current evidence is concentrated on postoperative surveillance rather than de novo early screening due to limited sensitivity for small/early-stage tumors.",
+      "supporting_evidence": [
+        "PMID:41912863",
+        "PMID:41873318",
+        "PMID:41883993",
+        "PMID:41652428",
+        "PMID:41487574"
+      ],
+      "conflicting_evidence": [
+        "PMID:41899615",
+        "PMID:42145022",
+        "PMID:41866828",
+        "PMID:41294651",
+        "PMID:41178929",
+        "PMID:40938601",
+        "PMID:42001480",
+        "CT:NCT07176962"
+      ],
+      "confidence": 0.5,
+      "reasoning": "Multiple reviews and cohort-based studies show strong concordance between tissue and plasma IDH1/2 mutations and support ctDNA as a promising tool for MRD detection and recurrence surveillance in intrahepatic cholangiocarcinoma, outperforming imaging for detecting microscopic disease. However, broader liquid biopsy reviews caution about barriers including low ctDNA shedding in early-stage/small tumors, assay pre-analytics, and confounding from clonal hematopoiesis, meaning ctDNA's role in true de novo early detection (versus post-treatment monitoring) remains unproven at population scale.",
+      "system": "multiagent"
+    },
+    {
+      "claim": "A blood-based polymeric immunoglobulin receptor (PIGR) lateral-flow immunoassay could serve as a low-cost, field-deployable screening tool for cholangiocarcinoma in Opisthorchis viverrini-endemic populations (e.g., Southeast Asia), where decades-long latency between fluke infection and cancer diagnosis creates a window for risk-based screening.",
+      "supporting_evidence": [
+        "PMID:42322834",
+        "PMID:41071656"
+      ],
+      "conflicting_evidence": [
+        "PMID:42185667",
+        "PMID:42196646",
+        "PMID:39955486",
+        "PMID:40923709",
+        "PMID:40386563",
+        "PMID:41560312",
+        "PMID:39103092",
+        "PMID:41919759"
+      ],
+      "confidence": 0.35,
+      "reasoning": "A rapid PIGR lateral-flow strip was developed and tested against healthy subjects, O. viverrini-infected individuals, CCA patients, and other-cancer controls, suggesting feasibility for population screening in endemic regions. Genomic epidemiology work shows CCA driver mutations (TP53, PTEN, FGFR2 amplifications) arise decades before diagnosis, supporting a rationale for early risk-based screening starting from infection. However, co-endemicity of other helminths and ongoing high infection prevalence despite health education/sanitation interventions could confound biomarker specificity and limit real-world screening uptake and impact.",
+      "system": "multiagent"
+    },
+    {
+      "claim": "Measuring a panel of soluble proteins (VEGF, PDGF-AA, IGF, MMPs) directly in bile aspirated during routine ERCP for obstructive jaundice can help distinguish malignant (cholangiocarcinoma/pancreatic) biliary strictures from benign strictures, adding diagnostic value at a procedure many at-risk patients already undergo.",
+      "supporting_evidence": [
+        "PMID:42015571"
+      ],
+      "conflicting_evidence": [
+        "PMID:42078454",
+        "PMID:41822346",
+        "PMID:41217342",
+        "PMID:41904891",
+        "PMID:41892837",
+        "PMID:41919759",
+        "PMID:42123365",
+        "PMID:41095804"
+      ],
+      "confidence": 0.3,
+      "reasoning": "A prospective cohort of 100 ERCP patients (48 benign, 23 CCA, 29 PDAC) found bile concentrations of these growth factors/proteases had diagnostic and prognostic value for malignant biliary stenosis, an opportunistic 'add-on' test since bile is already being sampled during ERCP for jaundice workup. This is not a pre-symptomatic screening tool (patients already have strictures/jaundice), and a separate small (n=50) untargeted bile metabolomics study attempting a related diagnostic model illustrates that bile-based biomarker discovery in this space is still at small-cohort, single-center stage; a case report also shows conventional tumor markers can be falsely reassuring in malignancy mimics, underscoring the need for bile-specific assays rather than serum alone.",
+      "system": "multiagent"
+    },
+    {
+      "claim": "Bile is a superior liquid-biopsy compartment relative to peripheral plasma for ctDNA-based early detection of biliary tract cancers because it shows higher concordance with tumor tissue mutation profiles, suggesting bile-based mutation panels (e.g., for KRAS, TP53, and other biliary drivers) could enable earlier detection than blood-based ctDNA testing alone, especially in patients undergoing ERCP for biliary strictures.",
+      "supporting_evidence": [
+        "PMID:41178929",
+        "PMID:41883993"
+      ],
+      "conflicting_evidence": [
+        "PMID:41487574",
+        "PMID:39273408",
+        "PMID:40932825",
+        "PMID:41904891",
+        "PMID:38551383",
+        "PMID:41399682",
+        "PMID:41866828"
+      ],
+      "confidence": 0.4,
+      "reasoning": "A dedicated review states bile has been proven to be a reliable ctDNA source with higher concordance with tumor tissue than plasma, and that ctDNA detection in this context may precede radiological recurrence, directly supporting the idea that bile-based mutation testing could detect disease earlier than blood alone. A broader precision oncology roadmap review corroborates ctDNA from both blood and bile as promising for CCA. Countervailing literature on liquid biopsy in biliary tract cancers still frames early diagnosis as an unmet need overall, indicating that even bile-based ctDNA has not yet been prospectively validated as a stand-alone early screening tool, only as a promising investigational biomarker.",
+      "system": "multiagent"
+    },
+    {
+      "claim": "Multi-analyte cell-free DNA approaches integrating fragmentomics (fragment size, coverage at transcription factor binding sites) with methylation signals, as successfully applied in other GI and liver cancers, represent a promising but currently untested strategy for improving sensitivity of early cholangiocarcinoma detection beyond single-analyte mutation or methylation panels.",
+      "supporting_evidence": [
+        "PMID:42174634",
+        "PMID:42353299",
+        "PMID:41866828"
+      ],
+      "conflicting_evidence": [
+        "PMID:41866828",
+        "PMID:42165910",
+        "PMID:41652428",
+        "PMID:41487574",
+        "PMID:41883993"
+      ],
+      "confidence": 0.25,
+      "reasoning": "cfDNA fragmentomics combined with methylation-based features have demonstrated diagnostic value for early-stage gastric cancer and hepatocellular carcinoma in cirrhosis, suggesting the same multimodal cfDNA strategy (fragment size patterns, nucleosome positioning, methylation) could be adapted for cholangiocarcinoma, a cancer with similarly low early-stage tumor burden and difficult early detection. This is currently an extrapolated hypothesis rather than one with direct CCA-specific fragmentomics data; the same review on GI liquid biopsy explicitly flags that sensitivity in stage I disease remains limited across cancer types due to low tumor fraction, a key complicating factor for applying this approach to early CCA.",
+      "system": "multiagent"
+    },
+    {
+      "claim": "A composite blood panel combining CA19-9 with complementary serum markers (e.g., CEA and the novel candidate β-hCG/LHCGR axis) improves early detection sensitivity and specificity for cholangiocarcinoma over CA19-9 alone, and could serve as a low-cost first-line triage test in symptomatic or high-risk patients.",
+      "supporting_evidence": [
+        "PMCID:PMC13299596",
+        "PMID:42353153"
+      ],
+      "conflicting_evidence": [
+        "PMID:42123365",
+        "PMID:41822346",
+        "PMID:41095804",
+        "PMID:41552242",
+        "PMID:38216169",
+        "PMID:41625888",
+        "PMID:39077298",
+        "PMID:41588412",
+        "PMID:41217342"
+      ],
+      "confidence": 0.32,
+      "reasoning": "CA19-9 is already routinely measured and cheap, making it attractive for screening, but as a standalone marker it has well-documented poor sensitivity/specificity (elevated in benign cholestasis/cholangitis, and can be normal in confirmed malignancy per case report). A multi-omics study identified β-hCG (via LHCGR upregulation) as a serum marker that, combined with traditional tumor markers, improved detection efficacy and prognostic prediction, suggesting a multi-marker panel approach may partially overcome single-marker limitations. This remains an early-stage finding (single-cohort, one geographic population) requiring independent validation before screening deployment.",
+      "system": "multiagent"
+    }
+  ],
+  "dropped_hypotheses": [],
+  "dropped_citations": [
+    {
+      "hypothesis_claim": "A blood-based polymeric immunoglobulin receptor (PIGR) lateral-flow immunoassay could serve as a low-cost, field-deployable screening tool for cholangiocarcinoma in Opisthorchis viverrini-endemic populations (e.g., Southeast Asia), where decades-long latency between fluke infection and cancer diagnosis creates a window for risk-based screening.",
+      "citation_id": "PMC12994020",
+      "role": "conflicting",
+      "reason": "ID not found in this session's retrieved sources"
+    }
+  ],
+  "retrieved_source_count": 368,
+  "run_id": "multiagent_20260713T194031Z"
+}

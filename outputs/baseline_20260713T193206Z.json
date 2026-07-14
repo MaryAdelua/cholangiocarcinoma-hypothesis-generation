@@ -1,0 +1,141 @@
+{
+  "system": "baseline",
+  "hypotheses": [
+    {
+      "claim": "A multi-marker cell-free DNA methylation assay in bile and/or plasma (e.g., panel of ~4 candidate loci identified from RRBS) can detect cholangiocarcinoma (CCA) in high-risk primary sclerosing cholangitis (PSC) patients earlier and more accurately than current clinical/imaging criteria, and is now advancing to a dedicated ctDNA methylation blood test for biliary tract cancer screening.",
+      "supporting_evidence": [
+        "PMID:42067191",
+        "CT:NCT07176962",
+        "PMID:41883993",
+        "PMID:42145022"
+      ],
+      "conflicting_evidence": [
+        "PMID:41866828"
+      ],
+      "confidence": 0.65,
+      "reasoning": "A dedicated study identified and validated DNA methylation biomarkers in bile (n=272) and plasma (n=128) across three hospitals specifically for distinguishing CCA from PSC, and this concept is now being translated into a prospective screening trial (NCT07176962). However, a broader review of liquid biopsy for GI cancers notes that sensitivity for stage I disease remains limited due to low tumor burden/analyte scaling, which tempers confidence that this generalizes to truly early (subclinical) lesions rather than clinically apparent PSC-associated CCA.",
+      "system": "baseline"
+    },
+    {
+      "claim": "Circulating tumor DNA (ctDNA) obtained from bile (rather than peripheral blood) has higher sensitivity for detecting early, localized biliary tract cancers than plasma ctDNA, because bile is in direct contact with the tumor and dilutes less than systemic blood.",
+      "supporting_evidence": [
+        "PMID:41883993",
+        "PMID:42145022"
+      ],
+      "conflicting_evidence": [
+        "PMID:42067191"
+      ],
+      "confidence": 0.5,
+      "reasoning": "Review literature explicitly highlights bile as a liquid biopsy compartment with promise for ctDNA in CCA given anatomical proximity, distinct from blood-based approaches. However, the PSC methylation study found that specific biomarkers performed differently in bile vs plasma (not uniformly superior in bile), suggesting compartment performance may be marker- and context-dependent rather than a universal advantage.",
+      "system": "baseline"
+    },
+    {
+      "claim": "A blood-based extracellular vesicle (exosome) cargo signature (proteins/miRNA) can serve as a non-invasive early screening tool for cholangiocarcinoma, particularly in populations at elevated risk (e.g., liver fluke-endemic regions), by capturing tumor-derived molecular content before overt structural changes are visible on imaging.",
+      "supporting_evidence": [
+        "PMID:41939857",
+        "PMID:41919759",
+        "PMID:42123365"
+      ],
+      "conflicting_evidence": [
+        "PMID:41866828"
+      ],
+      "confidence": 0.5,
+      "reasoning": "Multiple reviews describe exosomes/EVs as diagnostic candidates in CCA and note their biological relevance to early carcinogenesis (e.g., in Clonorchis sinensis-driven CCA), but most work remains at proof-of-concept/small-cohort stage without large prospective validation, and general GI liquid-biopsy reviews caution about limited stage-I sensitivity for EV-based analytes.",
+      "system": "baseline"
+    },
+    {
+      "claim": "Serum beta-hCG (via its receptor LHCGR upregulation pathway), combined with conventional markers such as CA19-9, improves detection sensitivity for cholangiocarcinoma compared to CA19-9 alone, potentially enabling earlier or more accurate flagging in symptomatic or surveillance populations.",
+      "supporting_evidence": [
+        "PMID:42353153",
+        "PMCID:PMC13299596"
+      ],
+      "conflicting_evidence": [],
+      "confidence": 0.45,
+      "reasoning": "A multi-omics study in a liver-fluke-endemic Thai population identified LHCGR/beta-hCG upregulation correlating with CCA stage and showed added value of combining beta-hCG with routine tumor markers; this is a plausible but single-population, early-stage finding requiring external validation and unclear performance specifically at pre-symptomatic/very early stages.",
+      "system": "baseline"
+    },
+    {
+      "claim": "Persistently elevated serum gamma-glutamyl transferase (GGT), even when other liver tests are normal, identifies a subgroup of adults at increased risk of subsequent hepatobiliary malignancy (including cholangiocarcinoma) and could be used as a low-cost trigger for closer surveillance or imaging.",
+      "supporting_evidence": [
+        "PMID:42192874"
+      ],
+      "conflicting_evidence": [],
+      "confidence": 0.45,
+      "reasoning": "A large real-world propensity-matched cohort study (TriNetX, ~14,590 matched pairs) found associations between persistently elevated GGT and hepatobiliary/pancreatic cancer outcomes. This is a novel, checkable epidemiological signal, but GGT is nonspecific (also elevated with alcohol use, metabolic dysfunction), so specificity for CCA detection specifically (vs. other hepatobiliary cancers) is unproven.",
+      "system": "baseline"
+    },
+    {
+      "claim": "Type 2 diabetes and chronic HBV infection converge on a shared 'metaflammation' transcriptomic network that could be leveraged to define a composite clinical risk score (diabetes + HBV status + inflammatory markers) for stratifying patients who warrant earlier imaging surveillance for cholangiocarcinoma.",
+      "supporting_evidence": [
+        "PPR:PPR1160294",
+        "PMID:41781899"
+      ],
+      "conflicting_evidence": [
+        "PMID:42169949"
+      ],
+      "confidence": 0.35,
+      "reasoning": "Bioinformatic integration of TCGA-CHOL and other public datasets suggests a converging metabolic-inflammatory network linking T2D and HBV to CCA progression, and a Korean epidemiologic cohort documents rising metabolic risk factor contributions to biliary tract cancers. This is a novel combination hypothesis (mechanistic bioinformatics + epidemiology) not yet validated as a prospective screening tool, and equity/access gaps in intrahepatic CCA diagnosis add uncertainty about implementation feasibility.",
+      "system": "baseline"
+    },
+    {
+      "claim": "AI-based radiomics models applied to routine contrast-enhanced CT or MRI can detect small or indeterminate intrahepatic cholangiocarcinoma lesions, or distinguish them from benign/HCC lesions, at an earlier stage and with higher accuracy than radiologist visual assessment alone, particularly valuable in patients under HCC/cirrhosis surveillance where iCCA may be incidentally missed.",
+      "supporting_evidence": [
+        "PMID:41899542",
+        "PMID:41569166",
+        "PMID:41616271"
+      ],
+      "conflicting_evidence": [],
+      "confidence": 0.55,
+      "reasoning": "A systematic review/meta-analysis specifically on radiomics for ICC detection/differentiation, plus systematic reviews of AI on CT/MRI for HCC vs CCA differentiation, and a review on AI in liver cancer surveillance collectively support this. Confidence is moderate because most included studies are retrospective, single-center, and not yet prospectively validated as population screening tools.",
+      "system": "baseline"
+    },
+    {
+      "claim": "Advanced peroral cholangioscopy (e.g., SpyGlass single-operator cholangioscopy) with targeted biopsy or confocal laser endomicroscopy detects malignancy in indeterminate biliary strictures with higher sensitivity than standard ERCP brush cytology, enabling earlier histologic confirmation of early-stage perihilar/extrahepatic CCA that would otherwise be missed or delayed.",
+      "supporting_evidence": [
+        "PMID:42435259",
+        "PMID:42122131",
+        "PMID:40425411",
+        "PMID:40589379"
+      ],
+      "conflicting_evidence": [
+        "PMID:41378323"
+      ],
+      "confidence": 0.7,
+      "reasoning": "Multiple independent reviews and a network meta-analysis directly compare cholangioscopy-based modalities to brush cytology (long known to have <50% sensitivity) and consistently report superior diagnostic yield for cholangioscopy/EUS-guided approaches, especially for perihilar strictures. This is a well-established and increasingly consolidated finding, though optimal modality choice still depends on stricture location and operator expertise.",
+      "system": "baseline"
+    },
+    {
+      "claim": "A fecal or gut microbiome-derived bile acid metabolite signature (reflecting disrupted primary-to-secondary bile acid conversion and FXR/TGR5/S1PR2 signaling) can serve as a non-invasive stool-based marker of early biliary tract carcinogenesis, potentially detectable at the periductal fibrosis stage before overt cancer develops.",
+      "supporting_evidence": [
+        "PPR:PPR1257036",
+        "PMID:42293159"
+      ],
+      "conflicting_evidence": [
+        "PMCID:PMC13297221"
+      ],
+      "confidence": 0.4,
+      "reasoning": "A dedicated fecal bile acid profiling study found host-microbiome disruption differentiating normal bile ducts, periductal fibrosis, and CCA, and a mechanistic review supports plausible bile acid-microbiome-carcinogenesis pathways via defined receptors. This is a genuinely novel, largely preclinical hypothesis (preprint-level evidence, small cohorts) requiring much larger validation; a scoping review on biliary microbiota notes the field is still emerging with unclear causal directionality.",
+      "system": "baseline"
+    },
+    {
+      "claim": "Because indeterminate biliary strictures are frequently biopsy/cytology-negative for malignancy (up to one-third ultimately benign, with substantial false-negative rates using standard sampling), applying molecular testing (targeted NGS panels for FGFR2 fusions, IDH1 mutations, or other CCA driver alterations) directly on brush cytology or cholangioscopy biopsy specimens can rescue diagnostic sensitivity and enable earlier, more confident diagnosis of early-stage CCA in ambiguous strictures.",
+      "supporting_evidence": [
+        "PMID:40425411",
+        "CIVIC:EID1846",
+        "CIVIC:EID1847",
+        "CIVIC:EID11230",
+        "CIVIC:EID7447"
+      ],
+      "conflicting_evidence": [
+        "PMID:42435259"
+      ],
+      "confidence": 0.5,
+      "reasoning": "CIViC curated evidence establishes that FGFR2 fusions (e.g., FGFR2-BICC1, FGFR2-AHCYL1, found in ~13.6% of intrahepatic CCA) and IDH1 R132 mutations are diagnostically and predictively significant, well-characterized alterations detectable by sequencing; endoscopy reviews highlight the high false-negative rate of standard sampling for indeterminate strictures. Combining molecular testing with existing tissue sampling is a plausible novel application, but the network meta-analysis of cholangioscopy modalities did not report molecular-augmented cytology results directly, so the incremental benefit specifically for stricture triage is inferred rather than directly demonstrated.",
+      "system": "baseline"
+    }
+  ],
+  "dropped_hypotheses": [],
+  "dropped_citations": [],
+  "retrieved_source_count": 64,
+  "run_id": "baseline_20260713T193206Z"
+}
