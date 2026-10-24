@@ -96,16 +96,36 @@ What each major directory is for:
 
 Requires Python 3.11+ and an Anthropic API key with available credit.
 
-```bash
-git clone <this-repo>
-cd Chol-research
-python -m venv .venv
-./.venv/Scripts/python.exe -m pip install -r requirements.txt   # Windows
-# source .venv/bin/activate && pip install -r requirements.txt  # macOS/Linux
+Clone the existing repository without changing its directory name:
 
-cp .env.example .env
-# edit .env and set ANTHROPIC_API_KEY=sk-ant-...
+```bash
+git clone https://github.com/MaryAdelua/cholangiocarcinoma-hypothesis-generation.git
+cd cholangiocarcinoma-hypothesis-generation
 ```
+
+On macOS/Linux:
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install -r requirements.txt
+cp .env.example .env
+```
+
+On Windows PowerShell:
+
+```powershell
+py -3 -m venv .venv
+.\.venv\Scripts\Activate.ps1
+python -m pip install -r requirements.txt
+Copy-Item .env.example .env
+```
+
+Edit the local `.env` and set `ANTHROPIC_API_KEY`; do not commit it. Keep the
+virtual environment activated for the `python` commands below. If PowerShell
+activation is unavailable, use `.\.venv\Scripts\python.exe` in place of
+`python` for installation and each workflow command; no execution-policy
+change is required. Confirm that your selected Python interpreter is 3.11 or newer.
 
 All retrieval APIs (Europe PMC, Open Targets, CIViC, ClinicalTrials.gov) are open access —
 no additional keys needed.
