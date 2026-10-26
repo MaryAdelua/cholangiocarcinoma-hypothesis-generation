@@ -233,8 +233,7 @@ Not started, listed here as candidate directions rather than commitments:
 
 ## License
 
-*To be determined before public release.* No license has been selected yet — this repository
-is not currently licensed for reuse.
+No license has been selected or included in this public repository.
 
 ## Citation
 

@@ -10,6 +10,15 @@ pulled directly from an existing artifact, verified against source files still k
 unchanged, reconstructed from multiple corroborating sources with the basis stated, or
 explicitly marked `unknown` where none of that was possible.
 
+## Historical scope
+
+This is a **pre-Git provenance snapshot dated 14 July 2026**, retained as a historical
+record. The repository is now version-controlled. References below to "current" source
+files, timestamps and session evidence describe the reconstruction date, not the latest
+checkout. Later commits do not establish the missing code revisions for earlier runs.
+See [current reproducibility guidance](REPRODUCIBILITY_NOTES.md#current-workflow).
+The machine-readable manifest and recorded results are unchanged.
+
 ## Reconstruction methodology
 
 No single source is treated as sufficient on its own. Every reconstructed field is
@@ -22,9 +31,10 @@ this combined evidence is marked `unknown`, not guessed.
 
 ## Version control
 
-**No git repository exists for this project.** `git status` in the project root returns
-`fatal: not a git repository`. No commit hash is available for any run below — a real
-absence of version control, not a gap in reconstruction effort.
+**At the pre-Git snapshot, no Git repository existed for this project.** The recorded
+`git status` result was `fatal: not a git repository`. No contemporaneous commit hash was
+available for the runs below. This describes the historical absence of version control,
+not the state of the current repository.
 
 ## Provenance tags
 

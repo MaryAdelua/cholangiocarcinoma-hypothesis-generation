@@ -1,6 +1,7 @@
 # Project Status
 
-Last updated: 2026-07-14
+Research status as of: 2026-07-14
+Documentation instructions clarified: 2026-10-26; no experiments rerun.
 
 See [CLAUDE.md](CLAUDE.md) for the full project brief. This file tracks build progress;
 [RESULTS.md](RESULTS.md) has the actual pilot findings.
@@ -27,12 +28,18 @@ trims to 50).
 
 ## How to run
 
+Follow the [installation instructions](README.md#installation) for macOS/Linux or Windows
+PowerShell, then run from the repository root with that virtual environment activated:
+
+```bash
+python run_baseline.py      # System A
+python run_multiagent.py    # System B
+python run_evaluation.py    # scores the latest baseline_*.json and multiagent_*.json in outputs/
 ```
-./.venv/Scripts/python.exe run_baseline.py      # System A
-./.venv/Scripts/python.exe run_multiagent.py    # System B
-./.venv/Scripts/python.exe run_evaluation.py    # scores the latest baseline_*.json and
-                                                 # multiagent_*.json in outputs/
-```
+
+If PowerShell activation is unavailable, substitute `.\.venv\Scripts\python.exe` for
+`python`; no execution-policy change is needed. These commands call external APIs and
+are experiment runs, not dependency-free documentation checks.
 
 Requires `ANTHROPIC_API_KEY` set in `.env` (see `.env.example`) with sufficient credit
 balance. At the current `run_size=50`, one full pass of all three (baseline + multiagent +
@@ -57,7 +64,7 @@ src/
   multiagent/                          System B (generators, adversarial, ranking, orchestrator)
   evaluation/                            harness (judge, falsification, metrics, entry point)
 outputs/    one timestamped JSON per run (baseline_*, multiagent_*, evaluation_*.json/.md)
-logs/       one timestamped JSONL per run — full research-data trace
+logs/       local JSONL research traces; intentionally not tracked in Git
 ```
 
 ## Known limitations at this stage
